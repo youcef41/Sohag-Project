@@ -1,0 +1,58 @@
+The initial cost = 72945595
+The intiial Number of bits = 44805759
+---------------------------------------
+Iteration : 0
+The final Number of bit = 43945321
+The final cost = 72945595
+ Execution Time = 62
+---------------------------------------
+Iteration : 1
+The final Number of bit = 42488349
+The final cost = 73674429
+ Execution Time = 32
+---------------------------------------
+Iteration : 2
+The final Number of bit = 41758498
+The final cost = 74404278
+ Execution Time = 31
+---------------------------------------
+Iteration : 3
+The final Number of bit = 41258516
+The final cost = 75127694
+ Execution Time = 47
+---------------------------------------
+Iteration : 4
+The final Number of bit = 40848035
+The final cost = 75860321
+ Execution Time = 31
+---------------------------------------
+Iteration : 5
+The final Number of bit = 40723850
+The final cost = 76555584
+ Execution Time = 31
+---------------------------------------
+Iteration : 6
+The final Number of bit = 40723850
+The final cost = 76751854
+ Execution Time = 16
+---------------------------------------
+Iteration : 7
+The final Number of bit = 40723850
+The final cost = 76913304
+ Execution Time = 31
+---------------------------------------
+Iteration : 8
+The final Number of bit = 40723850
+The final cost = 77204812
+ Execution Time = 31
+---------------------------------------
+Iteration : 9
+The final Number of bit = 40723850
+The final cost = 76807400
+ Execution Time = 32
+---------------------------------------
+Iteration : 10
+The final Number of bit = 40723850
+The final cost = 77017628
+ Execution Time = 31
+---------------------------------------
