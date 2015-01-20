@@ -52,7 +52,7 @@
 %% for the whole article with \linenumbers.
 %% \usepackage{lineno}
 \journal{Nuclear Physics B}
-
+\bibliographystyle{elsarticle-num}
 \begin{document}
 
 \begin{frontmatter}
@@ -120,6 +120,13 @@ All previous studies focus only on the differences and the relation between cont
 
 \subsection{Huffman Code}
 \subsection{Power Efficient on Data Transmission}
+In the recent years, application of battery-powered portable devices, e.g. laptop computers and mobile phones has increased rapidly. Power dissipation has become a primary concern for digital community because it affects the performance,reliability, and the cost of computation         in both portable and non-portable devices. CMOS technologies were developed in order to reduce the power consumption in devices. Digital CMOS circuits have three major sources of power dissipation and are summarised in the following equation \cite{Weste88}:
+\begin{equation}
+\begin{split}
+    P_{avg} ={}& P_{dynamic}+P_{short-circuit}+P_{leakage}\\
+         ={}& \alpha_{0 \rightarrow 1}\cdot C_L\cdot V_{dd}^2\cdot f_{clk} + I_{sc}\cdot V_{dd}+I_{leakage}\cdot V_{dd}
+\end{split}
+\end{equation}
 \subsection{Unequal Bit Considering On data Transmission}
 \section{Approach}
 \subsection{Proposed Scheme}
@@ -181,14 +188,15 @@ The main objective of the GA optimisation algorithm for bits minimisation proble
 %% else use the following coding to input the bibitems directly in the
 %% TeX file.
 
-\begin{thebibliography}{00}
+%\begin{thebibliography}{00}
 
 %% \bibitem{label}
 %% Text of bibliographic item
 
-\bibitem{}
+%\bibitem{}
 
-\end{thebibliography}
+%\end{thebibliography}
+\bibliography{mybibfile}
 \end{document}
 \endinput
 %%
