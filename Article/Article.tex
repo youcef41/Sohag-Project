@@ -130,7 +130,27 @@ encoded to meet the purposes like: unambiguous retrieval of information, efficie
   \text{cost}\left(w_i\right)=\sum_{j=1}^{n}c\left(\alpha_{ij}\right)
 \end{equation} 
   
-If all the elements of a codeword has unit cost or length then the cost of the codeword is equivalent to the length of the codeword. However, it is not necessary for the elements in the codeword to have equal length or cost. For example, in Morse Code all the ASCII characters are encoded as sequence of dots ($\cdot$) and dashes($-$) where a dash is three times longer than a dot in duration\cite{Redmond09}. Using Morse Code, we can treat the binary bit 0 as a dot and the binary bit 1 as a dash. Even if we consider the voltage level to represent the binary digits then still they are different.
+If all the elements of a codeword has unit cost or length then the cost of the codeword is equivalent to the length of the codeword. However, it is not necessary for the elements in the codeword to have equal length or cost. For example, in Morse Code all the ASCII characters are encoded as sequence of dots ($\cdot$) and dashes($-$) where a dash is three times longer than a dot in duration \cite{Redmond09}. Using Morse Code, we can treat the binary bits differently; 0 as a dot and 1 as a dash. Even if we consider the voltage level to represent the binary digits then they are still different. Table \ref{table1} shows the logic level to represent binary digits in CMOS and TTL technologies.
+
+\begin{table}[thpb]
+\renewcommand{\arraystretch}{1.5}
+\caption{Example of binary logic level}
+\label{table1}
+\centering
+\begin{tabular}{c c c c}
+\hline
+ \bfseries Technology  & 0 & 1&Notes\\
+\hline
+\bfseries CMOS & $0~V$ to $\frac{V_{DD}}{2}$&$\frac{V_{DD}}{2}$ to $V_{DD}$&$V_{DD}$= supply voltage\\
+%\hline
+\bfseries TTL & $0~V$ to $0.8~V$&$2~V$ to $V_{CC}$ &$V_{CC}$ is $4.75~V$ to $5.25~V$\\
+%\hline
+
+
+\hline
+\end{tabular}
+\end{table}
+
 %Digital CMOS circuits have three major sources of power dissipation and are summarised in the following equation \cite{Weste88}:
 %\begin{equation}
 %\begin{split}
