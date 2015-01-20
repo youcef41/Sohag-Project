@@ -118,16 +118,29 @@ In [Marty C. Brandon ] authors propose a new general data structure and data enc
 Wang and Zhang (2011) proposed a new scheme for referential compression of genomes based on the chromosome level. The Algorithm aim to search for longest common subsequence between matching parts and the differences encoded using Huffman coding.\\
 All previous studies focus only on the differences and the relation between continuation of the sequence, and without improvement of the encoding scheme.
 
-\subsection{Huffman Code}
-\subsection{Power Efficient on Data Transmission}
-In the recent years, application of battery-powered portable devices, e.g. laptop computers and mobile phones has increased rapidly. Power dissipation has become a primary concern for digital community because it affects the performance,reliability, and the cost of computation         in both portable and non-portable devices. CMOS technologies were developed in order to reduce the power consumption in devices. Digital CMOS circuits have three major sources of power dissipation and are summarised in the following equation \cite{Weste88}:
+\subsection{Rationale of Unequal Bit Cost Considering Encoding Approaches}
+In the recent years, application of battery-powered portable devices, e.g. laptop computers and mobile phones has increased significantly. Proper representation of digital data and their transmission efficiency has become a primary concern for digital community because it affects the performance, reliability, and the cost of computation in both portable and non-portable devices. CMOS technologies were developed in order to reduce the power consumption both in data processing and transmission. In order to increase transmission speed and reduce transmission cost, parallel data transmission methods are widely used. However, parallel transmission is limited to short distance communications, e.g. locally connected devices, internal buses. Ruling out the possible availability of parallel transmission
+links over long distance, we are left with its serial alternative only. 
+
+Data encoding techniques came into action to improve the data transmission efficiency over serial communication medium by compressing data before transmitting. Efficiency can be measured in terms of incurred cost, required storage space, consumed power, time spent and likewise. Data must be
+encoded to meet the purposes like: unambiguous retrieval of information, efficient storage, efficient transmission and etc. Let a message consist of sequences of characters taken from an alphabet $\Sigma$, where  $\alpha_1,\alpha_2,\alpha_3\ldots,\alpha_r$ are the elements that represent the characters in the source $\Sigma$. The length of $\alpha_i$ represents its cost or transmission time, i.e., $c\left(\alpha_i\right)= length(\alpha_i)$. A codeword $w_i$ is a string of characters in $\Sigma$, i.e., $w_i\in\Sigma^{+}$. If a codeword is $w_i=\alpha_{i1},\alpha_{i2},\ldots,\alpha_{in}$, then the length or cost of the codeword is the sum of the lengths of its constituent elements:
+
 \begin{equation}
-\begin{split}
-    P_{avg} ={}& P_{dynamic}+P_{short-circuit}+P_{leakage}\\
-         ={}& \alpha_{0 \rightarrow 1}\cdot C_L\cdot V_{dd}^2\cdot f_{clk} + I_{sc}\cdot V_{dd}+I_{leakage}\cdot V_{dd}
-\end{split}
-\end{equation}
-\subsection{Unequal Bit Considering On data Transmission}
+\label{eqn1}
+  \text{cost}\left(w_i\right)=\sum_{j=1}^{n}c\left(\alpha_{ij}\right)
+\end{equation} 
+  
+If all the elements of a codeword has unit cost or length then the cost of the codeword is equivalent to the length of the codeword. However, it is not necessary for the elements in the codeword to have equal length or cost. For example, in Morse Code all the ASCII characters are encoded as sequence of dots ($\cdot$) and dashes($-$) where a dash is three times longer than a dot in duration\cite{Redmond09}. Using Morse Code, we can treat the binary bit 0 as a dot and the binary bit 1 as a dash. Even if we consider the voltage level to represent the binary digits then still they are different.
+%Digital CMOS circuits have three major sources of power dissipation and are summarised in the following equation \cite{Weste88}:
+%\begin{equation}
+%\begin{split}
+%    P_{avg} ={}& P_{dynamic}+P_{short-circuit}+P_{leakage}\\
+%         ={}& \alpha_{0 \rightarrow 1}\cdot C_L\cdot V_{dd}^2\cdot f_{clk} + I_{sc}\cdot V_{dd}+I_{leakage}\cdot V_{dd}
+%\end{split}
+%\end{equation}
+\subsection{Huffman Codes}
+
+%\subsection{Unequal Bit Considering On data Transmission}
 \section{Approach}
 \subsection{Proposed Scheme}
 \subsection{Power Efficient Huffman code}

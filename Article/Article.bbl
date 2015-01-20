@@ -5,8 +5,8 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
-\bibitem{Weste88}
-N.~H.~E. Weste, K.~Eshraghian, Principles of CMOS VLSI design: a systems
-  perspective, Addison-Wesley, 1988.
+\bibitem{Redmond09}
+W.~A. Redmond, International morse code, Microsoft Encarta 2009 [DVD] (1964)
+  275--278.
 
 \end{thebibliography}
