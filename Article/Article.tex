@@ -41,6 +41,9 @@
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
 %% The amsthm package provides extended theorem environments
 %% \usepackage{amsthm}
 
@@ -48,7 +51,6 @@
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
 %% \usepackage{lineno}
-
 \journal{Nuclear Physics B}
 
 \begin{document}
@@ -123,6 +125,41 @@ All previous studies focus only on the differences and the relation between cont
 \subsection{Proposed Scheme}
 \subsection{Power Efficient Huffman code}
 \subsection{Optimisation of the Codes}
+\subsubsection{Problem formulation}
+The problem of finding the best allocation of codes to each symbol can be   modelled as an Assignment Problems with Constraint, the problem is formulated as follows :\\\\
+\textbf{Definition:} Given a set of codes $C=\left\{C_{1},C_{2}...C_{n}\right\}$, and a set of frequencies $C=\left\{Q_{1},Q_{2}...Q_{n}\right\}$. For each code we have the length of the code $|C_{i}|$ (number of bits) and the cost of the code $S_{C_{i}}$ (cost of ones and zeros), the objective is to assign to each frequency a code in order to get the minimum total number of bits, while respecting the initial assignment total cost $S_{t}$.   
+\\
+The Objective Function is : 
+
+\begin{equation}
+Minimise \sum (|C_{i}| \times Q_{j}) 
+\end{equation}
+while :
+\begin{equation}
+\sum (|S_{C_{i}}| \times Q_{j}) \leqslant S_{t} 
+\end{equation}
+\subsubsection{Basic Genetic Algorithm}
+Genetic Algorithm (GA) is a bio-inspired meta-heuristics algorithm developed by []. GA is a stochastic optimization algorithm imitate the natural evolution process of genomes. GA started by generate a population of random feasible solutions, the optimization process of GA is as follow, and we select two solution among the population, by one of the well-known selection techniques. This two selected solution will be considered as two fathers, we generate two other new solutions from the two selected solution (Sons), this new can be mutate according to a given mutation probability. The quality of each solution is computed with the fitness function with control the evolution of the GA population by the Deletion of worst solution and insertion of good solutions between fathers and sons. This processes is repeated until the stopped criteria is achieved which can be the number of generation or if the population is stabilized.
+
+\subsubsection{GA for Bits minimisation}
+The main objective of the GA optimisation algorithm for bits minimisation problem is to assign to each frequency a specific code. The GABM population is generated randomly from the different codes and frequencies, and we add to this population the affectation given by the cost considering algorithm (step 1). The optimisation process of genetic algorithms start with the selection of two solution randomly from the population (step 2). After that the crossover operation are applied to these two solution (considered as parents) to generate two new solutions (considered as sons)(step 3), these new solutions are mutated according to a predefined probability (step 4) to ensure a good diversification on the space solutions. The next step is to evaluate the four solution (parents and sons)(step 5). Finally the new population are reproduced by replacing the two initial selected solutions by the two best among this four solution (parents and sons) (step 6). the whole [process are repeated until the max number of operation is achieved (return to step 1). 
+\begin{algorithm}
+\caption{GA for bits minimisation}
+\begin{algorithmic}[1]
+\State Population initialization (P).
+\While {Max number of generation not achieved} 
+\State Select two solutions S1,S2 form P.
+\State Crossover $S_{1},S_{2}$ to generate $S_{11},S_{21}$.
+\State Mutate $S_{11},S_{21}$.
+\State Evaluate $S_{1},S_{2},S_{11},S_{21}$.
+\State Replace $S_{1},S_{2}$ by the two best from ($S_{1},S_{2},S_{11},S_{21}$).
+\State Return to 1;
+\EndWhile
+\State Display the best solution from the population P;
+\end{algorithmic}
+\end{algorithm}
+
+
 \section{Results And Discussion}
 \section{Conclusion}
 
