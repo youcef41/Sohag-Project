@@ -130,7 +130,7 @@ encoded to meet the purposes like: unambiguous retrieval of information, efficie
   \text{cost}\left(w_i\right)=\sum_{j=1}^{n}c\left(\alpha_{ij}\right)
 \end{equation} 
   
-If all the elements of a codeword has unit cost or length then the cost of the codeword is equivalent to the length of the codeword. However, it is not necessary for the elements in the codeword to have equal length or cost. For example, in Morse Code all the ASCII characters are encoded as sequence of dots ($\cdot$) and dashes($-$) where a dash is three times longer than a dot in duration \cite{Redmond09}. Using Morse Code, we can treat the binary bits differently; 0 as a dot and 1 as a dash. Even if we consider the voltage level to represent the binary digits then they are still different. Table \ref{table1} shows the logic level to represent binary digits in CMOS and TTL technologies.
+If all the elements of a codeword has unit cost or length then the cost of the codeword is equivalent to the length of the codeword. However, it is not necessary for the elements in the codeword to have equal length or cost. For example, in Morse Code all the ASCII characters are encoded as sequence of dots ($\cdot$) and dashes($-$) where a dash is three times longer than a dot in duration \cite{Redmond09}. However, the Morse code scheme suffers from the prefix problem \cite{Gr03}. Ignoring the prefix problem, Morse Code results in a tremendous savings of bits over ASCII representation. Using Morse Code, we can treat the binary bits differently; 0 as a dot and 1 as a dash. Even if we consider the voltage level to represent the binary digits then they are still different. Table \ref{table1} shows the logic level to represent binary digits in CMOS and TTL technologies. 
 
 \begin{table}[thpb]
 \renewcommand{\arraystretch}{1.5}
@@ -151,6 +151,12 @@ If all the elements of a codeword has unit cost or length then the cost of the c
 \end{tabular}
 \end{table}
 
+As the unequal letter cost problem is not new therefore it has been addressed by different researchers. The more general case where the costs of the letters as well as the probabilities of the words are arbitrarily specified was treated in \cite{Karp61}. A number of other researchers have focused on uniform sources and developed algorithm for the unequal letter costs encoding \cite{Gil95, Kar62,Varn71,AltMel80,perl1975}.  Let $p_1,p_2,\ldots,p_n$ be the probabilities with which the source symbols occur in a message and the codewords representing the source symbols are $w_1,w_2,\ldots,w_n$ then the cost of the code $W$ is:
+
+\begin{equation}
+C\left(W\right)=\sum_{i=1}^{n}cost\left(w_i\right).p_i 
+\end{equation}
+The aim of producing an optimal code with unequal letter cost is to find a codeword $W$ that consists of $n$ prefix code letters each with minimum cost $c_i$ that produces the overall minimum cost $C\left(W\right)$, given that costs $0<c_1\leq c_2 \leq c_2 \ldots \leq c_n$, and probabilities $p_1\geq p_2\geq \ldots\geq p_n>0$.
 %Digital CMOS circuits have three major sources of power dissipation and are summarised in the following equation \cite{Weste88}:
 %\begin{equation}
 %\begin{split}

@@ -9,4 +9,33 @@
 W.~A. Redmond, International morse code, Microsoft Encarta 2009 [DVD] (1964)
   275--278.
 
+\bibitem{Gr03}
+P.~D. Grunwald, P.~M.~B. Vitany, Kolmogorov complexity and information theory,
+  Journal of Logic, Language and Information 12 (2003) 497--529.
+
+\bibitem{Karp61}
+R.~Karp, Minimum-redundancy coding for the discrete noiseless channel, IRE
+  Transactions on Information Theory 7~(1) (1961) 27--38.
+
+\bibitem{Gil95}
+E.~N. Gilbert, Coding with digits of unequal costs, IEEE Transactions on
+  Information Theory 41.
+
+\bibitem{Kar62}
+R.~M. Krause, Channels which transmit letters of unequal duration, Information
+  Control 5 (1962) 13--24.
+
+\bibitem{Varn71}
+B.~Varn, Optimal variable length codes -{Arbitrary symbol cost and equal code
+  word probability}, Information Control~(19) (1971) 289--301.
+
+\bibitem{AltMel80}
+D.~Altenkamp, K.~Mehlhorn, Codes: Unequal probabilities, unequal letter costs,
+  Journal of the Association for Computing Machinery 27~(3) (1980) 412--427.
+
+\bibitem{perl1975}
+Y.~Perl, M.~R. Garey, S.~Even, Efficient generation of optimal prefix code:
+  Equiprobable words using unequal cost letters, Journal of the ACM (JACM)
+  22~(2) (1975) 202--214.
+
 \end{thebibliography}
