@@ -162,7 +162,41 @@ The aim of producing an optimal code with unequal letter cost is to find a codew
 %\end{split}
 %\end{equation}
 \subsection{Huffman Codes}
-Technique of producing Huffman codes is an optimal encoding rule that minimises the number of bits needed to represent source data is proposed by D.A. Huffman\cite{Huff51}. It is an entropy encoding algorithm used for lossless data compression. It is an efficient data compression scheme that takes into account the probabilities at which different quantisation levels are likely to occur and results into fewer data bits on the average. For any given set of levels and associated probabilities, there is an optimal encoding rule that minimises the number of bits needed to represent the source. Encoding characters in predefined fixed length code, does not attain an optimum performance, because every character consumes equal number of bits. Huffman code tackles this by generating variable length codes, given a probability usage frequency for a set of symbols.
+In computer science and information theory, Huffman code is an entropy encoding algorithm used for lossless data compression. It takes into account the probabilities at which different symbols are likely to occur and results into fewer data bits on the average. 
+%then assigns variable-length codes to different distinct symbols, and thus minimises the number of bits required to encode a message. 
+For any given set of symbols and associated occurrence probabilities, there is an optimal encoding rule that minimises the number of bits needed to represent the source. Encoding symbols in predefined fixed length code, does not attain an optimum performance, because every character consumes equal number of bits irrespective to their degree of contribution to the whole message. Huffman code tackles this by generating variable length codes, given a probability usage frequency for a set of symbols. It generates prefix-code to facilitate unambiguous retrieval of information. A scheme of prefix code assigns codes to letters in $\Sigma$ to form codeword $w_i$ such that none of them is a prefix to another. For example, the codes $\left\{ 1,01,001,0001\right\}$ and $\left\{ 000,001,011,111\right\}$ are prefix-free, whereas the code $\left\{ 1,01,100\right\}$ is not, because 1 is a prefix in 100.
+
+Applications of Huffman code are pervasive throughout
+computer science. The algorithm to completely perform Huffman encoding and decoding is explained by \cite{Amst86}. It can be used effectively where there is a need for a compact code to represent a long series of a relatively small number of distinct bytes. For example, Table \ref{table1} shows 8 different ASCII characters, their frequencies, ASCII codes and the codewords generated for those symbols using Huffman code. It is seen from the table that the codeword to represent each character is compressed and the most frequent character gets the shortest code. In this example, the compression ratio obtained by Huffman code is 64.16\%.   
+
+\begin{table}[thpb]
+\renewcommand{\arraystretch}{1.3}
+\caption{Example of application of Huffman Code to compress ASCII characters}
+\label{table2}
+\centering
+\begin{tabular}{c c c c}
+\hline
+ Symbols & Frequency& ASCII Code &\begin{tabular}{@{}c@{}}Codewords using\\Huffman Code\end{tabular} \\
+\hline
+\bfseries A & 50&01000001&00\\
+%\hline
+\bfseries B & 35&01000010&101\\
+%\hline
+\bfseries C & 42&01000011&110\\
+%\hline
+\bfseries D & 22&01000100&1001\\
+%\hline
+\bfseries E & 65&01000101&01\\
+%\hline
+\bfseries F & 25&01000110&1111\\
+%\hline
+\bfseries G & 9&01000111&1000\\
+%\hline
+\bfseries H & 23&01001000&1110\\
+\hline
+\end{tabular}
+\end{table}
+
 %\subsection{Unequal Bit Considering On data Transmission}
 \section{Approach}
 \subsection{Proposed Scheme}
@@ -216,7 +250,7 @@ The main objective of the GA optimisation algorithm for bits minimisation proble
 \caption{Operations of genetic algorithm}
 \includegraphics[scale=0.5]{Images/Drawing2.jpg}
 \end{center}
-\label{Fig1}
+\label{Fig2}
 \end{figure}
 
 
