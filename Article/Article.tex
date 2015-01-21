@@ -117,7 +117,6 @@ A recent deluge of interest in the development of new tools for biological data 
 In [Marty C. Brandon ] authors propose a new general data structure and data encoding approach for the efficient storage of genomic data. This method encode only the differences between a genome sequence and a reference sequence, the method use different encoding scheme from fixed codes such as Golomb and Elias codes, to variables codes, such as Huffman codes. Other methods based on same idea to encode only the difference between reference sequence and the target one, Authors in [Scott Christley1] uses Huffman code for encoding difference between sequence to sent it as an email attachment, but these methods suffer that they must sent the reference sequence for at least one time for each species.\\
 Wang and Zhang (2011) proposed a new scheme for referential compression of genomes based on the chromosome level. The Algorithm aim to search for longest common subsequence between matching parts and the differences encoded using Huffman coding.\\
 All previous studies focus only on the differences and the relation between continuation of the sequence, and without improvement of the encoding scheme.
-
 \subsection{Rationale of Unequal Bit Cost Considering Encoding Approaches}
 In the recent years, application of battery-powered portable devices, e.g. laptop computers and mobile phones has increased significantly. Proper representation of digital data and their transmission efficiency has become a primary concern for digital community because it affects the performance, reliability, and the cost of computation in both portable and non-portable devices. CMOS technologies were developed in order to reduce the power consumption both in data processing and transmission. In order to increase transmission speed and reduce transmission cost, parallel data transmission methods are widely used. However, parallel transmission is limited to short distance communications, e.g. locally connected devices, internal buses. Ruling out the possible availability of parallel transmission
 links over long distance, we are left with its serial alternative only. 
@@ -145,8 +144,6 @@ If all the elements of a codeword has unit cost or length then the cost of the c
 %\hline
 \bfseries TTL & $0~V$ to $0.8~V$&$2~V$ to $V_{CC}$ &$V_{CC}$ is $4.75~V$ to $5.25~V$\\
 %\hline
-
-
 \hline
 \end{tabular}
 \end{table}
@@ -169,7 +166,6 @@ Technique of producing Huffman codes is an optimal encoding rule that minimises 
 %\subsection{Unequal Bit Considering On data Transmission}
 \section{Approach}
 \subsection{Proposed Scheme}
-Sohag bombombombomb 
 \subsection{Power Efficient Huffman code}
 \subsection{Optimisation of the Codes}
 \subsubsection{Problem formulation}
@@ -189,22 +185,40 @@ while :
 Genetic Algorithm (GA) is a bio-inspired meta-heuristics algorithm developed by []. GA is a stochastic optimization algorithm imitate the natural evolution process of genomes. GA started by generate a population of random feasible solutions, the optimization process of GA is as follow, and we select two solution among the population, by one of the well-known selection techniques. This two selected solution will be considered as two fathers, we generate two other new solutions from the two selected solution (Sons), this new can be mutate according to a given mutation probability. The quality of each solution is computed with the fitness function with control the evolution of the GA population by the Deletion of worst solution and insertion of good solutions between fathers and sons. This processes is repeated until the stopped criteria is achieved which can be the number of generation or if the population is stabilized.
 
 \subsubsection{GA for Bits minimisation}
-The main objective of the GA optimisation algorithm for bits minimisation problem is to assign to each frequency a specific code. The GABM population is generated randomly from the different codes and frequencies, and we add to this population the affectation given by the cost considering algorithm (step 1). The optimisation process of genetic algorithms start with the selection of two solution randomly from the population (step 2). After that the crossover operation are applied to these two solution (considered as parents) to generate two new solutions (considered as sons)(step 3), these new solutions are mutated according to a predefined probability (step 4) to ensure a good diversification on the space solutions. The next step is to evaluate the four solution (parents and sons)(step 5). Finally the new population are reproduced by replacing the two initial selected solutions by the two best among this four solution (parents and sons) (step 6). the whole [process are repeated until the max number of operation is achieved (return to step 1). 
+The main objective of the GA optimisation algorithm for bits minimisation problem is to assign to each frequency a specific code. The GABM population is generated randomly from the different codes and frequencies, and we add to this population the affectation given by the cost considering algorithm (step 1). The optimisation process of genetic algorithms start with the selection of two solution randomly from the population (step 3). After that the crossover operation are applied to these two solution (considered as parents) to generate two new solutions (considered as sons)(step 4), these new solutions are mutated according to a predefined probability (step 5) to ensure a good diversification on the space solutions. The next step is to add these two new solution (children)to the population (step 6). Finally the new population are ranked by fitness (step 7), and the worst solution are deleted until the initial size of the population are achieved  (step 8). the whole [process are repeated until the max number of operation is achieved (return to step 9). 
 \begin{algorithm}
 \caption{GA for bits minimisation}
 \begin{algorithmic}[1]
 \State Population initialization (P).
 \While {Max number of generation not achieved} 
-\State Select two solutions S1,S2 form P.
+\State Select two solutions $S_{1},S_{2}$ form P.
 \State Crossover $S_{1},S_{2}$ to generate $S_{11},S_{21}$.
 \State Mutate $S_{11},S_{21}$.
-\State Evaluate $S_{1},S_{2},S_{11},S_{21}$.
-\State Replace $S_{1},S_{2}$ by the two best from ($S_{1},S_{2},S_{11},S_{21}$).
-\State Return to 1;
+\State Add children to population
+\State Rank the population by fitness
+\State Remove worst candidates until population limit
+\State Return to 2;
 \EndWhile
 \State Display the best solution from the population P;
 \end{algorithmic}
 \end{algorithm}
+
+\begin{figure}[h]
+\begin{center}
+\caption{Population Update for genetic algorithm}
+\includegraphics[scale=0.7]{Images/Drawing1.jpg}
+\end{center}
+\label{Fig1}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\caption{Operations of genetic algorithm}
+\includegraphics[scale=0.5]{Images/Drawing2.jpg}
+\end{center}
+\label{Fig1}
+\end{figure}
+
 
 
 \section{Results And Discussion}
