@@ -44,6 +44,7 @@
 \usepackage{algorithm}
 \usepackage{lscape}
 \usepackage[noend]{algpseudocode}
+\usepackage{algcompatible}
 
 %% The amsthm package provides extended theorem environments
 %% \usepackage{amsthm}
@@ -52,7 +53,7 @@
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
 %% \usepackage{lineno}
-\journal{Nuclear Physics B}
+\journal{Information Processing Letters}
 \bibliographystyle{elsarticle-num}
 \begin{document}
 
@@ -110,7 +111,10 @@
 
 %% main text
 \section{Introduction}
+\label{sec1}
+
 \section{Background}
+\label{sec2}
 \subsection{Issues on Biological Data Transmission}
 The size of biological data including DNA sequences increase with an ever expanding rate and will be bigger and bigger in the future. These Biological data are stored in biology database, the exponential growth of these database become a big problem to all biological data processing methods.
 Different operation will be applied to these data such as, searching [],e-mail attachment [], alignment [], and transmission on distributed computing []. Interestingly, biological data compression can play a key role in all biological data processing.\\  
@@ -118,6 +122,7 @@ A recent deluge of interest in the development of new tools for biological data 
 In [Marty C. Brandon ] authors propose a new general data structure and data encoding approach for the efficient storage of genomic data. This method encode only the differences between a genome sequence and a reference sequence, the method use different encoding scheme from fixed codes such as Golomb and Elias codes, to variables codes, such as Huffman codes. Other methods based on same idea to encode only the difference between reference sequence and the target one, Authors in [Scott Christley1] uses Huffman code for encoding difference between sequence to sent it as an email attachment, but these methods suffer that they must sent the reference sequence for at least one time for each species.\\
 Wang and Zhang (2011) proposed a new scheme for referential compression of genomes based on the chromosome level. The Algorithm aim to search for longest common subsequence between matching parts and the differences encoded using Huffman coding.\\
 All previous studies focus only on the differences and the relation between continuation of the sequence, and without improvement of the encoding scheme.
+
 \subsection{Rationale of Unequal Bit Cost Considering Encoding Approaches}
 In the recent years, application of battery-powered portable devices, e.g. laptop computers and mobile phones has increased significantly. Proper representation of digital data and their transmission efficiency has become a primary concern for digital community because it affects the performance, reliability, and the cost of computation in both portable and non-portable devices. CMOS technologies were developed in order to reduce the power consumption both in data processing and transmission. In order to increase transmission speed and reduce transmission cost, parallel data transmission methods are widely used. However, parallel transmission is limited to short distance communications, e.g. locally connected devices, internal buses. Ruling out the possible availability of parallel transmission
 links over long distance, we are left with its serial alternative only. 
@@ -198,16 +203,64 @@ computer science. The algorithm to completely perform Huffman encoding and decod
 \end{tabular}
 \end{table}
 
+There are many other variants of Huffman codes that compress source data to reduce data size and/or transmission cost. For example, Mannan and Kaykobad introduced block technique in Huffman coding which overcomes the limitation of reading whole message prior to encoding\cite{Kay03}. In classical Huffman coding scheme, the letter costs are considered as equal. The unequal letter cost versions of Huffman codes scheme are proposed in \cite{Gol1996,Gol02,Gol2002,Gol12}.
+In the unequal letter cost version of the classical Huffman code, letters  of  the alphabet  are  considered as unequal. Recently, in \cite{Kab14} a method is proposed to show the effects of unequal bits cost on classical Huffman code. The idea of this method is to assign the most frequent symbol the minimum cost and the least frequent symbol the maximum cost code, whereas classical Huffman code assigns most frequent symbol the minimum length and the least frequent symbol the maximum length code.
+
 \section{Approach}
+\label{sec3}
 \subsection{Proposed Scheme}
-\begin{figure}[h]
+
+\begin{figure}[thpb]
 \begin{center}
-\caption{The proposed Scheme}
+
 \includegraphics[scale=0.5]{Images/Drawing3.jpg}
+\caption{The proposed Scheme}
 \end{center}
 \label{Fig1}
 \end{figure}
+
 \subsection{Power Efficient Huffman code}
+\begin{algorithm}[!btph]
+\caption{Cost-considering / Unequal bit cost Coding}
+\label{alg1}
+
+\begin{algorithmic}[1]
+\REQUIRE Distinct symbols contained in the message to be encoded and their frequencies 
+\ENSURE Non-uniform\ /\ variable\ letter\ cost\ i.e,\ Cost-considering\ balanced\ tree
+
+\FOR{each distinct symbol $i$} 
+\STATE $ Enqueue\left(max\_Q , frequency~[~i~]\right)$
+\ENDFOR
+\STATE create a root node
+\STATE $cost~[~root~]\leftarrow 0$
+\STATE $Enqueue\left(min\_Q , cost~[~root~]\right)$
+\STATE Define costs of the left and right child of the binary tree
+\REPEAT 
+\STATE $cost\_of\_parent\_node\leftarrow Dequeue\left(min\_Q\right)$
+\STATE create $left$ and $right$ child for this node
+\STATE $cost~[~left\_child~]\leftarrow cost\_of\_parent\_node+left\_child\_cost$
+\STATE $Enqueue\left(min\_Q , cost~[~left\_child~]\right)$
+\STATE $cost~[~right\_child~]\leftarrow cost\_of\_parent\_node+right\_child\_cost$
+\STATE $Enqueue\left(min\_Q , cost~[~right\_child~]\right)$
+\STATE Mark parent node as explored
+\UNTIL{$2\left(n-1\right)$ nodes are created}
+\WHILE{$min\_Q\neq\emptyset$} 
+\STATE $leaf\_node\leftarrow Dequeue\left(min\_Q\right)$
+\STATE $frequency[leaf\_node]\leftarrow Dequeue\left(max\_Q\right)$
+\ENDWHILE
+\FOR{each parent node $j$} 
+\STATE $frequency~[~j~]\leftarrow frequency~[~left\_child~]+frequency~[~right\_child~]$
+\ENDFOR
+\REPEAT
+\IF{conflict between nodes} 
+\STATE resolve conflict by swapping conflicted nodes
+\STATE calculate and reassign cost of all affected nodes
+\STATE calculate and reassign frequency of all affected nodes 
+\ENDIF
+\UNTIL{all conflicts are resolved }
+%\algstore{myalg}
+\end{algorithmic}
+\end{algorithm}
 \subsection{Optimisation of the Codes}
 \subsubsection{Problem formulation}
 The problem of finding the best allocation of codes to each symbol can be   modelled as an Assignment Problems with Constraint, the problem is formulated as follows :\\\\
@@ -243,20 +296,22 @@ The main objective of the GA optimisation algorithm for bits minimisation (GaBm)
 \end{algorithmic}
 \end{algorithm}
 
-\begin{figure}[h]
+\begin{figure}[thpb]
 \begin{center}
-\caption{Population Update for genetic algorithm}
+
 \includegraphics[scale=0.7]{Images/Drawing1.jpg}
+\caption{Population Update for genetic algorithm}
 \end{center}
-\label{Fig1}
+\label{Fig2}
 \end{figure}
 
 \begin{figure}[h]
 \begin{center}
-\caption{Operations of genetic algorithm}
+
 \includegraphics[scale=0.5]{Images/Drawing2.jpg}
+\caption{Operations of genetic algorithm}
 \end{center}
-\label{Fig1}
+\label{Fig3}
 \end{figure}
 
 
@@ -321,6 +376,7 @@ Pseudomonas aeruginosa LES400&78261299 & 	37843793&	68212426&	41745748&	68212426
 %\bibitem{}
 
 %\end{thebibliography}
+\section*{References}
 \bibliography{mybibfile}
 \end{document}
 \endinput

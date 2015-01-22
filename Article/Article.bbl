@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
@@ -37,5 +37,35 @@ D.~Altenkamp, K.~Mehlhorn, Codes: Unequal probabilities, unequal letter costs,
 Y.~Perl, M.~R. Garey, S.~Even, Efficient generation of optimal prefix code:
   Equiprobable words using unequal cost letters, Journal of the ACM (JACM)
   22~(2) (1975) 202--214.
+
+\bibitem{Amst86}
+J.~Amsterdam, Data compression with huffman coding, BYTE 11~(5) (1986) 98--108.
+
+\bibitem{Kay03}
+M.~A. Mannan, M.~Kaykobad, Block huffman coding, Computers and Mathematics with
+  Applications.
+
+\bibitem{Gol1996}
+M.~Golin, N.~Young, {Prefix codes: Equiprobable words, unequal letter costs},
+  {SIAM JOURNAL ON COMPUTING} {25}~({6}) ({1996}) {1281--1292}.
+
+\bibitem{Gol02}
+M.~J. Golin, C.~Kenyon, N.~E. Young, Huffman coding with unequal letter costs,
+  in: ACM Symposium on Theory of Computing, 2002, pp. 785--791.
+
+\bibitem{Gol2002}
+P.~Bradford, M.~Golin, L.~Larmore, W.~Rytter, {Optimal prefix-free codes for
+  unequal letter costs: Dynamic programming with the Monge property}, {JOURNAL
+  OF ALGORITHMS} {42}~({2}) ({2002}) {277--303}.
+
+\bibitem{Gol12}
+M.~J. Golin, C.~Mathieu, N.~E. Young, {Huffman Coding with Letter Costs: A
+  Linear-Time Approximation Scheme}, {SIAM JOURNAL ON COMPUTING} {41}~({3})
+  ({2012}) {684--713}.
+
+\bibitem{Kab14}
+S.~Kabir, T.~Azad, A.~S. M.~A. Alam, M.~Kaykobad, Effects of unequal bit costs
+  on classical huffman codes, in: 17th International Conference on Computer and
+  Information Technology, 2014, pp. 96--101.
 
 \end{thebibliography}
