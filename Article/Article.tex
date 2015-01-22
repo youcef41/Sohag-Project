@@ -42,6 +42,7 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{algorithm}
+\usepackage{lscape}
 \usepackage[noend]{algpseudocode}
 
 %% The amsthm package provides extended theorem environments
@@ -261,6 +262,37 @@ The main objective of the GA optimisation algorithm for bits minimisation (GaBm)
 
 
 \section{Results And Discussion}
+\begin{landscape}
+\begin{table*}
+\small
+\label{datas}
+\caption{GABM for comparison for cost and number of bits of different approaches with different datasets}
+\begin{center}
+\begin{tabular}{c c c c c c c}
+\toprule
+$\textbf{Data sets}$ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{low cost considering  algorithm}& \multicolumn{2}{c}{Optimized algorithm}\\\hline
+ & $\textbf{Cost}$	& $\textbf{Bits}$ &	$\textbf{Cost}$&	$\textbf{Bits	}$&$\textbf{Cost}$&	$\textbf{Bits}$
+\\\hline
+Mycobacterium smegmatis &76787151  &	37256819	&67272097	&41270715	&67272097&	40459089\\\hline
+Amycolatopsis benzoatilytica &100425402&  	48778740	&88334137	&54602397	&88334137&	53281409\\\hline
+Mycobacterium rhodesiae&75940155  	&36860555	&66629579	&40873035&	66629579&	40128089\\\hline
+Streptomyces bottropensis&103552729  	&50047265	&90758205&	56109303&	90758205&	54281713\\\hline
+Mycobacterium smegmatis. MC2&82234926  &	39772838	&71876260	&44199916&	71876260&	43338060\\\hline
+Mycobacterium smegmatis MKD8&83454842  	&40370894	&72945595	&44805759	&72945595	&43945321\\\hline
+Bradyrhizobium WSM471&92539488  &	44977876&	81176987&	49688369	&81176987	&49052869\\\hline
+Amycolatopsis thermoflava&99613856 & 	48183688	&87033015&	53778627	&87033015&	52820213\\\hline
+Bacillus thuringiensis serovar thuringiensis&71876739 &	34874617&	62637908&	38314532&	62637908&	37684296\\\hline
+Bacillus thuringiensis Bt407&75324432 & 	36576034	&65658000&	40226924	&65658000&	39558890\\\hline
+Pseudomonas aeruginosa 9BR&80766360  &	39092450&	70462778	&43020460&	70462778&	42260476\\\hline
+Bacillus thuringiensis serovar berliner&74560825  &	36179579&	65001120	&39772574	&65001120&	39077012\\\hline
+Bacillus thuringiensis serovar pakistani&71562941 & 	34737083	&62335103&	38118291&	62335103&	37629173\\\hline
+Pseudomonas aeruginosa LES400&78261299 & 	37843793&	68212426&	41745748&	68212426&	40979588\\\hline
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table*}
+\end{landscape}
+
 \section{Conclusion}
 
 
