@@ -264,7 +264,7 @@ In the unequal letter cost version of the classical Huffman code, letters  of  t
 \subsection{Optimisation of the Codes}
 \subsubsection{Problem formulation}
 The problem of finding the best allocation of codes to each symbol can be   modelled as an Assignment Problems with Constraint, the problem is formulated as follows :\\\\
-\textbf{Definition:} Given a set of codes $C=\left\{C_{1},C_{2}...C_{n}\right\}$, and a set of frequencies $C=\left\{Q_{1},Q_{2}...Q_{n}\right\}$. For each code we have the length of the code $|C_{i}|$ (number of bits) and the cost of the code $S_{C_{i}}$ (cost of ones and zeros), the objective is to assign to each frequency a code in order to get the minimum total number of bits, while respecting the initial assignment total cost $S_{t}$.   
+\textbf{Definition:} Given a set of codes $C=\left\{C_{1},C_{2}...C_{n}\right\}$, and a set of frequencies $C=\left\{Q_{1},Q_{2}...Q_{n}\right\}$. For each code we have the length of the code $|C_{i}|$ (number of bits) and the cost of the code $S_{C_{i}}$ (cost of ones and zeros), the objective is to assign to each frequency a code in order to minimize the total number of bits, while respecting the initial assignment total cost $S_{t}$ with a given penalty $\lambda$. This penalty coefficient represent the allowed Marge can be sacrificed for cost to optimize number of bits    
 \\
 The Objective Function is : 
 
@@ -273,20 +273,22 @@ Minimise \sum (|C_{i}| \times Q_{j})
 \end{equation}
 while :
 \begin{equation}
-\sum (|S_{C_{i}}| \times Q_{j}) \leqslant S_{t} 
+\sum (|S_{C_{i}}| \times Q_{j}) \leqslant (\lambda+1) S_{t} 
 \end{equation}
+
 \subsubsection{Basic Genetic Algorithm}
 Genetic Algorithm (GA) is a bio-inspired meta-heuristics algorithm developed by []. GA is a stochastic optimization algorithm imitate the natural evolution process of genomes. GA started by generate a population of random feasible solutions, the optimization process of GA is as follow, and we select two solution among the population, by one of the well-known selection techniques. This two selected solution will be considered as two parents, we generate two other new solutions from the two selected solution (Sons), this new solutions can be mutate according to a given mutation probability. The quality of each solution is computed with the fitness function which control the evolution of the GA population by the deletion of the worst solution and insertion of the good solutions among   parents and sons. This processes is repeated until the stopped criteria is achieved which can be the number of generation or if the population is stabilized.
 \subsubsection{GA for Bits minimisation}
-The main objective of the GA optimisation algorithm for bits minimisation (GaBm) problem is to assign to each frequency a specific code. The GaBm population is generated randomly from the different codes, and the affectation of codes to different frequencies given by the low cost considering  algorithm  to initial population to ensure that the final solution is better or at least equal to the solution given by the low cost considering Huffman code algorithm (step 1). The optimisation process of the genetic algorithms start with the selection of two solution randomly from the population (step 3). After that the operations of genetic algorithms are apply for the initial population optimization (see figure 3). Firstly the crossover operation are applied to these two selected  solution (considered as parents) to generate two new solutions (considered as sons)(step 4). These two children may contain conflict like finding a duplicated code allocated to two different frequencies in the solution, so a regulation step is done to ensure the correctness of the solution (see figure 3). Secondly these two new solutions are mutated according to a predefined probability (step 5), to ensure a good diversification on the space solutions. The next step is to add these two new solutions (children) to the population (step 6) (see figure 2). Finally the new population are ranked by fitness (step 7), and the worst solution are deleted until the initial size of the population are achieved  (step 8). the whole process are repeated until the max number of operation is achieved (step 9). 
+The main objective of the GA optimisation algorithm for bits minimisation (GaBm) problem is to assign to each frequency a specific code. The GaBm population is generated randomly from the different codes, and the affectation of codes to different frequencies given by the low cost considering  algorithm  to initial population to ensure that the final solution is better or at least equal to the solution given by the low cost considering Huffman code algorithm (step 1). The optimisation process of the genetic algorithms start with the selection of two solution randomly from the population (step 3). After that the operations of genetic algorithms are apply for the initial population optimization (see figure 3). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). These two children may contain conflict like finding a duplicated code allocated to two different frequencies in the solution, so a regulation step is done to ensure the correctness of the solution (see figure 3). Secondly these two new solutions are mutated according to a predefined probability (step 5), to ensure a good diversification on the space solutions. Each new generated solution must satisfy the cost constraint, these children must be valid with satisfying the cost constraint. The next step is to add these two new solutions (children) to the population (step 7) (see figure 2). Finally the new population are ranked by fitness (step 8), and the worst solution are deleted until the initial size of the population are achieved  (step 9). the whole process are repeated until the max number of operation is achieved (step 10). 
 \begin{algorithm}
 \caption{GA for bits minimisation}
 \begin{algorithmic}[1]
 \State Population initialization (P).
 \While {Max number of generation not achieved} 
 \State Select two solutions $S_{1},S_{2}$ form P.
-\State Crossover $S_{1},S_{2}$ to generate $S_{11},S_{21}$.
+\State Crossover $S_{1},S_{2}$ to generate $S_{11},S_{21}$ (Children).
 \State Mutate $S_{11},S_{21}$.
+\State Validate children with cost constraint (equation 4). 
 \State Add children to population
 \State Rank the population by fitness
 \State Remove worst candidates until population limit
@@ -317,41 +319,102 @@ The main objective of the GA optimisation algorithm for bits minimisation (GaBm)
 
 
 \section{Results And Discussion}
-\begin{landscape}
-\begin{table*}
+
+\begin{table}
+\small
+\label{datas}
+\caption{}
+\begin{center}
+\begin{tabular}{c  c  c}
+\toprule
+$\textbf{Data sets}$ &$\textbf{Name}$ &	$\textbf{Size}$ \\\hline
+Data set 1& Mycobacterium smegmatis & \\\hline
+Data set 2& Amycolatopsis benzoatilytica &\\\hline
+Data set 3& Mycobacterium rhodesiae& \\\hline
+Data set 4& Streptomyces bottropensis& \\\hline
+Data set 5& Mycobacterium smegmatis. MC2& \\\hline
+Data set 6& Mycobacterium smegmatis MKD8& \\\hline
+Data set 7& Bradyrhizobium WSM471& \\\hline
+Data set 8& Amycolatopsis thermoflava& \\\hline
+Data set 9& Bacillus thuringiensis serovar thuringiensis& \\\hline
+Data sets 10& Bacillus thuringiensis Bt407& \\\hline
+Data set 11& Pseudomonas aeruginosa 9BR& \\\hline
+Data set 12& Bacillus thuringiensis serovar berliner& \\\hline
+Data set 13& Bacillus thuringiensis serovar pakistani&\\\hline
+Data set 14& Pseudomonas aeruginosa LES400&\\\hline
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table} 
+
+\begin{table}
 \small
 \label{datas}
 \caption{GABM for comparison for cost and number of bits of different approaches with different datasets}
 \begin{center}
-\begin{tabular}{c c c c c c c}
+\begin{tabular}{c | c c | c c | c c}
 \toprule
-$\textbf{Data sets}$ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{low cost considering  algorithm}& \multicolumn{2}{c}{Optimized algorithm}\\\hline
+$\textbf{Data sets}$ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{CCA }& \multicolumn{2}{c}{OCCA}\\\hline
  & $\textbf{Cost}$	& $\textbf{Bits}$ &	$\textbf{Cost}$&	$\textbf{Bits	}$&$\textbf{Cost}$&	$\textbf{Bits}$
 \\\hline
-Mycobacterium smegmatis &76787151  &	37256819	&67272097	&41270715	&67272097&	40459089\\\hline
-Amycolatopsis benzoatilytica &100425402&  	48778740	&88334137	&54602397	&88334137&	53281409\\\hline
-Mycobacterium rhodesiae&75940155  	&36860555	&66629579	&40873035&	66629579&	40128089\\\hline
-Streptomyces bottropensis&103552729  	&50047265	&90758205&	56109303&	90758205&	54281713\\\hline
-Mycobacterium smegmatis. MC2&82234926  &	39772838	&71876260	&44199916&	71876260&	43338060\\\hline
-Mycobacterium smegmatis MKD8&83454842  	&40370894	&72945595	&44805759	&72945595	&43945321\\\hline
-Bradyrhizobium WSM471&92539488  &	44977876&	81176987&	49688369	&81176987	&49052869\\\hline
-Amycolatopsis thermoflava&99613856 & 	48183688	&87033015&	53778627	&87033015&	52820213\\\hline
-Bacillus thuringiensis serovar thuringiensis&71876739 &	34874617&	62637908&	38314532&	62637908&	37684296\\\hline
-Bacillus thuringiensis Bt407&75324432 & 	36576034	&65658000&	40226924	&65658000&	39558890\\\hline
-Pseudomonas aeruginosa 9BR&80766360  &	39092450&	70462778	&43020460&	70462778&	42260476\\\hline
-Bacillus thuringiensis serovar berliner&74560825  &	36179579&	65001120	&39772574	&65001120&	39077012\\\hline
-Bacillus thuringiensis serovar pakistani&71562941 & 	34737083	&62335103&	38118291&	62335103&	37629173\\\hline
-Pseudomonas aeruginosa LES400&78261299 & 	37843793&	68212426&	41745748&	68212426&	40979588\\\hline
+Data set 1&76787151  &	37256819	&67272097	&41270715	&67272097&	40459089\\\hline
+Data set 2&100425402&  	48778740	&88334137	&54602397	&88334137&	53281409\\\hline
+Data set 3&75940155  	&36860555	&66629579	&40873035&	66629579&	40128089\\\hline
+Data set 4&103552729  	&50047265	&90758205&	56109303&	90758205&	54281713\\\hline
+Data set 5&82234926  &	39772838	&71876260	&44199916&	71876260&	43338060\\\hline
+Data set 6&83454842  	&40370894	&72945595	&44805759	&72945595	&43945321\\\hline
+Data set 7&92539488  &	44977876&	81176987&	49688369	&81176987	&49052869\\\hline
+Data set 8&99613856 & 	48183688	&87033015&	53778627	&87033015&	52820213\\\hline
+Data set 9&71876739 &	34874617&	62637908&	38314532&	62637908&	37684296\\\hline
+Data set 10&75324432 & 	36576034	&65658000&	40226924	&65658000&	39558890\\\hline
+Data set 11&80766360  &	39092450&	70462778	&43020460&	70462778&	42260476\\\hline
+Data set 12&74560825  &	36179579&	65001120	&39772574	&65001120&	39077012\\\hline
+Data set 13&71562941 & 	34737083	&62335103&	38118291&	62335103&	37629173\\\hline
+Data set 14&78261299 & 	37843793&	68212426&	41745748&	68212426&	40979588\\\hline
 \bottomrule
 \end{tabular}
 \end{center}
-\end{table*}
-\end{landscape}
+\end{table}
 
+\begin{table}
+\small
+\label{datas}
+\caption{influence of penalty on bit minimization}
+\begin{center}
+\begin{tabular}{c c c c }
+\toprule
+$\textbf{Data sets}$ & $\textbf{Cost}$	& $\textbf{Bits}$ &		\textbf{$\lambda (\%)$} \\\hline
+Mycobacterium smegmatis &	69956907	&37933325 &4\\\hline
+Amycolatopsis benzoatilytica &	92682206	&49593802 &5\\\hline
+Mycobacterium rhodesiae&	69292943	&37581057 &4\\\hline
+Streptomyces bottropensis&	96107532	&50292416 &6\\\hline
+Mycobacterium smegmatis. MC2&	74730060	&40325704 &4\\\hline
+Mycobacterium smegmatis MKD8&	76528930	&40723850 &5\\\hline
+Bradyrhizobium WSM471&	84396016	&46056472 &4\\\hline
+Amycolatopsis thermoflava&	92205957	&48298731 &6\\\hline
+Bacillus thuringiensis serovar thuringiensis&	65138929	&35283557 &4\\\hline
+Bacillus thuringiensis Bt407&	68258009	&37234983 &4\\\hline
+Pseudomonas aeruginosa 9BR&	72568094	&40166110 &3\\\hline
+Bacillus thuringiensis serovar berliner&	66949136	&36822940 &3\\\hline
+Bacillus thuringiensis serovar pakistani&	65431387	&34963921 &5\\\hline
+Pseudomonas aeruginosa LES400&	71603920	&38158306 &5\\\hline
+
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+\begin{figure}[h]
+\begin{center}
+
+\includegraphics{Images/Drawing4.jpg}
+\caption{Convergence of Optimized cost considering Huffman algorithm}
+\end{center}
+\label{Fig5}
+\end{figure}
 \section{Conclusion}
-
-
-
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
 %% \appendix

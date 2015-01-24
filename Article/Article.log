@@ -1,17 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.30)  22 JAN 2015 20:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.7)  23 JAN 2015 17:02
 entering extended mode
 **Article.tex
-
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.tex"
+("C:\Sohag github\Sohag-Project\Article\Article.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
@@ -97,8 +95,8 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@sep=\skip43
 \@@sep=\skip44
 
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.spl") ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+("C:\Sohag github\Sohag-Project\Article\Article.spl")
+("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip45
 \bibsep=\skip46
@@ -241,9 +239,14 @@ Package: algcompatible
 
 Document Style - algorithmic compatible environments for the `algorithmicx' sty
 le
+) ("C:\Sohag github\Sohag-Project\Article\Article.aux"
+
+LaTeX Warning: Label `datas' multiply defined.
+
+
+LaTeX Warning: Label `datas' multiply defined.
+
 )
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
@@ -293,67 +296,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--270
 
  []
 
-[5] [6] [7 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Arti
-cle/Images/Drawing3.jpg>]
+[5] [6] [7 <C:/Sohag github/Sohag-Project/Article/Images/Drawing3.jpg>]
 <Images/Drawing1.jpg, id=38, 556.479pt x 210.18526pt>
 File: Images/Drawing1.jpg Graphic file (type jpg)
 
 <use Images/Drawing1.jpg>
-Package pdftex.def Info: Images/Drawing1.jpg used on input line 302.
+Package pdftex.def Info: Images/Drawing1.jpg used on input line 304.
 (pdftex.def)             Requested size: 389.53265pt x 147.12866pt.
  <Images/Drawing2.jpg, id=39, 939.51pt x 461.92575pt>
 File: Images/Drawing2.jpg Graphic file (type jpg)
 
 <use Images/Drawing2.jpg>
-Package pdftex.def Info: Images/Drawing2.jpg used on input line 311.
+Package pdftex.def Info: Images/Drawing2.jpg used on input line 313.
 (pdftex.def)             Requested size: 469.75385pt x 230.96231pt.
 
-Overfull \hbox (79.75385pt too wide) in paragraph at lines 311--312
+Overfull \hbox (79.75385pt too wide) in paragraph at lines 313--314
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8] [9 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article/
-Images/Drawing1.jpg> <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Pr
-oject/Article/Images/Drawing2.jpg>]
-Overfull \hbox (53.76895pt too wide) in paragraph at lines 326--347
+
+Overfull \hbox (17.54243pt too wide) in paragraph at lines 355--376
  [] 
  []
 
-[10]
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.bbl" [11
+<Images/Drawing4.jpg, id=40, 289.08pt x 174.05025pt>
+File: Images/Drawing4.jpg Graphic file (type jpg)
+ <use Images/Drawing4.jpg>
+Package pdftex.def Info: Images/Drawing4.jpg used on input line 412.
+(pdftex.def)             Requested size: 289.07928pt x 174.0498pt.
 
 
-]) [12]
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.aux") ) 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+("C:\Sohag github\Sohag-Project\Article\Article.bbl" [8] [9 <C:/Sohag github/So
+hag-Project/Article/Images/Drawing1.jpg>] [10] [11 <C:/Sohag github/Sohag-Proje
+ct/Article/Images/Drawing2.jpg>] [12]) [13 <C:/Sohag github/Sohag-Project/Artic
+le/Images/Drawing4.jpg>] ("C:\Sohag github\Sohag-Project\Article\Article.aux")
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3540 strings out of 493921
- 45189 string characters out of 3147281
- 110273 words of memory out of 3000000
- 6778 multiletter control sequences out of 15000+200000
+ 3546 strings out of 493921
+ 44939 string characters out of 3147280
+ 114322 words of memory out of 3000000
+ 6783 multiletter control sequences out of 15000+200000
  12751 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,13n,30p,1604b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Article.pdf (12 pages, 643291 bytes).
+ 34i,13n,30p,1732b,312s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/symbols/msam10.pfb>
+Output written on Article.pdf (13 pages, 696228 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
