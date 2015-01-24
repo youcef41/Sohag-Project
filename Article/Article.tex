@@ -211,7 +211,8 @@ In the unequal letter cost version of the classical Huffman code, letters  of  t
 \section{Approach}
 \label{sec3}
 \subsection{Proposed Scheme}
-A gene is a stretch of DNA (or RNA) that codes for a polypeptide (protein), that is a series of aminoacids bound together. Each gene consists of nucleotides bound together, which are interpreted by the cellular machinery in groups of three, called triplets. DNA is first transcribed into messenger RNA (mRNA), which is then translated into proteins. Each triplet codes for one aminoacid not one gene! In fact genes are not "coded" by anything, they are the code!
+
+A genome is a stretch of DNA (or RNA) that codes for a polypeptide (protein), that is a set of amino acids bound together in specific order. Each genomic sequence consist of nucleotide bound together, which are interpreted by the cellular machinery in groups of three, called triplets. This the main raison to divide the whole sequence in a set of triplet and give a code to each triplet. The first step in the optimised cost considering algorithm is cutting the sequence in triplet, then compute the frequency of each triplet in the whole sequence. This table of frequencies are used by the cost considering Huffman code to generate low cost code to each triplet (frequency). Finally these codes with frequencies are used by the optimised cost considering algorithm to generate the optimal allocation with a given  penalty.
 
 \begin{figure}[thpb]
 \begin{center}
@@ -374,8 +375,7 @@ Genome 7& Bradyrhizobium WSM471& 7,784,016  &NZ\_CM001442\\\hline
 \end{center}
 \end{table} 
 
-T
-
+The table 3 present the results founded by the basic Huffman code, cost considering algorithm and optimised cost considering algorithm. The result show that the number of bits of Huffman algorithm is the minimum number among the other algorithm but the cost is  very high. The cost considering algorithm improve the quality of the generated codes in terms of cost but the number of bits. The optimised cost considering algorithm try to find the best allocation of codes to frequencies while the cost constraint respected. The table 4 present the best founded number of bits with different penalty, for each genome we find the max number of useful penalty, after this value, increasing the penalty are in-useful (See figure 3), the number of bits achieve the minimum number but the cost stop decreasing (point 1 in figure 3) and this number of bits stabilized while the cost still increasing until it stabilized also (point 2 figure 3), after this point the cost and number of bits are stabilized.
 \begin{table}
 \small
 \label{datas}
@@ -443,6 +443,10 @@ Pseudomonas aeruginosa LES400&	71603920	&38158306 &5\\\hline
 \label{Fig5}
 \end{figure}
 \section{Conclusion}
+
+In this paper we have proposed a new approach for efficient data compression using Huffman code and optimised strategy. The new approach is divided into phases, firstly a cost considering Huffman algorithm are proposed which reduce the cost of the generated codes, these codes are secondary passed by the optimisation algorithm to reduce the global number of bits using a cost penalty.\\
+The proposed approach is tested with biological genomic sequence and a performance comparison is made with the standard Huffman code and the cost considering without optimisation. Simulation results showed that the proposed approach is more robust and efficient compared to other competing algorithms because its penalty based optimisation strategy to search the best allocation of codes to different frequencies.
+
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
 %% \appendix
