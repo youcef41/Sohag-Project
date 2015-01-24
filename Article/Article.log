@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.7)  23 JAN 2015 17:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.7)  24 JAN 2015 11:37
 entering extended mode
 **Article.tex
 ("C:\Sohag github\Sohag-Project\Article\Article.tex"
@@ -239,7 +239,10 @@ Package: algcompatible
 
 Document Style - algorithmic compatible environments for the `algorithmicx' sty
 le
-) ("C:\Sohag github\Sohag-Project\Article\Article.aux"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen131
+)
+("C:\Sohag github\Sohag-Project\Article\Article.aux"
 
 LaTeX Warning: Label `datas' multiply defined.
 
@@ -247,52 +250,51 @@ LaTeX Warning: Label `datas' multiply defined.
 LaTeX Warning: Label `datas' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
  ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count120
-\scratchdimen=\dimen131
+\scratchdimen=\dimen132
 \scratchbox=\box34
 \nofMPsegments=\count121
 \nofMParguments=\count122
 \everyMPshowfont=\toks26
 \MPscratchCnt=\count123
-\MPscratchDim=\dimen132
+\MPscratchDim=\dimen133
 \MPnumerator=\count124
 \makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks27
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 108.
+LaTeX Font Info:    Try loading font information for U+msa on input line 110.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 108.
+LaTeX Font Info:    Try loading font information for U+msb on input line 110.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
-<Images/Drawing3.jpg, id=23, 363.759pt x 464.937pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
+<Images/Drawing3.jpg, id=26, 363.759pt x 464.937pt>
 File: Images/Drawing3.jpg Graphic file (type jpg)
  <use Images/Drawing3.jpg>
-Package pdftex.def Info: Images/Drawing3.jpg used on input line 216.
+Package pdftex.def Info: Images/Drawing3.jpg used on input line 218.
 (pdftex.def)             Requested size: 181.87906pt x 232.46793pt.
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 266--270
+Underfull \hbox (badness 10000) in paragraph at lines 268--272
 
  []
 
@@ -301,16 +303,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--270
 File: Images/Drawing1.jpg Graphic file (type jpg)
 
 <use Images/Drawing1.jpg>
-Package pdftex.def Info: Images/Drawing1.jpg used on input line 304.
+Package pdftex.def Info: Images/Drawing1.jpg used on input line 305.
 (pdftex.def)             Requested size: 389.53265pt x 147.12866pt.
- <Images/Drawing2.jpg, id=39, 939.51pt x 461.92575pt>
-File: Images/Drawing2.jpg Graphic file (type jpg)
 
-<use Images/Drawing2.jpg>
-Package pdftex.def Info: Images/Drawing2.jpg used on input line 313.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Drawing2.jpg, id=39, 939.51pt x 461.92575pt>
+File: Images/Drawing2.jpg Graphic file (type jpg)
+ <use Images/Drawing2.jpg>
+Package pdftex.def Info: Images/Drawing2.jpg used on input line 312.
 (pdftex.def)             Requested size: 469.75385pt x 230.96231pt.
 
-Overfull \hbox (79.75385pt too wide) in paragraph at lines 313--314
+Overfull \hbox (79.75385pt too wide) in paragraph at lines 312--313
  [] 
  []
 
@@ -318,35 +323,47 @@ Overfull \hbox (79.75385pt too wide) in paragraph at lines 313--314
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (17.54243pt too wide) in paragraph at lines 355--376
+Overfull \hbox (21.0499pt too wide) in paragraph at lines 321--376
+[]\OT1/cmr/m/n/12 The ap-proach has been eval-u-ated with dif-fer-ent real bi-o
+-log-i-cal data (genomes),
+ []
+
+
+Overfull \hbox (11.23752pt too wide) in paragraph at lines 321--376
+\OT1/cmr/m/n/12 these genomes from The Na-tional Cen-ter for Biotech-nol-ogy In
+-for-ma-tion (NCBI)
+ []
+
+[8]
+Overfull \hbox (15.88474pt too wide) in paragraph at lines 382--403
  [] 
  []
 
-<Images/Drawing4.jpg, id=40, 289.08pt x 174.05025pt>
+<Images/Drawing4.jpg, id=43, 356.532pt x 246.9225pt>
 File: Images/Drawing4.jpg Graphic file (type jpg)
  <use Images/Drawing4.jpg>
-Package pdftex.def Info: Images/Drawing4.jpg used on input line 412.
-(pdftex.def)             Requested size: 289.07928pt x 174.0498pt.
+Package pdftex.def Info: Images/Drawing4.jpg used on input line 438.
+(pdftex.def)             Requested size: 356.53111pt x 246.92188pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-("C:\Sohag github\Sohag-Project\Article\Article.bbl" [8] [9 <C:/Sohag github/So
-hag-Project/Article/Images/Drawing1.jpg>] [10] [11 <C:/Sohag github/Sohag-Proje
-ct/Article/Images/Drawing2.jpg>] [12]) [13 <C:/Sohag github/Sohag-Project/Artic
-le/Images/Drawing4.jpg>] ("C:\Sohag github\Sohag-Project\Article\Article.aux")
+("C:\Sohag github\Sohag-Project\Article\Article.bbl" [9 <C:/Sohag github/Sohag-
+Project/Article/Images/Drawing1.jpg>] [10] [11] [12 <C:/Sohag github/Sohag-Proj
+ect/Article/Images/Drawing2.jpg>] [13]) [14 <C:/Sohag github/Sohag-Project/Arti
+cle/Images/Drawing4.jpg>] ("C:\Sohag github\Sohag-Project\Article\Article.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3546 strings out of 493921
- 44939 string characters out of 3147280
- 114322 words of memory out of 3000000
- 6783 multiletter control sequences out of 15000+200000
+ 3558 strings out of 493921
+ 45212 string characters out of 3147280
+ 117511 words of memory out of 3000000
+ 6791 multiletter control sequences out of 15000+200000
  12751 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,13n,30p,1732b,312s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,13n,30p,1732b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -361,9 +378,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb>
-Output written on Article.pdf (13 pages, 696228 bytes).
+Output written on Article.pdf (14 pages, 712798 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

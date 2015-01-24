@@ -45,6 +45,8 @@
 \usepackage{lscape}
 \usepackage[noend]{algpseudocode}
 \usepackage{algcompatible}
+\usepackage{multirow}
+
 
 %% The amsthm package provides extended theorem environments
 %% \usepackage{amsthm}
@@ -209,10 +211,10 @@ In the unequal letter cost version of the classical Huffman code, letters  of  t
 \section{Approach}
 \label{sec3}
 \subsection{Proposed Scheme}
+A gene is a stretch of DNA (or RNA) that codes for a polypeptide (protein), that is a series of aminoacids bound together. Each gene consists of nucleotides bound together, which are interpreted by the cellular machinery in groups of three, called triplets. DNA is first transcribed into messenger RNA (mRNA), which is then translated into proteins. Each triplet codes for one aminoacid not one gene! In fact genes are not "coded" by anything, they are the code!
 
 \begin{figure}[thpb]
 \begin{center}
-
 \includegraphics[scale=0.5]{Images/Drawing3.jpg}
 \caption{The proposed Scheme}
 \end{center}
@@ -298,18 +300,15 @@ The main objective of the GA optimisation algorithm for bits minimisation (GaBm)
 \end{algorithmic}
 \end{algorithm}
 
-\begin{figure}[thpb]
+\begin{figure}[h]
 \begin{center}
-
 \includegraphics[scale=0.7]{Images/Drawing1.jpg}
 \caption{Population Update for genetic algorithm}
 \end{center}
 \label{Fig2}
 \end{figure}
-
 \begin{figure}[h]
 \begin{center}
-
 \includegraphics[scale=0.5]{Images/Drawing2.jpg}
 \caption{Operations of genetic algorithm}
 \end{center}
@@ -319,33 +318,63 @@ The main objective of the GA optimisation algorithm for bits minimisation (GaBm)
 
 
 \section{Results And Discussion}
-
+The approach has been evaluated with different real biological data (genomes), these genomes from The National Center for Biotechnology Information (NCBI) available on ( http://www.ncbi.nlm.nih.gov) []. In table () the different data set are described with the size of each of them and the references on the biological data bank.
 \begin{table}
 \small
 \label{datas}
-\caption{}
+\caption{Dataset description}
 \begin{center}
-\begin{tabular}{c  c  c}
+\begin{tabular}{c  c  c c}
 \toprule
-$\textbf{Data sets}$ &$\textbf{Name}$ &	$\textbf{Size}$ \\\hline
-Data set 1& Mycobacterium smegmatis & \\\hline
-Data set 2& Amycolatopsis benzoatilytica &\\\hline
-Data set 3& Mycobacterium rhodesiae& \\\hline
-Data set 4& Streptomyces bottropensis& \\\hline
-Data set 5& Mycobacterium smegmatis. MC2& \\\hline
-Data set 6& Mycobacterium smegmatis MKD8& \\\hline
-Data set 7& Bradyrhizobium WSM471& \\\hline
-Data set 8& Amycolatopsis thermoflava& \\\hline
-Data set 9& Bacillus thuringiensis serovar thuringiensis& \\\hline
-Data sets 10& Bacillus thuringiensis Bt407& \\\hline
-Data set 11& Pseudomonas aeruginosa 9BR& \\\hline
-Data set 12& Bacillus thuringiensis serovar berliner& \\\hline
-Data set 13& Bacillus thuringiensis serovar pakistani&\\\hline
-Data set 14& Pseudomonas aeruginosa LES400&\\\hline
+$\textbf{Data sets}$ &$\textbf{Name}$ &	$\textbf{Size (bp)}$ &	$\textbf{Reference}$ \\\hline
+Genome 1& Mycobacterium smegmatis &6,988,302 & CP009496  \\\hline
+
+Genome 2& Amycolatopsis benzoatilytica &  8,704,271& NZ\_KB912942 \\\hline
+
+\multirow{2}{*}{Genome 3}&Mycobacterium rhodesiae& \multirow{2}{*}{6,415,739} & \multirow{2} {*}{CP003169}\\ 
+&NBB3& &\\
+\hline
+
+\multirow{2}{*}{Genome 4 }&Streptomyces bottropensis& \multirow{2}{*}{8,955,726} &
+\multirow{2}{*}{NZ\_KB911581} \\ 
+& ATCC 25435 \\
+\hline
+    
+\multirow{2}{*}{Genome 5}&Mycobacterium smegmatis& \multirow{2}{*}{6,988,269 } &\multirow{2}{*}{CP009494             } \\ 
+&str. MC2 155 \\
+\hline
+
+\multirow{2}{*}{Genome 6}&Mycobacterium smegmatis& \multirow{2}{*}{7,092,137} &\multirow{2}{*}{NZ\_KI421511}\\   &MKD8& &\\
+\hline
+    
+Genome 7& Bradyrhizobium WSM471& 7,784,016  &NZ\_CM001442\\\hline
+
+\multirow{2}{*}{Genome 8}&Amycolatopsis thermoflava&  \multirow{2}{*}{8,677,910} &\multirow{2}{*}{NZ\_CM001442}\\   &N1165 & \\
+\hline
+
+\multirow{2}{*}{Genome 9}&Bacillus thuringiensis&   \multirow{2}{*}{6,026,843} &\multirow{2}{*}{ NZ\_CM000747 }\\    &Bt407&\\
+\hline    
+
+\multirow{2}{*}{Genome 10}&Bacillus thuringiensis& \multirow{2}{*}{6,323,123 } &\multirow{2}{*}{ NZ\_CM000748}\\    &serovar thuringiensis& \\
+\hline
+    
+\multirow{2}{*}{Genome 11}&Pseudomonas aeruginosa& \multirow{2}{*}{6,801,503  } &\multirow{2}{*}{NZ\_AFXI01000001}\\    &9BR&\\
+\hline
+    
+\multirow{2}{*}{Genome 12}&Bacillus thuringiensis&  \multirow{2}{*}{6,260,142  } &\multirow{2}{*}{ NZ\_CM000753}\\    &serovar berliner ATCC &\\
+\hline
+    
+\multirow{2}{*}{Genome 13}&Bacillus thuringiensis& \multirow{2}{*}{6,037,513 } &\multirow{2}{*}{ NZ\_CM000750 }\\    &serovar pakistani&\\
+\hline
+    
+\multirow{2}{*}{Genome 14}&Pseudomonas aeruginosa& \multirow{2}{*}{6,591,121  } &\multirow{2}{*}{ CP006982  }\\    &LES400&\\
+\hline
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table} 
+
+T
 
 \begin{table}
 \small
@@ -357,20 +386,20 @@ Data set 14& Pseudomonas aeruginosa LES400&\\\hline
 $\textbf{Data sets}$ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{CCA }& \multicolumn{2}{c}{OCCA}\\\hline
  & $\textbf{Cost}$	& $\textbf{Bits}$ &	$\textbf{Cost}$&	$\textbf{Bits	}$&$\textbf{Cost}$&	$\textbf{Bits}$
 \\\hline
-Data set 1&76787151  &	37256819	&67272097	&41270715	&67272097&	40459089\\\hline
-Data set 2&100425402&  	48778740	&88334137	&54602397	&88334137&	53281409\\\hline
-Data set 3&75940155  	&36860555	&66629579	&40873035&	66629579&	40128089\\\hline
-Data set 4&103552729  	&50047265	&90758205&	56109303&	90758205&	54281713\\\hline
-Data set 5&82234926  &	39772838	&71876260	&44199916&	71876260&	43338060\\\hline
-Data set 6&83454842  	&40370894	&72945595	&44805759	&72945595	&43945321\\\hline
-Data set 7&92539488  &	44977876&	81176987&	49688369	&81176987	&49052869\\\hline
-Data set 8&99613856 & 	48183688	&87033015&	53778627	&87033015&	52820213\\\hline
-Data set 9&71876739 &	34874617&	62637908&	38314532&	62637908&	37684296\\\hline
-Data set 10&75324432 & 	36576034	&65658000&	40226924	&65658000&	39558890\\\hline
-Data set 11&80766360  &	39092450&	70462778	&43020460&	70462778&	42260476\\\hline
-Data set 12&74560825  &	36179579&	65001120	&39772574	&65001120&	39077012\\\hline
-Data set 13&71562941 & 	34737083	&62335103&	38118291&	62335103&	37629173\\\hline
-Data set 14&78261299 & 	37843793&	68212426&	41745748&	68212426&	40979588\\\hline
+Genome 1&76787151  &	37256819	&67272097	&41270715	&67272097&	40459089\\\hline
+Genome 2&100425402&  	48778740	&88334137	&54602397	&88334137&	53281409\\\hline
+Genome 3&75940155  	&36860555	&66629579	&40873035&	66629579&	40128089\\\hline
+Genome 4&103552729  	&50047265	&90758205&	56109303&	90758205&	54281713\\\hline
+Genome 5&82234926  &	39772838	&71876260	&44199916&	71876260&	43338060\\\hline
+Genome 6&83454842  	&40370894	&72945595	&44805759	&72945595	&43945321\\\hline
+Genome 7&92539488  &	44977876&	81176987&	49688369	&81176987	&49052869\\\hline
+Genome 8&99613856 & 	48183688	&87033015&	53778627	&87033015&	52820213\\\hline
+Genome 9&71876739 &	34874617&	62637908&	38314532&	62637908&	37684296\\\hline
+Genome 10&75324432 & 	36576034	&65658000&	40226924	&65658000&	39558890\\\hline
+Genome 11&80766360  &	39092450&	70462778	&43020460&	70462778&	42260476\\\hline
+Genome 12&74560825  &	36179579&	65001120	&39772574	&65001120&	39077012\\\hline
+Genome 13&71562941 & 	34737083	&62335103&	38118291&	62335103&	37629173\\\hline
+Genome 14&78261299 & 	37843793&	68212426&	41745748&	68212426&	40979588\\\hline
 \bottomrule
 \end{tabular}
 \end{center}
@@ -408,7 +437,6 @@ Pseudomonas aeruginosa LES400&	71603920	&38158306 &5\\\hline
 
 \begin{figure}[h]
 \begin{center}
-
 \includegraphics{Images/Drawing4.jpg}
 \caption{Convergence of Optimized cost considering Huffman algorithm}
 \end{center}
