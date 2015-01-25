@@ -1,15 +1,17 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.7)  24 JAN 2015 17:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.30)  25 JAN 2015 15:32
 entering extended mode
 **Article.tex
-("C:\Sohag github\Sohag-Project\Article\Article.tex"
+
+("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
+e.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
@@ -95,8 +97,8 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@sep=\skip43
 \@@sep=\skip44
 
-("C:\Sohag github\Sohag-Project\Article\Article.spl")
-("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
+e.spl") ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip45
 \bibsep=\skip46
@@ -242,7 +244,8 @@ le
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen131
 )
-("C:\Sohag github\Sohag-Project\Article\Article.aux"
+("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
+e.aux"
 
 LaTeX Warning: Label `datas' multiply defined.
 
@@ -287,35 +290,36 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
-<Images/Drawing3.jpg, id=26, 363.759pt x 464.937pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] [5]
+<Images/Drawing3.jpg, id=29, 363.759pt x 464.937pt>
 File: Images/Drawing3.jpg Graphic file (type jpg)
  <use Images/Drawing3.jpg>
-Package pdftex.def Info: Images/Drawing3.jpg used on input line 219.
+Package pdftex.def Info: Images/Drawing3.jpg used on input line 227.
 (pdftex.def)             Requested size: 181.87906pt x 232.46793pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--273
+Underfull \hbox (badness 10000) in paragraph at lines 277--281
 
  []
 
-[5] [6] [7 <C:/Sohag github/Sohag-Project/Article/Images/Drawing3.jpg>]
-<Images/Drawing1.jpg, id=38, 556.479pt x 210.18526pt>
+[6 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article/Imag
+es/Drawing3.jpg>] [7] [8]
+<Images/Drawing1.jpg, id=41, 556.479pt x 210.18526pt>
 File: Images/Drawing1.jpg Graphic file (type jpg)
 
 <use Images/Drawing1.jpg>
-Package pdftex.def Info: Images/Drawing1.jpg used on input line 306.
+Package pdftex.def Info: Images/Drawing1.jpg used on input line 314.
 (pdftex.def)             Requested size: 389.53265pt x 147.12866pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Drawing2.jpg, id=39, 939.51pt x 461.92575pt>
+<Images/Drawing2.jpg, id=42, 939.51pt x 461.92575pt>
 File: Images/Drawing2.jpg Graphic file (type jpg)
  <use Images/Drawing2.jpg>
-Package pdftex.def Info: Images/Drawing2.jpg used on input line 313.
+Package pdftex.def Info: Images/Drawing2.jpg used on input line 321.
 (pdftex.def)             Requested size: 469.75385pt x 230.96231pt.
 
-Overfull \hbox (79.75385pt too wide) in paragraph at lines 313--314
+Overfull \hbox (79.75385pt too wide) in paragraph at lines 321--322
  [] 
  []
 
@@ -323,48 +327,52 @@ Overfull \hbox (79.75385pt too wide) in paragraph at lines 313--314
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (21.0499pt too wide) in paragraph at lines 322--377
+Overfull \hbox (21.0499pt too wide) in paragraph at lines 331--386
 []\OT1/cmr/m/n/12 The ap-proach has been eval-u-ated with dif-fer-ent real bi-o
 -log-i-cal data (genomes),
  []
 
 
-Overfull \hbox (11.23752pt too wide) in paragraph at lines 322--377
+Overfull \hbox (11.23752pt too wide) in paragraph at lines 331--386
 \OT1/cmr/m/n/12 these genomes from The Na-tional Cen-ter for Biotech-nol-ogy In
 -for-ma-tion (NCBI)
  []
 
-[8]
-Overfull \hbox (15.88474pt too wide) in paragraph at lines 384--405
+
+Overfull \hbox (15.88474pt too wide) in paragraph at lines 393--414
  [] 
  []
 
-[9 <C:/Sohag github/Sohag-Project/Article/Images/Drawing1.jpg>] [10]
-<Images/Drawing4.jpg, id=50, 356.532pt x 246.9225pt>
+[9] [10] <Images/Drawing4.jpg, id=50, 356.532pt x 246.9225pt>
 File: Images/Drawing4.jpg Graphic file (type jpg)
- <use Images/Drawing4.jpg>
-Package pdftex.def Info: Images/Drawing4.jpg used on input line 440.
+
+<use Images/Drawing4.jpg>
+Package pdftex.def Info: Images/Drawing4.jpg used on input line 449.
 (pdftex.def)             Requested size: 356.53111pt x 246.92188pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11 <C:/Sohag github/Sohag-Project/Article/Images/Drawing2.jpg>] [12]
-("C:\Sohag github\Sohag-Project\Article\Article.bbl" [13] [14 <C:/Sohag github/
-Sohag-Project/Article/Images/Drawing4.jpg>]) [15]
-("C:\Sohag github\Sohag-Project\Article\Article.aux")
+[11 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article/Ima
+ges/Drawing1.jpg>] [12]
+("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
+e.bbl" [13 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Arti
+cle/Images/Drawing2.jpg>] [14]) [15 <C:/Users/SOHAG/Documents/GitHub/paper with
+ yusuf/Sohag-Project/Article/Images/Drawing4.jpg>]
+("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
+e.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3558 strings out of 493921
- 45212 string characters out of 3147280
- 114511 words of memory out of 3000000
- 6791 multiletter control sequences out of 15000+200000
+ 3560 strings out of 493921
+ 45587 string characters out of 3147281
+ 115529 words of memory out of 3000000
+ 6793 multiletter control sequences out of 15000+200000
  12751 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,13n,30p,1732b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,13n,30p,1732b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -379,7 +387,7 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb>
-Output written on Article.pdf (15 pages, 714636 bytes).
+Output written on Article.pdf (15 pages, 714584 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
