@@ -280,7 +280,14 @@ while :
 \subsubsection{Basic Genetic Algorithm}
 Genetic Algorithm (GA) is a bio-inspired meta-heuristics algorithm developed by []. GA is a stochastic optimization algorithm imitate the natural evolution process of genomes. GA started by generate a population of random feasible solutions, the optimization process of GA is as follow, and we select two solution among the population, by one of the well-known selection techniques. This two selected solution will be considered as two parents, we generate two other new solutions from the two selected solution (Sons), this new solutions can be mutate according to a given mutation probability. The quality of each solution is computed with the fitness function which control the evolution of the GA population by the deletion of the worst solution and insertion of the good solutions among   parents and sons. This processes is repeated until the stopped criteria is achieved which can be the number of generation or if the population is stabilized.
 \subsubsection{GA for Bits minimisation}
-The main objective of the GA optimisation algorithm for bits minimisation (GaBm) problem is to assign to each frequency a specific code. The GaBm population is generated randomly from the different codes, and the affectation of codes to different frequencies given by the low cost considering  algorithm  to initial population to ensure that the final solution is better or at least equal to the solution given by the low cost considering Huffman code algorithm (step 1). The optimisation process of the genetic algorithms start with the selection of two solution randomly from the population (step 3). After that the operations of genetic algorithms are apply for the initial population optimization (see figure 3). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). These two children may contain conflict like finding a duplicated code allocated to two different frequencies in the solution, so a regulation step is done to ensure the correctness of the solution (see figure 3). Secondly these two new solutions are mutated according to a predefined probability (step 5), to ensure a good diversification on the space solutions. Each new generated solution must satisfy the cost constraint, these children must be valid with satisfying the cost constraint. The next step is to add these two new solutions (children) to the population (step 7) (see figure 2). Finally the new population are ranked by fitness (step 8), and the worst solution are deleted until the initial size of the population are achieved  (step 9). the whole process are repeated until the max number of operation is achieved (step 10). 
+The main objective of the GA optimisation algorithm for bits minimisation (GaBm) problem is to assign to each frequency a specific code. The encoding of an optimization problem solution into a
+chromosome is one of the most important issue to obtaining a good optimisation results. GaBM uses a two array fixed length to "64" which is the number of combination for all nucleotides, the first contain the frequencies of each codes and the second contain the cost of each codes. In this way, our genetic algorithm will work with the two array and uses the entry index on the allocation process.
+The genetic algorithm are stochastic algorithm based on random evolution. Generally the initial population is generated in a random affectation. In the GaBm algorithm the population contain firstly the affectation given by the cost considering Huffman code algorithm and secondly the rest of the population is random generated, but all generated solution must satisfy the initial cost constraints (step 1). 
+
+The evolution of the population is the key of the optimisation algorithm of genetic algorithm. During each generation the process start with the selection of a proportion of the population to bread a new generation. In the literature many selection methods have been proposed to guide the population evolution. The existent selection methods are varied from a random selection to heuristic based selection. we have chosen to select randomly the part of the population to be processed, as the heuristic methods are very time-consuming (step 3).
+After that the operations of genetic algorithms are applied for the initial population to generate a new generation of the population (see figure 3). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). In the literature many crossover techniques have been used in genetic algorithm, such as one-point crossover which divide the chromosome on two fragments and recombine the second fragments by the other chromosome second fragment, two-point crossover which divide the chromosome on three fragment and recombine the middle fragment by  the middle fragments on the other chromosome, and many other crossover techniques to allow a good convergence of the algorithm, in our case we have used the two point crossover with two parameters, the first parameter $\alpha$ is a random value in [0,63], which represent the first cut point and $\beta$ is a random value too in [0,63], which represent the number of position to be crossed. we used a two random parameters to ensure a good diversification on the whole search space (step 4).
+These two new generated children may contain conflict like finding a duplicated code allocated to two different frequencies in the solution, so a regulation step is done to ensure the correctness of the solution (see figure 3).
+ Secondly these two new solutions are mutated according to a predefined probability $\gamma$, the best value of mutation rate is very problem specific (step 5). The probability $\gamma$ are fixed to $0.2$ to explorer a few position on the solution. The mutation operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. In our case we have used the mutation as a random swap mutation operator (see figure 3).  Each new generated solution must satisfy the cost constraint, these children must be valid with satisfying the cost constraint. The next step is to add these two new solutions (children) to the population (step 7) (see figure 2). Finally the new population are ranked by fitness (step 8), and the worst solution are deleted until the initial size of the population are achieved  (step 9). the whole process are repeated until the max number of operation is achieved (step 10). 
 \begin{algorithm}
 \caption{GA for bits minimisation}
 \begin{algorithmic}[1]
@@ -373,7 +380,6 @@ Genome 7& Bradyrhizobium WSM471& 7,784,016  &NZ\_CM001442\\\hline
 \end{tabular}
 \end{center}
 \end{table} 
-
 The table 3 present the results founded by the basic Huffman code, cost considering algorithm and optimised cost considering algorithm. The result show that the number of bits of Huffman algorithm is the minimum number among the other algorithm but the cost is  very high. The cost considering algorithm improve the quality of the generated codes in terms of cost but the number of bits. The optimised cost considering algorithm try to find the best allocation of codes to frequencies while the cost constraint respected. The table 4 present the best founded number of bits with different penalty, for each genome we find the max number of useful penalty, after this value, increasing the penalty are in-useful (See figure 3), the number of bits achieve the minimum number but the cost stop decreasing (point 1 in figure 3) and this number of bits stabilized while the cost still increasing until it stabilized also (point 2 figure 3), after this point the cost and number of bits are stabilized.
 \begin{table}
 \small
@@ -385,20 +391,20 @@ The table 3 present the results founded by the basic Huffman code, cost consider
 $\textbf{Data sets}$ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{CCA }& \multicolumn{2}{c}{OCCA}\\\hline
  & $\textbf{Cost}$	& $\textbf{Bits}$ &	$\textbf{Cost}$&	$\textbf{Bits	}$&$\textbf{Cost}$&	$\textbf{Bits}$
 \\\hline
-Genome 1&76787151  &	37256819	&67272097	&41270715	&67272097&	40459089\\\hline
-Genome 2&100425402&  	48778740	&88334137	&54602397	&88334137&	53281409\\\hline
-Genome 3&75940155  	&36860555	&66629579	&40873035&	66629579&	40128089\\\hline
-Genome 4&103552729  	&50047265	&90758205&	56109303&	90758205&	54281713\\\hline
-Genome 5&82234926  &	39772838	&71876260	&44199916&	71876260&	43338060\\\hline
-Genome 6&83454842  	&40370894	&72945595	&44805759	&72945595	&43945321\\\hline
-Genome 7&92539488  &	44977876&	81176987&	49688369	&81176987	&49052869\\\hline
-Genome 8&99613856 & 	48183688	&87033015&	53778627	&87033015&	52820213\\\hline
-Genome 9&71876739 &	34874617&	62637908&	38314532&	62637908&	37684296\\\hline
-Genome 10&75324432 & 	36576034	&65658000&	40226924	&65658000&	39558890\\\hline
-Genome 11&80766360  &	39092450&	70462778	&43020460&	70462778&	42260476\\\hline
-Genome 12&74560825  &	36179579&	65001120	&39772574	&65001120&	39077012\\\hline
-Genome 13&71562941 & 	34737083	&62335103&	38118291&	62335103&	37629173\\\hline
-Genome 14&78261299 & 	37843793&	68212426&	41745748&	68212426&	40979588\\\hline
+Genome 1&76787151  &	37256819	&67416213 & 41332479	& 67416213 & 40503061 \\\hline
+Genome 2& 100425402 &  	48778740	& 88430665	& 54662727	& 88430665&  53341739 \\\hline
+Genome 3&75940155  	&36860555	&66745619	&40927187 &	66745619 & 40182241\\\hline
+Genome 4&103552729  	&50047265	&90821835&	56147481&	90821835  & 54319891\\\hline
+Genome 5&82234926  &	39772838	&71963876	&44254676 &	71963876 & 43392820\\\hline
+Genome 6&83454842  	&40370894	&73038795	&44864009	&73038795 & 44003571\\\hline
+Genome 7&92539488  &	44977876&	81416359&	49790957	&81416359 & 49127335\\\hline
+Genome 8&99613856 & 	48183688	&87102639&	53817307	&87102639&	52858893\\\hline
+Genome 9&71876739 &	34874617&	62998800 &	38469200&	62998800 8&	37831964\\\hline
+Genome 10&75324432 & 	36576034	&66084958&	40409906	&66084958&	39739522\\\hline
+Genome 11&80766360  &	39092450&	70620666	&43119140&	70620666&	42359156 \\\hline
+Genome 12&74560825  &	36179579&	65359604	&39926210	&65359604&	39221148\\\hline
+Genome 13&71562941 & 	34737083	&62758225 &	38299629&	62758225 &	37809443\\\hline
+Genome 14&78261299 & 	37843793&	68354090&	41816580&	68354090&	 41050420\\\hline
 \bottomrule
 \end{tabular}
 \end{center}
@@ -412,21 +418,20 @@ Genome 14&78261299 & 	37843793&	68212426&	41745748&	68212426&	40979588\\\hline
 \begin{tabular}{c c c c }
 \toprule
 $\textbf{Data sets}$ & $\textbf{Cost}$	& $\textbf{Bits}$ &		\textbf{$\lambda (\%)$} \\\hline
-Mycobacterium smegmatis &	69956907	&37933325 &4\\\hline
-Amycolatopsis benzoatilytica &	92682206	&49593802 &5\\\hline
-Mycobacterium rhodesiae&	69292943	&37581057 &4\\\hline
-Streptomyces bottropensis&	96107532	&50292416 &6\\\hline
-Mycobacterium smegmatis. MC2&	74730060	&40325704 &4\\\hline
-Mycobacterium smegmatis MKD8&	76528930	&40723850 &5\\\hline
-Bradyrhizobium WSM471&	84396016	&46056472 &4\\\hline
-Amycolatopsis thermoflava&	92205957	&48298731 &6\\\hline
-Bacillus thuringiensis serovar thuringiensis&	65138929	&35283557 &4\\\hline
-Bacillus thuringiensis Bt407&	68258009	&37234983 &4\\\hline
-Pseudomonas aeruginosa 9BR&	72568094	&40166110 &3\\\hline
-Bacillus thuringiensis serovar berliner&	66949136	&36822940 &3\\\hline
-Bacillus thuringiensis serovar pakistani&	65431387	&34963921 &5\\\hline
-Pseudomonas aeruginosa LES400&	71603920	&38158306 &5\\\hline
-
+Mycobacterium smegmatis &	 70760174 &37809636& 4\\\hline
+Amycolatopsis benzoatilytica &	92010490& 49654132& 3\\\hline
+Mycobacterium rhodesiae&	69421783& 37563017 &3\\\hline
+Streptomyces bottropensis&	96294638& 50330594& 5\\\hline
+Mycobacterium smegmatis. MC2&	74855668 &40380464& 5\\\hline
+Mycobacterium smegmatis MKD8&	76738330& 40782100 &4\\\hline
+Bradyrhizobium WSM471&	84667949 &45961149& 3\\\hline
+Amycolatopsis thermoflava&	92416243 &48336727& 5\\\hline
+Bacillus thuringiensis serovar thuringiensis&	66145783& 35330943& 4\\\hline
+Bacillus thuringiensis Bt407&	68751359& 37306497 &3\\\hline
+Pseudomonas aeruginosa 9BR&	72737300 &40264790& 2\\\hline
+Bacillus thuringiensis serovar berliner&	67981988 &36770118 &3\\\hline
+Bacillus thuringiensis serovar pakistani&	65896779& 35069999 &4\\\hline
+Pseudomonas aeruginosa LES400&	71762305 &38210997 &4\\\hline
 \bottomrule
 \end{tabular}
 \end{center}
