@@ -38,6 +38,47 @@ Y.~Perl, M.~R. Garey, S.~Even, Efficient generation of optimal prefix code:
   Equiprobable words using unequal cost letters, Journal of the ACM (JACM)
   22~(2) (1975) 202--214.
 
+\bibitem{Kab14}
+S.~Kabir, T.~Azad, A.~S. M.~A. Alam, M.~Kaykobad, Effects of unequal bit costs
+  on classical huffman codes, in: 17th International Conference on Computer and
+  Information Technology, 2014, pp. 96--101.
+
+\bibitem{Doug08}
+P.~F. T.~G. L.~H. W.~H. D.~P. H. R.~K. M.~S. S.~S.~P. S.~T. O. W. . S.~Y.~R.
+  Doug~Howe, Maria~Costanzo, Big data: The future of biocuration, Nature 455
+  (2008) 47--50.
+
+\bibitem{val10}
+F.~Valentin, S.~Squizzato, M.~Goujon, H.~McWilliam, J.~Paern, R.~Lopez, Fast
+  and efficient searching of biological data resources—using eb-eye,
+  Briefings in bioinformatics 11~(4) (2010) 375--384.
+
+\bibitem{chr09}
+S.~Christley, Y.~Lu, C.~Li, X.~Xie, Human genomes as email attachments,
+  Bioinformatics 25~(2) (2009) 274--275.
+\newblock \href {http://dx.doi.org/10.1093/bioinformatics/btn582}
+  {\path{doi:10.1093/bioinformatics/btn582}}.
+
+\bibitem{che03}
+R.~Chenna, H.~Sugawara, T.~Koike, R.~Lopez, T.~J. Gibson, D.~G. Higgins, J.~D.
+  Thompson, Multiple sequence alignment with the clustal series of programs,
+  Nucleic acids research 31~(13) (2003) 3497--3500.
+
+\bibitem{cha14}
+T.-H. Chang, S.-L. Wu, W.-J. Wang, J.-T. Horng, C.-W. Chang, A novel approach
+  for discovering condition-specific correlations of gene expressions within
+  biological pathways by using cloud computing technology, BioMed research
+  international 2014.
+
+\bibitem{bra09}
+M.~C. Brandon, D.~C. Wallace, P.~Baldi, Data structures and compression
+  algorithms for genomic sequence data, Bioinformatics 25~(14) (2009)
+  1731--1738.
+
+\bibitem{wan11}
+C.~Wang, D.~Zhang, A novel compression tool for efficient storage of genome
+  resequencing data, Nucleic acids research 39~(7) (2011) e45--e45.
+
 \bibitem{Amst86}
 J.~Amsterdam, Data compression with huffman coding, BYTE 11~(5) (1986) 98--108.
 
@@ -62,10 +103,5 @@ P.~Bradford, M.~Golin, L.~Larmore, W.~Rytter, {Optimal prefix-free codes for
 M.~J. Golin, C.~Mathieu, N.~E. Young, {Huffman Coding with Letter Costs: A
   Linear-Time Approximation Scheme}, {SIAM JOURNAL ON COMPUTING} {41}~({3})
   ({2012}) {684--713}.
-
-\bibitem{Kab14}
-S.~Kabir, T.~Azad, A.~S. M.~A. Alam, M.~Kaykobad, Effects of unequal bit costs
-  on classical huffman codes, in: 17th International Conference on Computer and
-  Information Technology, 2014, pp. 96--101.
 
 \end{thebibliography}

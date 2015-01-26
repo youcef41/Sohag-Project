@@ -69,7 +69,6 @@
 %% use the fntext command for theassociated footnote;
 %% use the corref command within \author for corresponding author footnotes;
 %% use the cortext command for theassociated footnote;
-%% use the ead command for the email address,
 %% and the form \ead[url] for the home page:
 %% \title{Title\tnoteref{label1}}
 %% \tnotetext[label1]{}
@@ -166,15 +165,14 @@ The rest of the paper is organised as follows: Section~\ref{sec2} presents the b
 \section{Background}
 \label{sec2}
 \subsection{Issues on Biological Data Transmission}
-The size of biological data including DNA sequences increase with an ever expanding rate and will be bigger and bigger in the future. These Biological data are stored in biology database, the exponential growth of these database become a big problem to all biological data processing methods.
-Different operation will be applied to these data such as, searching [],e-mail attachment [], alignment [], and transmission on distributed computing []. Interestingly, biological data compression can play a key role in all biological data processing.\\  
+The size of biological data including DNA sequences increase with an ever expanding rate and will be bigger and bigger in the future. These Biological data are stored in biology database, the exponential growth of these database become a big problem to all biological data processing methods~\cite{Doug08}.
+Different operation will be applied to these data such as, searching ~\cite{val10},e-mail attachment~\cite{chr09}, alignment ~\cite{che03}, and transmission on distributed computing ~\cite{cha14}. Interestingly, biological data compression can play a key role in all biological data processing.\\  
 A recent deluge of interest in the development of new tools for biological data processing, these all algorithms needs an efficient methods for data compression. The main objective of data compression methods is minimizing the number of bits in the data representation. 
-In [Marty C. Brandon ] authors propose a new general data structure and data encoding approach for the efficient storage of genomic data. This method encode only the differences between a genome sequence and a reference sequence, the method use different encoding scheme from fixed codes such as Golomb and Elias codes, to variables codes, such as Huffman codes. Other methods based on same idea to encode only the difference between reference sequence and the target one, Authors in [Scott Christley1] uses Huffman code for encoding difference between sequence to sent it as an email attachment, but these methods suffer that they must sent the reference sequence for at least one time for each species.\\
-Wang and Zhang (2011) proposed a new scheme for referential compression of genomes based on the chromosome level. The Algorithm aim to search for longest common subsequence between matching parts and the differences encoded using Huffman coding.\\
+In ~\cite{bra09} authors propose a new general data structure and data encoding approach for the efficient storage of genomic data. This method encode only the differences between a genome sequence and a reference sequence, the method use different encoding scheme from fixed codes such as Golomb, Elias codes and variable codes such as Huffman codes. Other methods based on same idea to encode only the difference between reference sequence and the target one, Authors in \cite{chr09} uses Huffman code for encoding difference between sequence to sent it as an email attachment, but these methods suffer that they must sent the reference sequence for at least one time for each species.\\
+Wang and Zhang \cite{wan11} proposed a new scheme for referential compression of genomes based on the chromosome level. The Algorithm aim to search for longest common subsequence between matching parts and the differences encoded using Huffman coding.\\
 All previous studies focus only on the differences and the relation between continuation of the sequence, and without improvement of the encoding scheme.
 
 %\subsection{Rationale of Unequal Bit Cost Considering Encoding Approaches}
-
 
 
 \subsection{Huffman Codes}
@@ -220,7 +218,7 @@ In the unequal letter cost version of the classical Huffman code, letters  of  t
 \label{sec3}
 \subsection{Proposed Scheme}
 
-A genome is a stretch of DNA (or RNA) that codes for a polypeptide (protein), that is a set of amino acids bound together in specific order. Each genomic sequence consist of nucleotide bound together, which are interpreted by the cellular machinery in groups of three, called triplets. This the main raison to divide the whole sequence in a set of triplet and give a code to each triplet. The first step in the optimised cost considering algorithm is cutting the sequence in triplet, then compute the frequency of each triplet in the whole sequence. This table of frequencies are used by the cost considering Huffman code to generate low cost code to each triplet (frequency). Finally these codes with frequencies are used by the optimised cost considering algorithm to generate the optimal allocation with a given  penalty.
+A genome is a stretch of DNA (or RNA) that codes for a polypeptide (protein), that is a set of amino acids bound together in specific order. Each genomic sequence consist of nucleotide bound together, which are interpreted by the cellular machinery in groups of three, called triplets~\cite{}. This is the main raison to divide the whole sequence in a set of triplet and give a code to each triplet. The first step in the optimised cost considering algorithm is cutting the sequence in triplet, then compute the frequency of each triplet in the whole sequence. This table of frequencies are used by the cost considering Huffman code to generate low cost code to each triplet (frequency). Finally these codes with frequencies are used by the optimised cost considering algorithm to generate the optimal allocation with a given  penalty.
 
 \begin{figure}[thpb]
 \begin{center}
