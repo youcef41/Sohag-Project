@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.30)  25 JAN 2015 15:32
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.27)  26 JAN 2015 11:13
 entering extended mode
 **Article.tex
 
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.tex"
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Article\Article.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,7 +15,9 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\elsarticle\elsarticle.cls"
+
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\elsarticle\elsarticle
+.cls
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -97,8 +99,9 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@sep=\skip43
 \@@sep=\skip44
 
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.spl") ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Article\Article.spl")
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip45
 \bibsep=\skip46
@@ -118,7 +121,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen109
 \lightrulewidth=\dimen110
@@ -137,8 +140,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@thisruleclass=\count97
 \@lastruleclass=\count98
 \@thisrulewidth=\dimen121
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip47
 
@@ -196,11 +198,11 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithm.
+sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count111
 \float@exts=\toks23
@@ -217,10 +219,12 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithmicx\algpseud
+ocode.sty
 Package: algpseudocode 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithmicx\algorith
+micx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
@@ -236,7 +240,9 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip52
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algcompatible.sty"
+)
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithmicx\algcompa
+tible.sty
 Package: algcompatible 
 
 Document Style - algorithmic compatible environments for the `algorithmicx' sty
@@ -244,8 +250,8 @@ le
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen131
 )
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.aux"
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Article\Article.aux"
 
 LaTeX Warning: Label `datas' multiply defined.
 
@@ -265,7 +271,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count120
 \scratchdimen=\dimen132
@@ -290,24 +297,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] [5]
+{C:/Users/456388.NET/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3
+] [4] [5]
 <Images/Drawing3.jpg, id=29, 363.759pt x 464.937pt>
 File: Images/Drawing3.jpg Graphic file (type jpg)
  <use Images/Drawing3.jpg>
-Package pdftex.def Info: Images/Drawing3.jpg used on input line 227.
+Package pdftex.def Info: Images/Drawing3.jpg used on input line 218.
 (pdftex.def)             Requested size: 181.87906pt x 232.46793pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--281
+[6 <C:/Users/456388.NET/OneDrive/Paper to Publish/new plan with yusuf/Sohag-Pro
+ject/Article/Images/Drawing3.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 268--272
 
  []
 
-[6 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article/Imag
-es/Drawing3.jpg>] [7] [8]
-<Images/Drawing1.jpg, id=41, 556.479pt x 210.18526pt>
+[7] [8] <Images/Drawing1.jpg, id=41, 556.479pt x 210.18526pt>
 File: Images/Drawing1.jpg Graphic file (type jpg)
 
 <use Images/Drawing1.jpg>
-Package pdftex.def Info: Images/Drawing1.jpg used on input line 314.
+Package pdftex.def Info: Images/Drawing1.jpg used on input line 305.
 (pdftex.def)             Requested size: 389.53265pt x 147.12866pt.
 
 
@@ -316,10 +324,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Images/Drawing2.jpg, id=42, 939.51pt x 461.92575pt>
 File: Images/Drawing2.jpg Graphic file (type jpg)
  <use Images/Drawing2.jpg>
-Package pdftex.def Info: Images/Drawing2.jpg used on input line 321.
+Package pdftex.def Info: Images/Drawing2.jpg used on input line 312.
 (pdftex.def)             Requested size: 469.75385pt x 230.96231pt.
 
-Overfull \hbox (79.75385pt too wide) in paragraph at lines 321--322
+Overfull \hbox (79.75385pt too wide) in paragraph at lines 312--313
  [] 
  []
 
@@ -327,52 +335,52 @@ Overfull \hbox (79.75385pt too wide) in paragraph at lines 321--322
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (21.0499pt too wide) in paragraph at lines 331--386
+Overfull \hbox (21.0499pt too wide) in paragraph at lines 322--377
 []\OT1/cmr/m/n/12 The ap-proach has been eval-u-ated with dif-fer-ent real bi-o
 -log-i-cal data (genomes),
  []
 
 
-Overfull \hbox (11.23752pt too wide) in paragraph at lines 331--386
+Overfull \hbox (11.23752pt too wide) in paragraph at lines 322--377
 \OT1/cmr/m/n/12 these genomes from The Na-tional Cen-ter for Biotech-nol-ogy In
 -for-ma-tion (NCBI)
  []
 
-
-Overfull \hbox (15.88474pt too wide) in paragraph at lines 393--414
+[9]
+Overfull \hbox (15.88474pt too wide) in paragraph at lines 384--405
  [] 
  []
 
-[9] [10] <Images/Drawing4.jpg, id=50, 356.532pt x 246.9225pt>
+<Images/Drawing4.jpg, id=46, 356.532pt x 246.9225pt>
 File: Images/Drawing4.jpg Graphic file (type jpg)
-
-<use Images/Drawing4.jpg>
-Package pdftex.def Info: Images/Drawing4.jpg used on input line 449.
+ <use Images/Drawing4.jpg>
+Package pdftex.def Info: Images/Drawing4.jpg used on input line 440.
 (pdftex.def)             Requested size: 356.53111pt x 246.92188pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article/Ima
-ges/Drawing1.jpg>] [12]
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.bbl" [13 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Arti
-cle/Images/Drawing2.jpg>] [14]) [15 <C:/Users/SOHAG/Documents/GitHub/paper with
- yusuf/Sohag-Project/Article/Images/Drawing4.jpg>]
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.aux")
+[10 <C:/Users/456388.NET/OneDrive/Paper to Publish/new plan with yusuf/Sohag-Pr
+oject/Article/Images/Drawing1.jpg>] [11] [12]
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Article\Article.bbl" [13 <C:/Users/456388.NET/OneDrive/Paper to Publish/new 
+plan with yusuf/Sohag-Project/Article/Images/Drawing2.jpg>] [14] [15 <C:/Users/
+456388.NET/OneDrive/Paper to Publish/new plan with yusuf/Sohag-Project/Article/
+Images/Drawing4.jpg>]) [16]
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Article\Article.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  3560 strings out of 493921
- 45587 string characters out of 3147281
- 115529 words of memory out of 3000000
+ 46192 string characters out of 3147267
+ 117530 words of memory out of 3000000
  6793 multiletter control sequences out of 15000+200000
  12751 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,13n,30p,1732b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,13n,30p,1732b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -387,9 +395,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb>
-Output written on Article.pdf (15 pages, 714584 bytes).
+Output written on Article.pdf (16 pages, 715886 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
+ 118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
