@@ -44,9 +44,9 @@ S.~Kabir, T.~Azad, A.~S. M.~A. Alam, M.~Kaykobad, Effects of unequal bit costs
   Information Technology, 2014, pp. 96--101.
 
 \bibitem{Doug08}
-P.~F. T.~G. L.~H. W.~H. D.~P. H. R.~K. M.~S. S.~S.~P. S.~T. O. W. . S.~Y.~R.
-  Doug~Howe, Maria~Costanzo, Big data: The future of biocuration, Nature 455
-  (2008) 47--50.
+D.~Howe, M.~Costanzo, P.~Fey, T.~Gojobori, L.~Hannick, W.~Hide, D.~P. Hill,
+  R.~Kania, M.~Schaeffer, S.~S. Pierre, S.~Twigger, O.~White, S.~Y. Rhee, Big
+  data: The future of biocuration, Nature 455 (2008) 47--50.
 
 \bibitem{val10}
 F.~Valentin, S.~Squizzato, M.~Goujon, H.~McWilliam, J.~Paern, R.~Lopez, Fast
@@ -54,29 +54,28 @@ F.~Valentin, S.~Squizzato, M.~Goujon, H.~McWilliam, J.~Paern, R.~Lopez, Fast
   Briefings in bioinformatics 11~(4) (2010) 375--384.
 
 \bibitem{chr09}
-S.~Christley, Y.~Lu, C.~Li, X.~Xie, Human genomes as email attachments,
+C.~Scott, L.~Yiming, L.~Chen, X.~Xiaohui, Human genomes as email attachments,
   Bioinformatics 25~(2) (2009) 274--275.
 \newblock \href {http://dx.doi.org/10.1093/bioinformatics/btn582}
   {\path{doi:10.1093/bioinformatics/btn582}}.
 
 \bibitem{che03}
-R.~Chenna, H.~Sugawara, T.~Koike, R.~Lopez, T.~J. Gibson, D.~G. Higgins, J.~D.
-  Thompson, Multiple sequence alignment with the clustal series of programs,
-  Nucleic acids research 31~(13) (2003) 3497--3500.
+C.~Ramu, S.~Hideaki, K.~Tadashi, L.~Rodrigo, G.~T. J, H.~D. G, T.~J. D,
+  Multiple sequence alignment with the clustal series of programs, Nucleic
+  acids research 31~(13) (2003) 3497--3500.
 
 \bibitem{cha14}
-T.-H. Chang, S.-L. Wu, W.-J. Wang, J.-T. Horng, C.-W. Chang, A novel approach
-  for discovering condition-specific correlations of gene expressions within
-  biological pathways by using cloud computing technology, BioMed research
-  international 2014.
+C.~Tzu-Hao, W.~Shih-Lin, W.~Wei-Jen, H.~Jorng-Tzong, C.~Cheng-Wei, A novel
+  approach for discovering condition-specific correlations of gene expressions
+  within biological pathways by using cloud computing technology, BioMed
+  research international 2014.
 
 \bibitem{bra09}
-M.~C. Brandon, D.~C. Wallace, P.~Baldi, Data structures and compression
-  algorithms for genomic sequence data, Bioinformatics 25~(14) (2009)
-  1731--1738.
+B.~M. C, W.~D. C, B.~Pierre, Data structures and compression algorithms for
+  genomic sequence data, Bioinformatics 25~(14) (2009) 1731--1738.
 
 \bibitem{wan11}
-C.~Wang, D.~Zhang, A novel compression tool for efficient storage of genome
+W.~Congmao, Z.~Dabing, A novel compression tool for efficient storage of genome
   resequencing data, Nucleic acids research 39~(7) (2011) e45--e45.
 
 \bibitem{Amst86}
@@ -108,5 +107,18 @@ M.~J. Golin, C.~Mathieu, N.~E. Young, {Huffman Coding with Letter Costs: A
 M.~J. Golin, G.~Rote, A dynamic programming algorithm for constructing optimal
   prefix-free codes with unequal letter costs, IEEE Transactions on Information
   Theory 44~(5) (1998) 1770--1781.
+
+\bibitem{gen1}
+M.~Mitchell, An introduction to genetic algorithms, MIT press, 1998.
+
+\bibitem{bli95}
+T.~Blickle, L.~Thiele, A comparison of selection schemes used in genetic
+  algorithms (1995).
+
+\bibitem{osa14}
+E.~Osaba, R.~Carballedo, F.~Diaz, E.~Onieva, I.~de~la Iglesia, A.~Perallos,
+  Crossover versus mutation: A comparative analysis of the evolutionary
+  strategy of genetic algorithms applied to combinatorial optimization
+  problems, The Scientific World Journal 2014.
 
 \end{thebibliography}

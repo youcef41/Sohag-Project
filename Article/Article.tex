@@ -14,7 +14,6 @@
 %% The list of all files belonging to the 'Elsarticle Bundle' is
 %% given in the file `manifest.txt'.
 %% 
-
 %% Template article for Elsevier's document class `elsarticle'
 %% with numbered style bibliographic references
 %% SP 2008/03/01
@@ -55,7 +54,7 @@
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
 %% \usepackage{lineno}
-\journal{Information Processing Letters}
+\journal{Computers & Mathematics with Applications}
 \bibliographystyle{elsarticle-num}
 \begin{document}
 
@@ -93,10 +92,11 @@
 
 \begin{abstract}
 %% Text of abstract
-
+In the recent year with the wide use of cloud and the distributed application in our life, the data transmission become more challenging over the years. In this paper we propose a new approach to improve the data transmission technique by improving the representation of Huffman code with the use of a genetic algorithm for optimal allocation of the codes to the symbols. The work in this research is consists of two steps. The First step of our algorithm is to generate a set of codes to the different symbols by cost considering of zero and ones. The aim of the codes generation method is to minimise the number of ones on the generated codes, which minimise the cost of the transmission. The second part of the approach is to find the optimal allocation of generated codes to different symbols, the optimal allocation is based on genetic algorithm to find the best allocation with a given penalty on cost, in order de sacrificing cost to minimise the number of bits. The case study of the approach is the biological data, which present a good application area to data compression with the huge growth of the biological data bases. The results are very promising and we have compared with the standard cost considering Huffman code and the original Huffman code.
 \end{abstract}
 
 \begin{keyword}
+Data Transmission , Huffman code, Cost Considering, Genetic algorithm, Biological data.
 %% keywords here, in the form: keyword \sep keyword
 
 %% PACS codes here, in the form: \PACS code \sep code
@@ -124,7 +124,7 @@ Data encoding techniques came into action to improve the data transmission effic
   
 If all the elements of a codeword has unit cost or length then the cost of the codeword is equivalent to the length of the codeword. However, it is not necessary for the elements in the codeword to have equal length or cost. For example, in Morse Code all the ASCII characters are encoded as sequence of dots ($\cdot$) and dashes ($-$) where a dash is three times longer than a dot in duration \cite{Redmond09}. However, the Morse code scheme suffers from the prefix problem \cite{Gr03}. Ignoring the prefix problem, Morse code results in a tremendous savings of bits over ASCII representation. Using Morse code, we can treat the binary bits differently; 0 as a dot and 1 as a dash. Even if we consider the voltage level to represent the binary digits then they are still different. Table \ref{table1} shows the logic level to represent binary digits in CMOS and TTL technologies. 
 
-\begin{table}[thpb]
+\begin{table}[h]
 \renewcommand{\arraystretch}{1.5}
 \caption{Example of binary logic level}
 \label{table1}
@@ -175,7 +175,7 @@ For any given set of symbols and associated occurrence probabilities, there is a
 Applications of Huffman code are pervasive throughout
 computer science. The algorithm to completely perform Huffman encoding and decoding is explained by \cite{Amst86}. It can be used effectively where there is a need for a compact code to represent a long series of a relatively small number of distinct bytes. For example, Table \ref{table1} shows 8 different ASCII characters, their frequencies, ASCII codes and the codewords generated for those symbols using Huffman code. It is seen from the table that the codeword to represent each character is compressed and the most frequent character gets the shortest code. In this example, the compression ratio obtained by Huffman code is 64.16\%.   
 
-\begin{table}[thpb]
+\begin{table}[h]
 \renewcommand{\arraystretch}{1.3}
 \caption{Example of application of Huffman Code to compress ASCII characters}
 \label{table2}
@@ -212,7 +212,7 @@ In the unequal letter cost version of the classical Huffman code, letters  of  t
 
 A genome is a stretch of DNA (or RNA) that codes for a polypeptide (protein), that is a set of amino acids bound together in specific order. Each genomic sequence consist of nucleotide bound together, which are interpreted by the cellular machinery in groups of three, called triplets~\cite{}. This is the main raison to divide the whole sequence in a set of triplet and give a code to each triplet. The first step in the optimised cost considering algorithm is cutting the sequence in triplet, then compute the frequency of each triplet in the whole sequence. This table of frequencies are used by the cost considering Huffman code to generate low cost code to each triplet (frequency). Finally these codes with frequencies are used by the optimised cost considering algorithm to generate the optimal allocation with a given  penalty.
 
-\begin{figure}[thpb]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.5]{Images/Drawing3.jpg}
 \caption{The proposed Scheme}
@@ -281,21 +281,19 @@ while :
 \end{equation}
 
 \subsubsection{Basic Genetic Algorithm}
-Genetic Algorithm (GA) is a bio-inspired meta-heuristics algorithm developed by []. GA is a stochastic optimization algorithm imitate the natural evolution process of genomes. GA started by generate a population of random feasible solutions, the optimization process of GA is as follow, and we select two solution among the population, by one of the well-known selection techniques. This two selected solution will be considered as two parents, we generate two other new solutions from the two selected solution (Sons), this new solutions can be mutate according to a given mutation probability. The quality of each solution is computed with the fitness function which control the evolution of the GA population by the deletion of the worst solution and insertion of the good solutions among   parents and sons. This processes is repeated until the stopped criteria is achieved which can be the number of generation or if the population is stabilized.
+Genetic Algorithm (GA) is a bio-inspired meta-heuristics algorithm developed by \cite{gen1}. GA is a stochastic optimization algorithm imitate the natural evolution process of genomes. GA started by generate a population of random feasible solutions. The optimization process of GA take this generate at each iteration a new population based on the previous one.  The process can be described as follow: Firstly the selection of two or more solution among the current population, by one of the well-known selection techniques \cite{bli95}. These selected solutions will be considered as a parents, the second operation of the genetic algorithm is the crossover, which take these parents as inputs to generate other new solutions considered as sons. The third operator of the genetic algorithm is the mutation which ensure a good diversification on the search process. The new solutions can be mutate according to a given mutation probability. The mutation change a position or more on the solution with new value different to the previous one. The quality of each solution is computed with the fitness function which control the evolution of the GA population by the deletion of the worst solution and insertion of the good solutions among  parents and sons. This processes is repeated until the stopped criteria is achieved which can be the number of generation or if the population is stabilized.
 \subsubsection{GA for Bits minimisation}
-The main objective of the GA optimisation algorithm for bits minimisation (GaBm) problem is to assign to each frequency a specific code. The encoding of an optimization problem solution into a
-chromosome is one of the most important issue to obtaining a good optimisation results. GaBM uses a two array fixed length to "64" which is the number of combination for all nucleotides, the first contain the frequencies of each codes and the second contain the cost of each codes. In this way, our genetic algorithm will work with the two array and uses the entry index on the allocation process.
+The main objective of the GA optimisation algorithm for bits minimisation (GaBm) problem is to assign to each frequency a specific code. The encoding of an optimization problem solution into a chromosome is one of the most important issue to obtaining a good optimisation results. GaBM uses a two array fixed length to "64" which is the number of combination for all nucleotides, the first contain the frequencies of each codes and the second contain the cost of each codes. In this way, our genetic algorithm will work with the two array and uses the entry index on the allocation process.
 The genetic algorithm are stochastic algorithm based on random evolution. Generally the initial population is generated in a random affectation. In the GaBm algorithm the population contain firstly the affectation given by the cost considering Huffman code algorithm and secondly the rest of the population is random generated, but all generated solution must satisfy the initial cost constraints (step 1). 
-
-The evolution of the population is the key of the optimisation algorithm of genetic algorithm. During each generation the process start with the selection of a proportion of the population to bread a new generation. In the literature many selection methods have been proposed to guide the population evolution. The existent selection methods are varied from a random selection to heuristic based selection. we have chosen to select randomly the part of the population to be processed, as the heuristic methods are very time-consuming (step 3).
-After that the operations of genetic algorithms are applied for the initial population to generate a new generation of the population (see figure 3). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). In the literature many crossover techniques have been used in genetic algorithm, such as one-point crossover which divide the chromosome on two fragments and recombine the second fragments by the other chromosome second fragment, two-point crossover which divide the chromosome on three fragment and recombine the middle fragment by  the middle fragments on the other chromosome, and many other crossover techniques to allow a good convergence of the algorithm, in our case we have used the two point crossover with two parameters, the first parameter $\alpha$ is a random value in [0,63], which represent the first cut point and $\beta$ is a random value too in [0,63], which represent the number of position to be crossed. we used a two random parameters to ensure a good diversification on the whole search space (step 4).
-These two new generated children may contain conflict like finding a duplicated code allocated to two different frequencies in the solution, so a regulation step is done to ensure the correctness of the solution (see figure 3).
- Secondly these two new solutions are mutated according to a predefined probability $\gamma$, the best value of mutation rate is very problem specific (step 5). The probability $\gamma$ are fixed to $0.2$ to explorer a few position on the solution. The mutation operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. In our case we have used the mutation as a random swap mutation operator (see figure 3).  Each new generated solution must satisfy the cost constraint, these children must be valid with satisfying the cost constraint. The next step is to add these two new solutions (children) to the population (step 7) (see figure 2). Finally the new population are ranked by fitness (step 8), and the worst solution are deleted until the initial size of the population are achieved  (step 9). the whole process are repeated until the max number of operation is achieved (step 10). 
+The evolution of the population is the key of the optimisation algorithm of genetic algorithm. During each generation the process start with the selection of a proportion of the population to bread a new generation. In the literature many selection methods have been proposed to guide the population evolution \cite{bli95}. The existent selection methods are varied from a random selection to heuristic based selection. we have chosen to select randomly the part of the population to be processed, as the heuristic methods are very time-consuming (step 3).
+After that the operations of genetic algorithms are applied for the initial population to generate a new generation of the population (see figure 2). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). In the literature many crossover techniques have been used in genetic algorithm \cite{osa14}, such as one-point crossover which divide the chromosome on two fragments and recombine the second fragments by the other chromosome second fragment, two-point crossover which divide the chromosome on three fragment and recombine the middle fragment by  the middle fragments on the other chromosome, and many other crossover techniques to allow a good convergence of the algorithm, in our case we have used the two point crossover with two parameters, the first parameter $\alpha$ is a random value in [0,63], which represent the first cut point and $\beta$ is a random value too in [0,63], which represent the number of position to be crossed. we used a two random parameters to ensure a good diversification on the whole search space (step 4).
+These two new generated children may contain conflict like finding a duplicated code allocated to two different frequencies in the solution, so a regulation step is done to ensure the correctness of the solution (see figure 2).
+ Secondly these two new solutions are mutated according to a predefined probability $\gamma$, the best value of mutation rate is very problem specific (step 5). The probability $\gamma$ are fixed to $0.2$ to explorer a few position on the solution. The mutation operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. In our case we have used the mutation as a random swap mutation operator (see figure 3).  Each new generated solution must satisfy the cost constraint, these children must be valid with satisfying the cost constraint. The next step is to add these two new solutions (children) to the population (step 7) (see figure 3). Finally the new population are ranked by fitness (step 8), and the worst solution are deleted until the initial size of the population are achieved  (step 9). the whole process are repeated until the max number of operation is achieved (step 10). 
 \begin{algorithm}
 \caption{GA for bits minimisation}
 \begin{algorithmic}[1]
 \State Population initialization (P).
-\While {Max number of generation not achieved} 
+\REPEAT  
 \State Select two solutions $S_{1},S_{2}$ form P.
 \State Crossover $S_{1},S_{2}$ to generate $S_{11},S_{21}$ (Children).
 \State Mutate $S_{11},S_{21}$.
@@ -303,19 +301,12 @@ These two new generated children may contain conflict like finding a duplicated 
 \State Add children to population
 \State Rank the population by fitness
 \State Remove worst candidates until population limit
-\State Return to 2;
+\UNTIL{Max number of generation not achieved} 
 \EndWhile
 \State Display the best solution from the population P;
 \end{algorithmic}
 \end{algorithm}
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.7]{Images/Drawing1.jpg}
-\caption{Population Update for genetic algorithm}
-\end{center}
-\label{Fig2}
-\end{figure}
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.5]{Images/Drawing2.jpg}
@@ -324,6 +315,13 @@ These two new generated children may contain conflict like finding a duplicated 
 \label{Fig3}
 \end{figure}
 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.7]{Images/Drawing1.jpg}
+\caption{Population Update for genetic algorithm}
+\end{center}
+\label{Fig2}
+\end{figure}
 
 
 \section{Results And Discussion}
@@ -439,9 +437,6 @@ Pseudomonas aeruginosa LES400&	71762305 &38210997 &4\\\hline
 \end{tabular}
 \end{center}
 \end{table}
-
-
-
 \begin{figure}[h]
 \begin{center}
 \includegraphics{Images/Drawing4.jpg}
