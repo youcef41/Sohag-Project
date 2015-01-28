@@ -54,7 +54,7 @@
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
 %% \usepackage{lineno}
-\journal{Computers & Mathematics with Applications}
+\journal{Computers \& Mathematics with Applications}
 \bibliographystyle{elsarticle-num}
 \begin{document}
 
@@ -79,7 +79,7 @@
 %% \address{Address\fnref{label3}}
 %% \fntext[label3]{}
 
-\title{Optimized and Cost Considering Huffman Code For Biological Data Transmission}
+\title{Optimised Cost Considering Huffman Code for Biological Data Compression}
 
 %% use optional labels to link authors explicitly to addresses:
 %% \author[label1,label2]{}
@@ -92,7 +92,16 @@
 
 \begin{abstract}
 %% Text of abstract
-In the recent year with the wide use of cloud and the distributed application in our life, the data transmission become more challenging over the years. In this paper we propose a new approach to improve the data transmission technique by improving the representation of Huffman code with the use of a genetic algorithm for optimal allocation of the codes to the symbols. The work in this research is consists of two steps. The First step of our algorithm is to generate a set of codes to the different symbols by cost considering of zero and ones. The aim of the codes generation method is to minimise the number of ones on the generated codes, which minimise the cost of the transmission. The second part of the approach is to find the optimal allocation of generated codes to different symbols, the optimal allocation is based on genetic algorithm to find the best allocation with a given penalty on cost, in order de sacrificing cost to minimise the number of bits. The case study of the approach is the biological data, which present a good application area to data compression with the huge growth of the biological data bases. The results are very promising and we have compared with the standard cost considering Huffman code and the original Huffman code.
+Classical Huffman code has widely been used to compress biological datasets. Though a considerable reduction of size of data is obtained by classical Huffman code, yet, more efficient encoding is possible by treating binary bits differently considering requirement of transmission time, energy consumption, and likewise. A number of techniques already modified Huffman code algorithm to  obtain optimal prefix-codes for unequal letter costs in order to reduce overall transmission cost (time). 
+%In the recent year with the wide use of cloud and the distributed application in our life, the data transmission become more challenging over the years. 
+In this paper we propose a new approach to improve compression performance of one such extension, cost considering Huffman code,   %the data transmission technique by improving the representation of Huffman code with the use of a 
+by applying genetic algorithm for optimal allocation of the codewords to the symbols. 
+%The work in this research is consists of two steps. 
+The approach start with generating a set of codewords for different input symbols based on their frequencies by considering cost (length) of 0 and 1 as $\alpha$ and $\beta$,~$\alpha < \beta$. This step ensures optimal cost encoding, however, compression performance is not higher than classical Huffman code. 
+%The aim of the codes generation method is to minimise the number of ones on the generated codes, which minimise the cost of the transmission. 
+To improve compression performance, the second part of the approach uses genetic algorithm to find an optimal allocation of generated codes to different symbols. The idea is to sacrifice some cost to minimise total number of bits, hence, the genetic algorithm works by giving penalty on cost. The performance of the approach is evaluated by applying it to compress some standard biological dataset and comparing the result with the results produced by classical Huffman code and standard cost considering Huffman code.
+% The case study of the approach is the biological data, which present a good application area to data compression with the huge growth of the biological data bases. 
+%The results are very promising and we have compared with the standard cost considering Huffman code and the original Huffman code.
 \end{abstract}
 
 \begin{keyword}
@@ -268,7 +277,7 @@ Now the tree $T$ is constructed and the cost of the tree actually depends on how
 \subsection{Optimisation of the Codes}
 \subsubsection{Problem formulation}
 The problem of finding the best allocation of codes to each symbol can be   modelled as an Assignment Problems with Constraint, the problem is formulated as follows :\\\\
-\textbf{Definition:} Given a set of codes $C=\left\{C_{1},C_{2}...C_{n}\right\}$, and a set of frequencies $C=\left\{Q_{1},Q_{2}...Q_{n}\right\}$. For each code we have the length of the code $|C_{i}|$ (number of bits) and the cost of the code $S_{C_{i}}$ (cost of ones and zeros), the objective is to assign to each frequency a code in order to minimize the total number of bits, while respecting the initial assignment total cost $S_{t}$ with a given penalty $\lambda$. This penalty coefficient represent the allowed Marge can be sacrificed for cost to optimize number of bits    
+\textbf{Definition:} Given a set of codes $C=\left\{C_{1},C_{2}...C_{n}\right\}$, and a set of frequencies $C=\left\{Q_{1},Q_{2}...Q_{n}\right\}$. For each code we have the length of the code $|C_{i}|$ (number of bits) and the cost of the code $S_{C_{i}}$ (cost of ones and zeros), the objective is to assign to each frequency a code in order to minimize the total number of bits, while respecting the initial assignment total cost $S_{t}$ with a given penalty $\lambda$. This penalty coefficient represent the allowed Marge can be sacrificed for cost to optimise number of bits    
 \\
 The Objective Function is : 
 
@@ -281,9 +290,9 @@ while :
 \end{equation}
 
 \subsubsection{Basic Genetic Algorithm}
-Genetic Algorithm (GA) is a bio-inspired meta-heuristics algorithm developed by \cite{gen1}. GA is a stochastic optimization algorithm imitate the natural evolution process of genomes. GA started by generate a population of random feasible solutions. The optimization process of GA take this generate at each iteration a new population based on the previous one.  The process can be described as follow: Firstly the selection of two or more solution among the current population, by one of the well-known selection techniques \cite{bli95}. These selected solutions will be considered as a parents, the second operation of the genetic algorithm is the crossover, which take these parents as inputs to generate other new solutions considered as sons. The third operator of the genetic algorithm is the mutation which ensure a good diversification on the search process. The new solutions can be mutate according to a given mutation probability. The mutation change a position or more on the solution with new value different to the previous one. The quality of each solution is computed with the fitness function which control the evolution of the GA population by the deletion of the worst solution and insertion of the good solutions among  parents and sons. This processes is repeated until the stopped criteria is achieved which can be the number of generation or if the population is stabilized.
+Genetic Algorithm (GA) is a bio-inspired meta-heuristics algorithm developed by \cite{gen1}. GA is a stochastic optimisation algorithm imitate the natural evolution process of genomes. GA started by generate a population of random feasible solutions. The optimisation process of GA take this generate at each iteration a new population based on the previous one.  The process can be described as follow: Firstly the selection of two or more solution among the current population, by one of the well-known selection techniques \cite{bli95}. These selected solutions will be considered as a parents, the second operation of the genetic algorithm is the crossover, which take these parents as inputs to generate other new solutions considered as sons. The third operator of the genetic algorithm is the mutation which ensure a good diversification on the search process. The new solutions can be mutate according to a given mutation probability. The mutation change a position or more on the solution with new value different to the previous one. The quality of each solution is computed with the fitness function which control the evolution of the GA population by the deletion of the worst solution and insertion of the good solutions among  parents and sons. This processes is repeated until the stopped criteria is achieved which can be the number of generation or if the population is stabilized.
 \subsubsection{GA for Bits minimisation}
-The main objective of the GA optimisation algorithm for bits minimisation (GaBm) problem is to assign to each frequency a specific code. The encoding of an optimization problem solution into a chromosome is one of the most important issue to obtaining a good optimisation results. GaBM uses a two array fixed length to "64" which is the number of combination for all nucleotides, the first contain the frequencies of each codes and the second contain the cost of each codes. In this way, our genetic algorithm will work with the two array and uses the entry index on the allocation process.
+The main objective of the GA optimisation algorithm for bits minimisation (GaBm) problem is to assign to each frequency a specific code. The encoding of an optimisation problem solution into a chromosome is one of the most important issue to obtaining a good optimisation results. GaBM uses a two array fixed length to "64" which is the number of combination for all nucleotides, the first contain the frequencies of each codes and the second contain the cost of each codes. In this way, our genetic algorithm will work with the two array and uses the entry index on the allocation process.
 The genetic algorithm are stochastic algorithm based on random evolution. Generally the initial population is generated in a random affectation. In the GaBm algorithm the population contain firstly the affectation given by the cost considering Huffman code algorithm and secondly the rest of the population is random generated, but all generated solution must satisfy the initial cost constraints (step 1). 
 The evolution of the population is the key of the optimisation algorithm of genetic algorithm. During each generation the process start with the selection of a proportion of the population to bread a new generation. In the literature many selection methods have been proposed to guide the population evolution \cite{bli95}. The existent selection methods are varied from a random selection to heuristic based selection. we have chosen to select randomly the part of the population to be processed, as the heuristic methods are very time-consuming (step 3).
 After that the operations of genetic algorithms are applied for the initial population to generate a new generation of the population (see figure 2). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). In the literature many crossover techniques have been used in genetic algorithm \cite{osa14}, such as one-point crossover which divide the chromosome on two fragments and recombine the second fragments by the other chromosome second fragment, two-point crossover which divide the chromosome on three fragment and recombine the middle fragment by  the middle fragments on the other chromosome, and many other crossover techniques to allow a good convergence of the algorithm, in our case we have used the two point crossover with two parameters, the first parameter $\alpha$ is a random value in [0,63], which represent the first cut point and $\beta$ is a random value too in [0,63], which represent the number of position to be crossed. we used a two random parameters to ensure a good diversification on the whole search space (step 4).
@@ -440,7 +449,7 @@ Pseudomonas aeruginosa LES400&	71762305 &38210997 &4\\\hline
 \begin{figure}[h]
 \begin{center}
 \includegraphics{Images/Drawing4.jpg}
-\caption{Convergence of Optimized cost considering Huffman algorithm}
+\caption{Convergence of Optimised cost considering Huffman algorithm}
 \end{center}
 \label{Fig5}
 \end{figure}
