@@ -38,6 +38,12 @@ Y.~Perl, M.~R. Garey, S.~Even, Efficient generation of optimal prefix code:
   Equiprobable words using unequal cost letters, Journal of the ACM (JACM)
   22~(2) (1975) 202--214.
 
+\bibitem{Huff51}
+D.~Huffman, A method for the construction of minimum-redundancy codes,
+  Proceedings of the Institute of Radio Engineers 40~(9) (1952) 1098--1101.
+\newblock \href {http://dx.doi.org/10.1109/JRPROC.1952.273898}
+  {\path{doi:10.1109/JRPROC.1952.273898}}.
+
 \bibitem{Kab14}
 S.~Kabir, T.~Azad, A.~S. M.~A. Alam, M.~Kaykobad, Effects of unequal bit costs
   on classical huffman codes, in: 17th International Conference on Computer and
@@ -74,6 +80,16 @@ C.~Tzu-Hao, W.~Shih-Lin, W.~Wei-Jen, H.~Jorng-Tzong, C.~Cheng-Wei, A novel
 B.~M. C, W.~D. C, B.~Pierre, Data structures and compression algorithms for
   genomic sequence data, Bioinformatics 25~(14) (2009) 1731--1738.
 
+\bibitem{Golomb96}
+S.~W. Golomb, Run-length encodings, IEEE Transactions on Information Theory
+  12~(3) (1996) 399--401.
+
+\bibitem{Elias75}
+P.~Elias, Universal codeword sets and representations of the integers, IEEE
+  Transactions on Information Theory 21~(2) (1975) 194--203.
+\newblock \href {http://dx.doi.org/10.1109/TIT.1975.1055349}
+  {\path{doi:10.1109/TIT.1975.1055349}}.
+
 \bibitem{wan11}
 W.~Congmao, Z.~Dabing, A novel compression tool for efficient storage of genome
   resequencing data, Nucleic acids research 39~(7) (2011) e45--e45.
@@ -83,7 +99,7 @@ J.~Amsterdam, Data compression with huffman coding, BYTE 11~(5) (1986) 98--108.
 
 \bibitem{Kay03}
 M.~A. Mannan, M.~Kaykobad, Block huffman coding, Computers and Mathematics with
-  Applications.
+  Applications 46~(10-11) (2003) 1581--1587.
 
 \bibitem{Gol1996}
 M.~Golin, N.~Young, {Prefix codes: Equiprobable words, unequal letter costs},
@@ -102,6 +118,10 @@ P.~Bradford, M.~Golin, L.~Larmore, W.~Rytter, {Optimal prefix-free codes for
 M.~J. Golin, C.~Mathieu, N.~E. Young, {Huffman Coding with Letter Costs: A
   Linear-Time Approximation Scheme}, {SIAM JOURNAL ON COMPUTING} {41}~({3})
   ({2012}) {684--713}.
+
+\bibitem{Harvey00}
+H.~Lodish, A.~Berk, S.~L. Zipursky, P.~Matsudaira, D.~Baltimore, J.~Darnell,
+  Molecular Cell Biology, 4th Edition, W.H.Freeman and Co Ltd, 1999.
 
 \bibitem{golin98}
 M.~J. Golin, G.~Rote, A dynamic programming algorithm for constructing optimal
