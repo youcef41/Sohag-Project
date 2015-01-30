@@ -335,7 +335,7 @@ These two new generated children may contain conflict like finding a duplicated 
 
 \section{Results And Discussion}
 \label{sec4}
-The approach has been evaluated with different real biological data (genomes), these genomes from The National Center for Biotechnology Information (NCBI) available on ( http://www.ncbi.nlm.nih.gov) []. In table () the different data set are described with the size of each of them and the references on the biological data bank.
+The approach has been evaluated with different real genomic biological data, these genomes were downloaded from a recent version of The National Center for Biotechnology Information (NCBI) available on $(http://www.ncbi.nlm.nih.gov)$. We focused on the sequences alone, ignoring any header and any other exogenous information. In table () the different data set are described with the size of each of them and the references on the biological data bank.
 \begin{table}
 \small
 \label{datas}
@@ -343,7 +343,7 @@ The approach has been evaluated with different real biological data (genomes), t
 \begin{center}
 \begin{tabular}{c  c  c c}
 \toprule
-$\textbf{Data sets}$ &$\textbf{Name}$ &	$\textbf{Size (bp)}$ &	$\textbf{Reference}$ \\\hline
+$\textbf{Data sets}$ &$\textbf{Name}$ &	$\textbf{Size (MegaOctet)}$ &	$\textbf{Reference}$ \\\hline
 Genome 1& Mycobacterium smegmatis &6,988,302 & CP009496  \\\hline
 
 Genome 2& Amycolatopsis benzoatilytica &  8,704,271& NZ\_KB912942 \\\hline
@@ -390,7 +390,6 @@ Genome 7& Bradyrhizobium WSM471& 7,784,016  &NZ\_CM001442\\\hline
 \end{tabular}
 \end{center}
 \end{table} 
-The table 3 present the results founded by the basic Huffman code, cost considering algorithm and optimised cost considering algorithm. The result show that the number of bits of Huffman algorithm is the minimum number among the other algorithm but the cost is  very high. The cost considering algorithm improve the quality of the generated codes in terms of cost but the number of bits. The optimised cost considering algorithm try to find the best allocation of codes to frequencies while the cost constraint respected. The table 4 present the best founded number of bits with different penalty, for each genome we find the max number of useful penalty, after this value, increasing the penalty are in-useful (See figure 3), the number of bits achieve the minimum number but the cost stop decreasing (point 1 in figure 3) and this number of bits stabilized while the cost still increasing until it stabilized also (point 2 figure 3), after this point the cost and number of bits are stabilized.
 \begin{table}
 \small
 \label{datas}
@@ -453,6 +452,8 @@ Pseudomonas aeruginosa LES400&	71762305 &38210997 &4\\\hline
 \end{center}
 \label{Fig5}
 \end{figure}
+The table 3 present the results founded by the basic Huffman code, cost considering algorithm and optimised cost considering algorithm. The result show that the number of bits of Huffman algorithm is the minimum number among the other algorithm but the cost is  very high. The cost considering algorithm improve the quality of the generated codes in terms of cost but the number of bits. The optimised cost considering algorithm try to find the best allocation of codes to frequencies while the cost constraint respected. The table 4 present the best founded number of bits with different penalty, for each genome we find the max number of useful penalty, after this value, increasing the penalty are in-useful (See figure 3), the number of bits achieve the minimum number but the cost stop decreasing (point 1 in figure 3) and this number of bits stabilized while the cost still increasing until it stabilized also (point 2 figure 3), after this point the cost and number of bits are stabilized.
+
 \section{Conclusion}
 \label{sec5}
 In this paper we have proposed a new approach for efficient data compression using Huffman code and optimised strategy. The new approach is divided into phases, firstly a cost considering Huffman algorithm are proposed which reduce the cost of the generated codes, these codes are secondary passed by the optimisation algorithm to reduce the global number of bits using a cost penalty.\\
@@ -461,10 +462,8 @@ The proposed approach is tested with biological genomic sequence and a performan
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
 %% \appendix
-
 %% \section{}
 %% \label{}
-
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
 %%
