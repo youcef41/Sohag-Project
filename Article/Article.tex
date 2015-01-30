@@ -124,7 +124,7 @@ Data Transmission , Huffman code, Cost Considering, Genetic algorithm, Biologica
 \section{Introduction}
 \label{sec1}
 In the recent years, application of battery-powered portable devices, e.g. laptop computers and mobile phones has increased significantly. Proper representation of digital data and their transmission efficiency has become a primary concern for digital community because it affects the performance, reliability, and the cost of computation in both portable and non-portable devices. CMOS technologies were developed in order to reduce the power consumption both in data processing and transmission. In order to increase transmission speed and reduce transmission cost, parallel data transmission methods are widely used. However, parallel transmission is limited to short distance communications, e.g. locally connected devices, internal buses. Ruling out the possible availability of parallel transmission links over long distance, we are left with its serial alternative only. If we attempt to transfer big files, e.g. DNA sequences, over a serial transmission link then it would take a significant amount of time. However, we cannot overlook this problem because at present parallel processing is widely used to increase throughput and in parallel processing architecture, processing units are usually distributed in different physical locations and task sharing is a must in such architecture.    
-
+.
 Data encoding techniques came into action to improve the data transmission efficiency over serial communication medium by compressing data before transmitting. Efficiency can be measured in terms of incurred cost, required storage space, consumed power, time spent and likewise. Data must be encoded to meet the purposes like: unambiguous retrieval of information, efficient storage, efficient transmission and etc. Let a message consist of sequences of characters taken from an alphabet $\Sigma$, where  $\alpha_1,\alpha_2,\alpha_3\ldots,\alpha_r$ are the elements that represent the characters in the source $\Sigma$. The length of $\alpha_i$ represents its cost or transmission time, i.e., $c\left(\alpha_i\right)= length(\alpha_i)$. A codeword $w_i$ is a string of characters in $\Sigma$, i.e., $w_i\in\Sigma^{+}$. If a codeword is $w_i=\alpha_{i1},\alpha_{i2},\ldots,\alpha_{in}$, then the length or cost of the codeword is the sum of the lengths of its constituent elements:
 
 \begin{equation}
@@ -346,47 +346,57 @@ The approach has been evaluated with different real genomic biological data, the
 \begin{tabular}{c  c  c c}
 \toprule
 $\textbf{Data sets}$ &$\textbf{Name}$ &	$\textbf{Size (MegaOctet)}$ &	$\textbf{Reference}$ \\\hline
-Genome 1& Mycobacterium smegmatis &6,988,302 & CP009496  \\\hline
+Genome 1& Mycobacterium smegmatis &  6,66 & CP009496  \\\hline
 
-Genome 2& Amycolatopsis benzoatilytica &  8,704,271& NZ\_KB912942 \\\hline
+Genome 2& Amycolatopsis benzoatilytica & 8,30 & NZ\_KB912942 \\\hline
 
-\multirow{2}{*}{Genome 3}&Mycobacterium rhodesiae& \multirow{2}{*}{6,415,739} & \multirow{2} {*}{CP003169}\\ 
+\multirow{2}{*}{Genome 3}&Mycobacterium rhodesiae& \multirow{2}{*}{6,11} & \multirow{2} {*}{CP003169}\\ 
 &NBB3& &\\
 \hline
 
-\multirow{2}{*}{Genome 4 }&Streptomyces bottropensis& \multirow{2}{*}{8,955,726} &
+\multirow{2}{*}{Genome 4 }&Streptomyces bottropensis& \multirow{2}{*}{8,54} &
 \multirow{2}{*}{NZ\_KB911581} \\ 
 & ATCC 25435 \\
 \hline
     
-\multirow{2}{*}{Genome 5}&Mycobacterium smegmatis& \multirow{2}{*}{6,988,269 } &\multirow{2}{*}{CP009494             } \\ 
+\multirow{2}{*}{Genome 5}&Mycobacterium smegmatis& \multirow{2}{*}{ 6,66} &\multirow{2}{*}{CP009494             } \\ 
 &str. MC2 155 \\
 \hline
 
-\multirow{2}{*}{Genome 6}&Mycobacterium smegmatis& \multirow{2}{*}{7,092,137} &\multirow{2}{*}{NZ\_KI421511}\\   &MKD8& &\\
+\multirow{2}{*}{Genome 6}&Mycobacterium smegmatis& \multirow{2}{*}{6,76} &\multirow{2}{*}{NZ\_KI421511}\\   &MKD8& &\\
 \hline
     
-Genome 7& Bradyrhizobium WSM471& 7,784,016  &NZ\_CM001442\\\hline
+Genome 7& Bradyrhizobium WSM471&  7,42 &NZ\_CM001442\\\hline
 
-\multirow{2}{*}{Genome 8}&Amycolatopsis thermoflava&  \multirow{2}{*}{8,677,910} &\multirow{2}{*}{NZ\_CM001442}\\   &N1165 & \\
+\multirow{2}{*}{Genome 8}&Amycolatopsis thermoflava&  \multirow{2}{*}{8,27} &\multirow{2}{*}{NZ\_CM001442}\\   &N1165 & \\
 \hline
 
-\multirow{2}{*}{Genome 9}&Bacillus thuringiensis&   \multirow{2}{*}{6,026,843} &\multirow{2}{*}{ NZ\_CM000747 }\\    &Bt407&\\
+\multirow{2}{*}{Genome 9}&Bacillus thuringiensis&   \multirow{2}{*}{5,74} &\multirow{2}{*}{ NZ\_CM000747 }\\    &Bt407&\\
 \hline    
 
-\multirow{2}{*}{Genome 10}&Bacillus thuringiensis& \multirow{2}{*}{6,323,123 } &\multirow{2}{*}{ NZ\_CM000748}\\    &serovar thuringiensis& \\
+\multirow{2}{*}{Genome 10}&Bacillus thuringiensis& \multirow{2}{*}{6,03} &\multirow{2}{*}{ NZ\_CM000748}\\    &serovar thuringiensis& \\
 \hline
     
-\multirow{2}{*}{Genome 11}&Pseudomonas aeruginosa& \multirow{2}{*}{6,801,503  } &\multirow{2}{*}{NZ\_AFXI01000001}\\    &9BR&\\
+\multirow{2}{*}{Genome 11}&Pseudomonas aeruginosa& \multirow{2}{*}{6,48} &\multirow{2}{*}{NZ\_AFXI01000001}\\    &9BR&\\
 \hline
     
-\multirow{2}{*}{Genome 12}&Bacillus thuringiensis&  \multirow{2}{*}{6,260,142  } &\multirow{2}{*}{ NZ\_CM000753}\\    &serovar berliner ATCC &\\
+\multirow{2}{*}{Genome 12}&Bacillus thuringiensis&  \multirow{2}{*}{5,97} &\multirow{2}{*}{ NZ\_CM000753}\\    &serovar berliner ATCC &\\
 \hline
     
-\multirow{2}{*}{Genome 13}&Bacillus thuringiensis& \multirow{2}{*}{6,037,513 } &\multirow{2}{*}{ NZ\_CM000750 }\\    &serovar pakistani&\\
+\multirow{2}{*}{Genome 13}&Bacillus thuringiensis& \multirow{2}{*}{5,75} &\multirow{2}{*}{ NZ\_CM000750 }\\    &serovar pakistani&\\
 \hline
     
-\multirow{2}{*}{Genome 14}&Pseudomonas aeruginosa& \multirow{2}{*}{6,591,121  } &\multirow{2}{*}{ CP006982  }\\    &LES400&\\
+\multirow{2}{*}{Genome 14}&Pseudomonas aeruginosa& \multirow{2}{*}{6,28} &\multirow{2}{*}{CP006982}\\    &LES400&\\
+\hline
+
+\multirow{2}{*}{Genome 15}& Mus musculus & \multirow{2}{*}{25,58} &\multirow{2}{*}{GL456087}\\  &chromosome 1&\\
+\hline
+
+\multirow{2}{*}{Genome 16}& Danio rerio & \multirow{2}{*}{56,14} &\multirow{2}{*}{CM002885}\\ & chromosome 1 &\\
+\hline
+\multirow{2}{*}{Genome 17}&Homo sapiens & \multirow{2}{*}{76,64 } &\multirow{2}{*}{  CM000680  }\\    & chromosome 18 &\\
+\hline
+\multirow{2}{*}{Genome 18}&Homo sapiens & \multirow{2}{*}{74,92} &\multirow{2}{*}{CM000684   }\\ & chromosome 22&\\
 \hline
 \bottomrule
 \end{tabular}
@@ -402,20 +412,25 @@ Genome 7& Bradyrhizobium WSM471& 7,784,016  &NZ\_CM001442\\\hline
 $\textbf{Data sets}$ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{CCA }& \multicolumn{2}{c}{OCCA}\\\hline
  & $\textbf{Cost}$	& $\textbf{Bits}$ &	$\textbf{Cost}$&	$\textbf{Bits	}$&$\textbf{Cost}$&	$\textbf{Bits}$
 \\\hline
-Genome 1&76787151  &	37256819	&67416213 & 41332479	& 67416213 & 40503061 \\\hline
-Genome 2& 100425402 &  	48778740	& 88430665	& 54662727	& 88430665&  53341739 \\\hline
-Genome 3&75940155  	&36860555	&66745619	&40927187 &	66745619 & 40182241\\\hline
-Genome 4&103552729  	&50047265	&90821835&	56147481&	90821835  & 54319891\\\hline
-Genome 5&82234926  &	39772838	&71963876	&44254676 &	71963876 & 43392820\\\hline
-Genome 6&83454842  	&40370894	&73038795	&44864009	&73038795 & 44003571\\\hline
-Genome 7&92539488  &	44977876&	81416359&	49790957	&81416359 & 49127335\\\hline
-Genome 8&99613856 & 	48183688	&87102639&	53817307	&87102639&	52858893\\\hline
-Genome 9&71876739 &	34874617&	62998800 &	38469200&	62998800 8&	37831964\\\hline
-Genome 10&75324432 & 	36576034	&66084958&	40409906	&66084958&	39739522\\\hline
-Genome 11&80766360  &	39092450&	70620666	&43119140&	70620666&	42359156 \\\hline
-Genome 12&74560825  &	36179579&	65359604	&39926210	&65359604&	39221148\\\hline
-Genome 13&71562941 & 	34737083	&62758225 &	38299629&	62758225 &	37809443\\\hline
-Genome 14&78261299 & 	37843793&	68354090&	41816580&	68354090&	 41050420\\\hline
+Genome 1& 76787151  &	4,44	&67416213   & 4,92	& 67416213 & 4,82 \\\hline
+Genome 2& 100425402 &  	5,81	& 88430665	& 6,51	& 88430665&  6,35 \\\hline
+Genome 3& 75940155  &	4,39    &66745619	& 4,87&	66745619 & 4,79 \\\hline
+Genome 4& 103552729 &	5,96    &90821835&	6,69 &	90821835  & 6,47\\\hline
+Genome 5& 82234926  &	4,74	&71963876	& 5,27 &	71963876 &5,17 \\\hline
+Genome 6& 83454842  &   4,81	&73038795	& 5,34	&73038795 & 5,24\\\hline
+Genome 7& 92539488  &	5,36    &81416359   &5,93	&81416359 & 5,85\\\hline
+Genome 8& 99613856  & 	5,74	&87102639   &6,41	&87102639&	6,30 \\\hline
+Genome 9& 71876739  &	4,15    &62998800  &4,58 &	62998800 8&	5,50 \\\hline
+Genome 10& 75324432 & 	4,36	&66084958  &4,81	&66084958&	4,73 \\\hline
+Genome 11& 80766360 &	4,66    &70620666  &5,41&	70620666&	5,04 \\\hline
+Genome 12& 74560825 &	4,31    &65359604  &4,75	&65359604&	4,67\\\hline
+Genome 13& 71562941 & 	4,14	&62758225  &4,56	&	62758225 &	4,50\\\hline
+Genome 14& 78261299 & 	4,51    &68354090  &4,98&	68354090& 4,89  \\\hline
+Genome 15& 324439242& 	18,77    &286008420 & 20,66	 &	288866525 &	19,94 \\\hline
+Genome 16& 703734840&  40,77    &618859291 & 45,08  &	625042576 &	43,18 \\\hline
+Genome 17& 901032667&  52,08    &791840455 &	57,36 &	799757406 &	55,12 \\\hline
+Genome 18& 983434816&  56,98    &867299889 &	62,42 &	875969422 & 60,70 \\\hline
+
 \bottomrule
 \end{tabular}
 \end{center}
@@ -426,23 +441,27 @@ Genome 14&78261299 & 	37843793&	68354090&	41816580&	68354090&	 41050420\\\hline
 \label{datas}
 \caption{influence of penalty on bit minimization}
 \begin{center}
-\begin{tabular}{c c c c }
+\begin{tabular}{c c c c c }
 \toprule
-$\textbf{Data sets}$ & $\textbf{Cost}$	& $\textbf{Bits}$ &		\textbf{$\lambda (\%)$} \\\hline
-Mycobacterium smegmatis &	 70760174 &37809636& 4\\\hline
-Amycolatopsis benzoatilytica &	92010490& 49654132& 3\\\hline
-Mycobacterium rhodesiae&	69421783& 37563017 &3\\\hline
-Streptomyces bottropensis&	96294638& 50330594& 5\\\hline
-Mycobacterium smegmatis. MC2&	74855668 &40380464& 5\\\hline
-Mycobacterium smegmatis MKD8&	76738330& 40782100 &4\\\hline
-Bradyrhizobium WSM471&	84667949 &45961149& 3\\\hline
-Amycolatopsis thermoflava&	92416243 &48336727& 5\\\hline
-Bacillus thuringiensis serovar thuringiensis&	66145783& 35330943& 4\\\hline
-Bacillus thuringiensis Bt407&	68751359& 37306497 &3\\\hline
-Pseudomonas aeruginosa 9BR&	72737300 &40264790& 2\\\hline
-Bacillus thuringiensis serovar berliner&	67981988 &36770118 &3\\\hline
-Bacillus thuringiensis serovar pakistani&	65896779& 35069999 &4\\\hline
-Pseudomonas aeruginosa LES400&	71762305 &38210997 &4\\\hline
+$\textbf{Data sets}$ & $\textbf{Cost}$	& $\textbf{Bits}$ &		\textbf{$\lambda (\%)$} &		\textbf{Compression ratio $\%$} \\\hline
+Genome 1 &	 70760174 &4,50& 4 & 32,72\\\hline
+Genome 2 &	92010490& 5,91 & 3& 28,79\\\hline
+Genome 3&	69421783& 4,47 &3& 26,84\\\hline
+Genome 4&	96294638& 5,99 & 5& 29,85\\\hline
+Genome 5&	74855668 &4,81& 5& 27,77\\\hline
+Genome 6&	76738330& 4,86  &4& 28,10\\\hline
+Genome 7&	84667949 &5,47& 3& 26,28\\\hline
+Genome 8&	92416243 &5,76& 5& 30,35\\\hline
+Genome 9&	66145783&4,21 & 4& 26,65\\\hline
+Genome 10&	68751359& 4,44 &3& 26,63\\\hline
+Genome 11&	72737300 &4,79& 2&26,08 \\\hline
+Genome 12&	67981988 & 4,38&3& 26,63\\\hline
+Genome 13&	65896779& 4,18 &4& 27,30\\\hline
+Genome 14&	71762305 &4,55 &4&27,54 \\\hline
+Genome 15&297188002 &19,31 & 3& 24,51\\\hline
+Genome 16&643785655 & 41,68 & 3& 25,75 \\\hline
+Genome 17&823506882 & 53,05 & 3& 30,78\\\hline
+Genome 18&901515198 &58,99 & 3& 21,26\\\hline
 \bottomrule
 \end{tabular}
 \end{center}
