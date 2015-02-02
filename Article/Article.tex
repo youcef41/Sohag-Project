@@ -88,19 +88,19 @@
 
 %\author{}
 \author[a,b]{Youcef Gheraibia\corref{cor1}}
-\ead{youcef.gheraibia@gmail.com}
+\ead{Y.Gheraibia@hull.ac.uk}
 \author[b]{Sohag Kabir\corref{cor2}}
 \ead{s.kabir@hull.ac.uk}
 
 \address{}
 
-\address[a]{Department of Mathematics and Computer Science , University of Souk Ahras, Souk Ahras 41000, Algeria}
+\address[a]{Department of Mathematics and Computer Science, University of Souk Ahras, Souk Ahras 41000, Algeria}
 
 \address[b]{Department of Computer Science, University of Hull, Hull HU6 7RX, UK}
 
-\cortext[cor1]{Corresponding author. Tel.: +0-000-000-0000 ; fax: +0-000-000-0000.}
+\cortext[cor1]{Corresponding author. Tel.: +44-7479-560709 ;}
 
-\cortext[cor2]{Corresponding author. Tel.: +447405024667 ; }
+\cortext[cor2]{Corresponding author. Tel.: +44-7405-024667 ; }
 
 
 
@@ -308,15 +308,17 @@ while :
 \subsubsection{Basic Genetic Algorithm}
 Genetic Algorithm (GA) is a bio-inspired meta-heuristic algorithm developed by \cite{gen1}. GA is a stochastic optimisation algorithm imitate the natural evolution process of genomes. GA started by generating an initial population of random feasible solutions. The optimisation process of GA takes the initial population and generates a new population based on it.  The process can be described as follow:\\ 
 Firstly, select two or more solutions from the current population by using one of the well-known selection techniques \cite{bli95}. These selected solutions will be considered as  parents. The second operation of the genetic algorithm is the crossover, which takes these parents as inputs to generate other new solutions considered as children. The third operation of the genetic algorithm is the mutation which ensures a good diversification in the search process. The new solutions can be mutated according to a given mutation probability. The mutation operation changes the value of one or more positions in the solution. The quality of each solution is verified by the fitness function which controls the evolution of the GA population by deletion of the worst solutions and insertion of the good solutions among  parents and sons. This processes is repeated until the stopped criteria is reached which can be the number of generation or if the population is stabilised.
-\subsubsection{GA for Bits minimisation}
-The main objective of the GA optimisation algorithm for bits minimisation (GaBm) is to assign each frequency a specific code. The encoding of an optimisation problem solution into a chromosome is one of the most important issue to obtaining a good optimisation results. The GaBM uses two fixed length arrays of size ``64" which is the number of combination for all nucleotides. The first array contains the frequencies of each triplets and the second array contains the cost of the codewords assigned to each triplets. In this way, our genetic algorithm will work with the two arrays and uses the entry index on the allocation process.
-The genetic algorithms are stochastic algorithm based on random evolution. Generally the initial population is generated in a random affectation. In the GaBm algorithm, the population contain firstly the affectation given by the cost considering Huffman code algorithm and secondly the rest of the population are randomly generated, but all generated solutions must satisfy the initial cost constraints (step 1). 
-The evolution of the population is the key of the optimisation algorithm. During each generation the process start with the selection of a proportion of the population to bread a new generation. In the literature many selection methods have been proposed to guide the population evolution \cite{bli95}. The existent selection methods are varied from a random selection to heuristic based selection. We have chosen to select randomly the part of the population to be processed, as the heuristic methods are very time-consuming (step 3).
-After that the operations of genetic algorithms are applied on the initial population to generate a new generation of the population (see figure 2). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). In the literature many crossover techniques have been used in genetic algorithm \cite{osa14}, such as one-point crossover which divide the chromosome into two fragments and recombine the second fragments with the other chromosome's second fragment, two-point crossover which divide the chromosome into three fragments and recombine the middle fragment with  the middle fragments of the other chromosome. There are many other crossover techniques to allow a good convergence of the algorithm. In our case, we have used the two point crossover with two parameters, the first parameter $\alpha$ is a random value in [0,63], which represent the first cut point and $\beta$ is a random value too in [0,63], which represent the number of position to be crossed. We used two random parameters to ensure a good diversification on the whole search space (step 4).
+\subsubsection{Optimised cost considering algorithm}
+The main objective of the GA optimisation algorithm for bits minimisation OCCA is to assign each frequency a specific code. \textbf{In GA optimisation algorithm, the encoding of the solution into a chromosome is one of the most important issue to obtaining a good optimisation results}. The OCCA uses two fixed length arrays of size ``64" which is the number of combination for all nucleotides. The first array contains the frequencies of each triplets and the second array contains the cost of the codewords assigned to each triplets. In this way, our genetic algorithm will work with the two arrays and uses the entry index on the allocation process.
+
+The genetic algorithm\textbf{ is a }stochastic algorithm based \textbf{on random evolution process}. \textbf{Generally the initial population is generated in a random affectation of codes to different triplets}. \textbf{In the OCCA algorithm, the population contain firstly the affectation given by the CCA. Secondly the rest of the population are randomly generated, all these generated solutions must satisfy the initial cost constraints, which is the cost of the CCA solution previously add to the population (step 1)}. 
+
+The evolution of the population is the key of the Genetic optimisation algorithm. During each generation the process start with the \textbf{selection of a part (set of solutions) of the population} to bread a new generation. In the literature many selection methods have been proposed to guide the population evolution \cite{bli95}. selection of a proportion (set of solutions) from the population  methods are varied from a random selection to heuristic based selection. We have chosen to select randomly the part of the population to be processed, as the heuristic methods are very time-consuming (step 3).
+After that the operations of genetic algorithms are applied on the initial population to generate a new generation of the population (see figure 2). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). In the literature many crossover techniques have been used in genetic algorithm \cite{osa14}, such as one-point crossover which divide the chromosome into two fragments and recombine the second fragments with the other chromosome's second fragment, two-point crossover which divide the chromosome into three fragments and recombine the middle fragment with  the middle fragments of the other chromosome. There are many other crossover techniques to allow a good convergence of the algorithm. In our case, we have used the two point crossover with two parameters, the first parameter $p_{c}$ is a random value in [0,63], which represent the first cut point and $p_{m}$ is a random value too in [0,63], which represent the number of position to be crossed. We used two random parameters to ensure a good diversification on the whole search space (step 4).
 These two new generated children may contain conflict like finding a duplicated code allocated to two different frequencies in the solution, so a regulation step is done to ensure the correctness of the solution (see figure 2).
  Secondly these two new solutions are mutated according to a predefined probability $\gamma$, the best value of mutation rate is very problem specific (step 5). The value of $\gamma$ is fixed to $0.2$ to explorer a few position on the solution. The mutation operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. In our case, we have used the mutation as a random swap mutation operator (see figure 3).  Each newly generated solution must satisfy the cost constraint, these children must be valid with satisfying the cost constraint. The next step is to add these two new solutions (children) to the population (step 7) (see figure 3). Finally the new population are ranked by fitness (step 8), and the worst solutions are deleted until the initial size of the population are achieved  (step 9). The whole processes are repeated until the maximum number of operation is achieved (step 10). 
 \begin{algorithm}[t]
-\caption{GA for bits minimisation}
+\caption{Optimised cost considering algorithm}
 \begin{algorithmic}[1]
 \State Population initialization (P).
 \REPEAT  
@@ -412,7 +414,7 @@ Genome 7& Bradyrhizobium WSM471&  7.42 &NZ\_CM001442\\\hline
 \hline
 \multirow{2}{*}{Genome 17}&Homo sapiens & \multirow{2}{*}{76.64 } &\multirow{2}{*}{  CM000680  }\\    & chromosome 18 &\\
 \hline
-\multirow{2}{*}{Genome 18}&Homo sapiens & \multirow{2}{*}{74.92} &\multirow{2}{*}{CM000684   }\\ & chromosome 22&\\
+\multirow{2}{*}{Genome 18}&Homo sapiens & \multirow{2}{*}{99.94} &\multirow{2}{*}{CM000684   }\\ & chromosome 22&\\
 \hline
 \bottomrule
 \end{tabular}
@@ -422,13 +424,13 @@ Genome 7& Bradyrhizobium WSM471&  7.42 &NZ\_CM001442\\\hline
 \begin{table}[h]
 \small
 \label{table4}
-\caption{GABM for comparison for cost and number of bits of different approaches with different datasets}
+\caption{OCCA comparison for cost and size with different approaches with different datasets}
 %\begin{center}
 \centering
 \begin{tabular}{c | c c | c c | c c}
 \toprule
-$\textbf{Data sets}$ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{CCA }& \multicolumn{2}{c}{OCCA}\\\hline
- & $\textbf{Cost}$	& $\textbf{Bits}$ &	$\textbf{Cost}$&	$\textbf{Bits	}$&$\textbf{Cost}$&	$\textbf{Bits}$
+ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{CCA }& \multicolumn{2}{c}{OCCA}\\\hline
+$\textbf{Data sets}$ & $\textbf{Cost}$	& $\textbf{Size(MB)}$ &	$\textbf{Cost}$&	$\textbf{Size(MB)}$&$\textbf{Cost}$&	$\textbf{Size(MB)}$
 \\\hline
 Genome 1& 76787151  &	4.44	&67416213   & 4.92	& 67416213 & 4.82 \\\hline
 Genome 2& 100425402 &  	5.81	& 88430665	& 6.51	& 88430665&  6.35 \\\hline
@@ -455,40 +457,40 @@ Genome 18& 983434816&  56.98    &867299889 &	62.42 &	875969422 & 60.70 \\\hline
 \end{table}
 
 
-\begin{table}[t]
+\begin{table}[tpbh]
 \small
 
-\caption{Influence of penalty on bit minimisation}
+\caption{Influence of penalty on OCCA}
 %\begin{center}
 \centering
 \begin{tabular}{c c c c c }
 \toprule
-$\textbf{Data sets}$ & $\textbf{Cost}$	& $\textbf{Bits}$ &		\textbf{$\lambda (\%)$} &		\textbf{Compression ratio $\%$} \\\hline
-Genome 1 &	 70760174 &4.50& 4 & 32.72\\\hline
-Genome 2 &	92010490& 5.91 & 3& 28.79\\\hline
-Genome 3&	69421783& 4.47 &3& 26.84\\\hline
-Genome 4&	96294638& 5.99 & 5& 29.85\\\hline
-Genome 5&	74855668 &4.81& 5& 27.77\\\hline
-Genome 6&	76738330& 4.86  &4& 28.10\\\hline
-Genome 7&	84667949 &5.47& 3& 26.28\\\hline
-Genome 8&	92416243 &5.76& 5& 30.35\\\hline
-Genome 9&	66145783&4.21 & 4& 26.65\\\hline
-Genome 10&	68751359& 4.44 &3& 26.63\\\hline
-Genome 11&	72737300 &4.79& 2&26.08 \\\hline
-Genome 12&	67981988 & 4.38&3& 26.63\\\hline
-Genome 13&	65896779& 4.18 &4& 27.30\\\hline
-Genome 14&	71762305 &4.55 &4&27.54 \\\hline
-Genome 15&297188002 &19.31 & 3& 24.51\\\hline
-Genome 16&643785655 & 41.68 & 3& 25.75 \\\hline
-Genome 17&823506882 & 53.05 & 3& 30.78\\\hline
-Genome 18&901515198 &58.99 & 3& 21.26\\\hline
+$\textbf{Data sets}$ & $\textbf{Cost}$	& $\textbf{Size(MB)}$ &		\textbf{$\lambda (\%)$} &		\textbf{Compression ratio $\%$} \\\hline
+Genome 1 &	 70760174 &4.50& 4\% & 32.72\%\\\hline
+Genome 2 &	92010490& 5.91 & 3\%& 28.79\%\\\hline
+Genome 3&	69421783& 4.47 &3\%& 26.84\%\\\hline
+Genome 4&	96294638& 5.99 & 5\%& 29.85\%\\\hline
+Genome 5&	74855668 &4.81& 5\%& 27.77\%\\\hline
+Genome 6&	76738330& 4.86  &4\%& 28.10\%\\\hline
+Genome 7&	84667949 &5.47& 3\%& 26.28\%\\\hline
+Genome 8&	92416243 &5.76& 5\%& 30.35\%\\\hline
+Genome 9&	66145783&4.21 & 4\%& 26.65\%\\\hline
+Genome 10&	68751359& 4.44 &3\%& 26.63\%\\\hline
+Genome 11&	72737300 &4.79& 2\%&26.08\%\\\hline
+Genome 12&	67981988 & 4.38&3\%& 26.63\%\\\hline
+Genome 13&	65896779& 4.18 &4\%& 27.30\%\\\hline
+Genome 14&	71762305 &4.55 &4\%&27.54\% \\\hline
+Genome 15&297188002 &19.31 & 3\%& 24.51\%\\\hline
+Genome 16&643785655 & 41.68 & 3\%& 25.75\% \\\hline
+Genome 17&823506882 & 53.05 & 3\%& 30.78\%\\\hline
+Genome 18&901515198 &58.99 & 3\%& 40,97\%\\\hline
 \bottomrule
 \end{tabular}
 %\end{center}
 \label{table5}
 \end{table}
 
-\begin{figure}[hbt]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.7]{Images/Drawing4_1.jpg}
 \caption{Convergence of Optimised cost considering Huffman algorithm}
@@ -524,6 +526,7 @@ The proposed approach is tested with biological genomic sequence and a performan
 %\bibitem{}
 
 %\end{thebibliography}
+\newpage
 \section*{References}
 \bibliography{mybibfile}
 \end{document}
