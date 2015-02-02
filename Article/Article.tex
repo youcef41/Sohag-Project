@@ -86,9 +86,23 @@
 %% \address[label1]{}
 %% \address[label2]{}
 
-\author{}
+%\author{}
+\author[a,b]{Youcef Gheraibia\corref{cor1}}
+\ead{youcef.gheraibia@gmail.com}
+\author[b]{Sohag Kabir\corref{cor2}}
+\ead{s.kabir@hull.ac.uk}
 
 \address{}
+
+\address[a]{Department of Mathematics and Computer Science , University of Souk Ahras, Souk Ahras 41000, Algeria}
+
+\address[b]{Department of Computer Science, University of Hull, Hull HU6 7RX, UK}
+
+\cortext[cor1]{Corresponding author. Tel.: +0-000-000-0000 ; fax: +0-000-000-0000.}
+
+\cortext[cor2]{Corresponding author. Tel.: +447405024667 ; }
+
+
 
 \begin{abstract}
 %% Text of abstract
@@ -100,13 +114,13 @@ by applying genetic algorithm for optimal allocation of the codewords to the sym
 The approach start with generating a set of codewords for different input symbols based on their frequencies by considering cost (length) of 0 and 1 as $\alpha$ and $\beta$,~$\alpha < \beta$. This step ensures optimal cost encoding, however, compression performance is not higher than classical Huffman code. 
 %The aim of the codes generation method is to minimise the number of ones on the generated codes, which minimise the cost of the transmission. 
 %To improve compression performance, the second part of the approach uses genetic algorithm to find an optimal allocation of generated codes to different symbols. 
-The idea is to sacrifice some cost to minimise total number of bits, hence, the genetic algorithm works by giving penalty on cost. The performance of the approach is evaluated by applying it to compress some standard biological dataset and comparing the result with the results produced by classical Huffman code and standard cost considering Huffman code.
+The idea is to sacrifice some cost to minimise total number of bits, hence, the genetic algorithm works by giving penalty on cost. The performance of the approach is evaluated by applying it to compress some standard biological datasets and comparing the result with the results produced by classical Huffman code and cost considering Huffman code.
 % The case study of the approach is the biological data, which present a good application area to data compression with the huge growth of the biological data bases. 
 %The results are very promising and we have compared with the standard cost considering Huffman code and the original Huffman code.
 \end{abstract}
 
 \begin{keyword}
-Data Transmission , Huffman code, Cost Considering, Genetic algorithm, Biological data.
+Data Compression, Huffman code, Cost Considering, Genetic algorithm, Biological data.
 %% keywords here, in the form: keyword \sep keyword
 
 %% PACS codes here, in the form: \PACS code \sep code
@@ -301,7 +315,7 @@ The evolution of the population is the key of the optimisation algorithm. During
 After that the operations of genetic algorithms are applied on the initial population to generate a new generation of the population (see figure 2). Firstly the crossover operation are applied to these two selected solution (considered as parents) to generate two new solutions (considered as sons)(step 4). In the literature many crossover techniques have been used in genetic algorithm \cite{osa14}, such as one-point crossover which divide the chromosome into two fragments and recombine the second fragments with the other chromosome's second fragment, two-point crossover which divide the chromosome into three fragments and recombine the middle fragment with  the middle fragments of the other chromosome. There are many other crossover techniques to allow a good convergence of the algorithm. In our case, we have used the two point crossover with two parameters, the first parameter $\alpha$ is a random value in [0,63], which represent the first cut point and $\beta$ is a random value too in [0,63], which represent the number of position to be crossed. We used two random parameters to ensure a good diversification on the whole search space (step 4).
 These two new generated children may contain conflict like finding a duplicated code allocated to two different frequencies in the solution, so a regulation step is done to ensure the correctness of the solution (see figure 2).
  Secondly these two new solutions are mutated according to a predefined probability $\gamma$, the best value of mutation rate is very problem specific (step 5). The value of $\gamma$ is fixed to $0.2$ to explorer a few position on the solution. The mutation operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. In our case, we have used the mutation as a random swap mutation operator (see figure 3).  Each newly generated solution must satisfy the cost constraint, these children must be valid with satisfying the cost constraint. The next step is to add these two new solutions (children) to the population (step 7) (see figure 3). Finally the new population are ranked by fitness (step 8), and the worst solutions are deleted until the initial size of the population are achieved  (step 9). The whole processes are repeated until the maximum number of operation is achieved (step 10). 
-\begin{algorithm}
+\begin{algorithm}[t]
 \caption{GA for bits minimisation}
 \begin{algorithmic}[1]
 \State Population initialization (P).
@@ -327,7 +341,7 @@ These two new generated children may contain conflict like finding a duplicated 
 \label{Fig3}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!thpb]
 \begin{center}
 \includegraphics[scale=0.7]{Images/Drawing1.jpg}
 \caption{Population Update for genetic algorithm}
@@ -338,12 +352,13 @@ These two new generated children may contain conflict like finding a duplicated 
 
 \section{Results And Discussion}
 \label{sec4}
-The approach has been evaluated with different real genomic biological data, these genomes were downloaded from a recent version of The National Center for Biotechnology Information (NCBI) available on $(http://www.ncbi.nlm.nih.gov)$. We focused on the sequences alone, ignoring any header and any other exogenous information. In table~\ref{table3} the different data set are described with the size of each of them and the references on the biological data bank.
-\begin{table}
+The effectiveness of the approach has been evaluated with different real genomic biological data, these genomes were downloaded from a recent version of The National Center for Biotechnology Information (NCBI) available on $(http://www.ncbi.nlm.nih.gov)$. We focused on the sequences alone, ignoring any header and any other exogenous information. In table~\ref{table3} the different data sets are described with the size of each of them and the references on the biological data bank.
+\begin{table}[!thpb]
 \small
 \label{table3}
 \caption{Dataset description}
-\begin{center}
+%\begin{center}
+\centering
 \begin{tabular}{c  c  c c}
 \toprule
 $\textbf{Data sets}$ &$\textbf{Name}$ &	$\textbf{Size (MB)}$ &	$\textbf{Reference}$ \\\hline
@@ -401,14 +416,15 @@ Genome 7& Bradyrhizobium WSM471&  7.42 &NZ\_CM001442\\\hline
 \hline
 \bottomrule
 \end{tabular}
-\end{center}
+%\end{center}
 \end{table} 
 
-\begin{table}
+\begin{table}[h]
 \small
 \label{table4}
 \caption{GABM for comparison for cost and number of bits of different approaches with different datasets}
-\begin{center}
+%\begin{center}
+\centering
 \begin{tabular}{c | c c | c c | c c}
 \toprule
 $\textbf{Data sets}$ & \multicolumn{2}{c}{Huffman Algorithm} & \multicolumn{2}{c}{CCA }& \multicolumn{2}{c}{OCCA}\\\hline
@@ -435,14 +451,16 @@ Genome 18& 983434816&  56.98    &867299889 &	62.42 &	875969422 & 60.70 \\\hline
 
 \bottomrule
 \end{tabular}
-\end{center}
+%\end{center}
 \end{table}
 
-\begin{table}
+
+\begin{table}[t]
 \small
-\label{table5}
+
 \caption{Influence of penalty on bit minimisation}
-\begin{center}
+%\begin{center}
+\centering
 \begin{tabular}{c c c c c }
 \toprule
 $\textbf{Data sets}$ & $\textbf{Cost}$	& $\textbf{Bits}$ &		\textbf{$\lambda (\%)$} &		\textbf{Compression ratio $\%$} \\\hline
@@ -466,16 +484,18 @@ Genome 17&823506882 & 53.05 & 3& 30.78\\\hline
 Genome 18&901515198 &58.99 & 3& 21.26\\\hline
 \bottomrule
 \end{tabular}
-\end{center}
+%\end{center}
+\label{table5}
 \end{table}
-\begin{figure}[h]
+
+\begin{figure}[hbt]
 \begin{center}
 \includegraphics[scale=0.7]{Images/Drawing4_1.jpg}
 \caption{Convergence of Optimised cost considering Huffman algorithm}
 \end{center}
 \label{Fig5}
 \end{figure}
-The table~\ref{table4} presents the results founded by the basic Huffman code, cost considering algorithm and optimised cost considering algorithm. The result show that the number of bits of Huffman algorithm is the minimum number among the other algorithm but the cost is  very high. The cost considering algorithm improve the quality of the generated codes in terms of cost but the number of bits. The optimised cost considering algorithm try to find the best allocation of codes to frequencies while the cost constraint respected. The table 4 present the best founded number of bits with different penalty, for each genome we find the max number of useful penalty, after this value, increasing the penalty are in-useful (See figure 3), the number of bits achieve the minimum number but the cost stop decreasing (point 1 in figure 3) and this number of bits stabilized while the cost still increasing until it stabilized also (point 2 figure 3), after this point the cost and number of bits are stabilized.
+Table~\ref{table4} presents the results obtained by the classical Huffman code, cost considering algorithm (CCA) and optimised cost considering algorithm (OCCA) without penalty on cost. The results show that the number of bits required by the classical Huffman algorithm to encode genomic data is the minimum among the other algorithms but the cost is  maximum. The cost considering algorithm improve the representation of the generated codes in terms of cost but the number of bits. However, still it compresses the data by X\% in the best case, Y\% in the worst case, and Z\% on an average. In terms of cost, in the best case the CCA improves cost over classical Huffman code by P\%, in the worst case by Q\%, and on an average by R\%.  The optimised cost considering algorithm tries to find the best allocation of codes to frequencies by giving penalty on cost. The outcome of this process is a fall in the total number of bits and a rise in the total cost. However, the cost is always lower than the cost incurred by the classical Huffman algorithm.  At first, the OCCA optimises number of bits without applying any penalty on cost. Afterwards, it continues giving penalty on cost ranging from 1\% to 10\% until a balance is found between total cost and bits. For each genome, a maximum amount of effective penalty is identified, after this maximum value, increasing the penalty is not helping any more to reduce number of bits, i.e., number of bits reach to minimum and cost to maximum.  The table \ref{table5} presents the best founded number of bits for different datasets with different effective penalty.  %are in-useful (See figure 3), the number of bits achieve the minimum number but the cost stop decreasing (point 1 in figure 3) and this number of bits stabilized while the cost still increasing until it stabilized also (point 2 figure 3), after this point the cost and number of bits are stabilized.
 
 \section{Conclusion}
 \label{sec5}

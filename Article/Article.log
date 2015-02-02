@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.30)  1 FEB 2015 13:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.30)  2 FEB 2015 01:03
 entering extended mode
 **Article.tex
 
@@ -272,81 +272,75 @@ LaTeX Font Info:    ... okay on input line 59.
 \makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks27
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 100.
+LaTeX Font Info:    Try loading font information for U+msa on input line 114.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 100.
+LaTeX Font Info:    Try loading font information for U+msb on input line 114.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5] [6] <Images/Drawing3_1.jpg, id=32, 605.26125pt x 709.65125pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] [5] [6]
+<Images/Drawing3_1.jpg, id=36, 605.26125pt x 709.65125pt>
 File: Images/Drawing3_1.jpg Graphic file (type jpg)
 
 <use Images/Drawing3_1.jpg>
-Package pdftex.def Info: Images/Drawing3_1.jpg used on input line 228.
+Package pdftex.def Info: Images/Drawing3_1.jpg used on input line 242.
 (pdftex.def)             Requested size: 242.1002pt x 283.85547pt.
- [7 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article/Ima
-ges/Drawing3_1.jpg>] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 281--285
+ [7] [8 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article
+/Images/Drawing3_1.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 295--299
 
  []
 
-[9] [10] [11] <Images/Drawing2.jpg, id=50, 794.97pt x 394.47375pt>
+[9] [10] [11] <Images/Drawing2.jpg, id=54, 794.97pt x 394.47375pt>
 File: Images/Drawing2.jpg Graphic file (type jpg)
 
 <use Images/Drawing2.jpg>
-Package pdftex.def Info: Images/Drawing2.jpg used on input line 324.
+Package pdftex.def Info: Images/Drawing2.jpg used on input line 338.
 (pdftex.def)             Requested size: 397.48402pt x 197.23639pt.
 
-Overfull \hbox (7.48402pt too wide) in paragraph at lines 324--325
+Overfull \hbox (7.48402pt too wide) in paragraph at lines 338--339
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Drawing1.jpg, id=51, 556.479pt x 210.18526pt>
+<Images/Drawing1.jpg, id=55, 556.479pt x 210.18526pt>
 File: Images/Drawing1.jpg Graphic file (type jpg)
 
 <use Images/Drawing1.jpg>
-Package pdftex.def Info: Images/Drawing1.jpg used on input line 332.
+Package pdftex.def Info: Images/Drawing1.jpg used on input line 346.
 (pdftex.def)             Requested size: 389.53265pt x 147.12866pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12] <Images/Drawing4_1.jpg, id=55, 594.22pt x 411.5375pt>
+<Images/Drawing4_1.jpg, id=56, 594.22pt x 411.5375pt>
 File: Images/Drawing4_1.jpg Graphic file (type jpg)
 
 <use Images/Drawing4_1.jpg>
-Package pdftex.def Info: Images/Drawing4_1.jpg used on input line 473.
+Package pdftex.def Info: Images/Drawing4_1.jpg used on input line 493.
 (pdftex.def)             Requested size: 415.95117pt x 288.07428pt.
 
-Overfull \hbox (25.95117pt too wide) in paragraph at lines 473--474
+Overfull \hbox (25.95117pt too wide) in paragraph at lines 493--494
  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article/Ima
-ges/Drawing2.jpg>] [14] [15] [16]
+[12] [13] [14] [15 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Proj
+ect/Article/Images/Drawing2.jpg> <C:/Users/SOHAG/Documents/GitHub/paper with yu
+suf/Sohag-Project/Article/Images/Drawing1.jpg>]
 ("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
-e.bbl" [17 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Arti
-cle/Images/Drawing1.jpg>] [18 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf
-/Sohag-Project/Article/Images/Drawing4_1.jpg>]
+e.bbl" [16] [17]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
-
+ [18 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Article/Im
+ages/Drawing4_1.jpg>]
 Underfull \hbox (badness 3009) in paragraph at lines 63--67
 []\OT1/cmr/m/n/12 C. Scott, L. Yim-ing, L. Chen, X. Xi-ao-hui, Hu-man genomes
  []
@@ -357,17 +351,17 @@ Underfull \hbox (badness 6157) in paragraph at lines 63--67
 5.
  []
 
-[19] [20]) [21]
+[19]) [20]
 ("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Article\Articl
 e.aux") ) 
 Here is how much of TeX's memory you used:
- 3606 strings out of 493921
- 46227 string characters out of 3147281
- 121761 words of memory out of 3000000
- 6839 multiletter control sequences out of 15000+200000
- 12751 words of font info for 47 fonts, out of 3000000 for 9000
+ 3624 strings out of 493921
+ 46391 string characters out of 3147281
+ 128896 words of memory out of 3000000
+ 6853 multiletter control sequences out of 15000+200000
+ 14967 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,13n,30p,1792b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,13n,30p,1938b,301s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fil
@@ -379,12 +373,16 @@ msfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Article.pdf (21 pages, 581762 bytes).
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmti7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb>
+Output written on Article.pdf (20 pages, 623922 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
+ 147 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
