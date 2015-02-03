@@ -10,8 +10,9 @@ W.~A. Redmond, International morse code, Microsoft Encarta 2009 [DVD] (1964)
   275--278.
 
 \bibitem{Gr03}
-P.~D. Grunwald, P.~M.~B. Vitany, Kolmogorov complexity and information theory,
-  Journal of Logic, Language and Information 12 (2003) 497--529.
+P.~D. Grunwald, P.~M.~B. Vitany, Kolmogorov complexity and information theory:
+  With an interpretation in terms of questions and answers, Journal of Logic,
+  Language and Information 12 (2003) 497--529.
 
 \bibitem{Karp61}
 R.~Karp, Minimum-redundancy coding for the discrete noiseless channel, IRE
@@ -19,15 +20,15 @@ R.~Karp, Minimum-redundancy coding for the discrete noiseless channel, IRE
 
 \bibitem{Gil95}
 E.~N. Gilbert, Coding with digits of unequal costs, IEEE Transactions on
-  Information Theory 41.
+  Information Theory 41~(2) (1995) 596--600.
 
 \bibitem{Kar62}
 R.~M. Krause, Channels which transmit letters of unequal duration, Information
-  Control 5 (1962) 13--24.
+  Control 5~(1) (1962) 13--24.
 
 \bibitem{Varn71}
 B.~Varn, Optimal variable length codes -{Arbitrary symbol cost and equal code
-  word probability}, Information Control~(19) (1971) 289--301.
+  word probability}, Information and Control 19~(4) (1971) 289--301.
 
 \bibitem{AltMel80}
 D.~Altenkamp, K.~Mehlhorn, Codes: Unequal probabilities, unequal letter costs,
@@ -66,9 +67,9 @@ C.~Scott, L.~Yiming, L.~Chen, X.~Xiaohui, Human genomes as email attachments,
   {\path{doi:10.1093/bioinformatics/btn582}}.
 
 \bibitem{che03}
-C.~Ramu, S.~Hideaki, K.~Tadashi, L.~Rodrigo, G.~T. J, H.~D. G, T.~J. D,
-  Multiple sequence alignment with the clustal series of programs, Nucleic
-  acids research 31~(13) (2003) 3497--3500.
+R.~Chenna, H.~Sugawara, T.~Koike, R.~Lopez, T.~J. Gibson, D.~G. Higgins, J.~D.
+  Thompson, Multiple sequence alignment with the clustal series of programs,
+  Nucleic acids research 31~(13) (2003) 3497--3500.
 
 \bibitem{cha14}
 C.~Tzu-Hao, W.~Shih-Lin, W.~Wei-Jen, H.~Jorng-Tzong, C.~Cheng-Wei, A novel
@@ -77,8 +78,9 @@ C.~Tzu-Hao, W.~Shih-Lin, W.~Wei-Jen, H.~Jorng-Tzong, C.~Cheng-Wei, A novel
   research international 2014.
 
 \bibitem{bra09}
-B.~M. C, W.~D. C, B.~Pierre, Data structures and compression algorithms for
-  genomic sequence data, Bioinformatics 25~(14) (2009) 1731--1738.
+M.~C. Brandon, D.~C. Wallace, P.~Baldi, Data structures and compression
+  algorithms for genomic sequence data, Bioinformatics 25~(14) (2009)
+  1731--1738.
 
 \bibitem{Golomb96}
 S.~W. Golomb, Run-length encodings, IEEE Transactions on Information Theory
@@ -91,7 +93,7 @@ P.~Elias, Universal codeword sets and representations of the integers, IEEE
   {\path{doi:10.1109/TIT.1975.1055349}}.
 
 \bibitem{wan11}
-W.~Congmao, Z.~Dabing, A novel compression tool for efficient storage of genome
+C.~Wang, D.~Zhang, A novel compression tool for efficient storage of genome
   resequencing data, Nucleic acids research 39~(7) (2011) e45--e45.
 
 \bibitem{Amst86}
@@ -103,7 +105,7 @@ M.~A. Mannan, M.~Kaykobad, Block huffman coding, Computers and Mathematics with
 
 \bibitem{Gol1996}
 M.~Golin, N.~Young, {Prefix codes: Equiprobable words, unequal letter costs},
-  {SIAM JOURNAL ON COMPUTING} {25}~({6}) ({1996}) {1281--1292}.
+  {SIAM Journal on Compting} {25}~({6}) ({1996}) {1281--1292}.
 
 \bibitem{Gol02}
 M.~J. Golin, C.~Kenyon, N.~E. Young, Huffman coding with unequal letter costs,
@@ -111,12 +113,12 @@ M.~J. Golin, C.~Kenyon, N.~E. Young, Huffman coding with unequal letter costs,
 
 \bibitem{Gol2002}
 P.~Bradford, M.~Golin, L.~Larmore, W.~Rytter, {Optimal prefix-free codes for
-  unequal letter costs: Dynamic programming with the Monge property}, {JOURNAL
-  OF ALGORITHMS} {42}~({2}) ({2002}) {277--303}.
+  unequal letter costs: Dynamic programming with the Monge property}, {Journal
+  of Algorithms} {42}~({2}) ({2002}) {277--303}.
 
 \bibitem{Gol12}
 M.~J. Golin, C.~Mathieu, N.~E. Young, {Huffman Coding with Letter Costs: A
-  Linear-Time Approximation Scheme}, {SIAM JOURNAL ON COMPUTING} {41}~({3})
+  Linear-Time Approximation Scheme}, {SIAM Journal on Computing} {41}~({3})
   ({2012}) {684--713}.
 
 \bibitem{Harvey00}
@@ -142,8 +144,8 @@ E.~Osaba, R.~Carballedo, F.~Diaz, E.~Onieva, I.~de~la Iglesia, A.~Perallos,
   problems, The Scientific World Journal 2014.
 
 \bibitem{pruitt2009ncbi}
-K.~D. Pruitt, T.~Tatusova, W.~Klimke, D.~R. Maglott, Ncbi reference sequences:
-  current status, policy and new initiatives, Nucleic acids research 37~(suppl
-  1) (2009) D32--D36.
+K.~D. Pruitt, T.~Tatusova, W.~Klimke, D.~R. Maglott, N{CBI} reference
+  sequences: current status, policy and new initiatives, Nucleic acids research
+  37~(suppl 1) (2009) D32--D36.
 
 \end{thebibliography}
