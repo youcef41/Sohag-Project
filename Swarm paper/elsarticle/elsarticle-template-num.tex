@@ -83,7 +83,7 @@
 %% \address{Address\fnref{label3}}
 %% \fntext[label3]{}
 
-\title{Penguins Search Optimization Algorithm For Association Rules Mining}
+\title{Penguins Search Optimisation Algorithm for Association Rules Mining}
 
 %% use optional labels to link authors explicitly to addresses:
 %% \author[label1,label2]{}
@@ -98,9 +98,9 @@
 \author[e]{Peng Yeng Yin}
 \author[b]{Smaine Mazouzi}
 
-\address[b]{Department of Computer Science, University of Hull, Hull HU6 7RX, UK}
+\address[a]{Department of Computer Science, University of Hull, Hull HU6 7RX, UK}
 
-\address[a]{ Badji Mokhtar-Annaba University, P.O. Box 12, 23000 Annaba, Algeria}
+\address[b]{ Badji Mokhtar-Annaba University, P.O. Box 12, 23000 Annaba, Algeria}
 
 \address[c]{Laboratoire de Recherche en Informatique Appliquée (LRIA), Computer Science Department, University of Sétif, 19000, Algeria}
 
@@ -112,11 +112,11 @@
 
 \begin{abstract}
 
-Association Rules Mining (ARM) is one of the most popular and well-known approaches for the decision-making process. All existing ARM algorithms generate a very large number of association rules with high overlapping. To deal with this issue, we propose a new ARM approach based on penguins search optimization algorithm (Pe-ARM for short). Moreover, an efficient measure is incorporated into the main process to evaluate the amount of overlapping among the generated rules. Indeed, before the evaluation of the rules, each penguin calculates the amount of overlapping between its rule and all accepted rules. Then, the given rule is rejected without fitness evaluation if at least the amount of overlapping for this rule and one rule from the set of accepted rule is greater than the maximum accepted overlap. The proposed approach also ensures a good diversification over the whole solutions space thanks to the multi-groups behavior of penguins. Furthermore, the search process is based on the oxygen reserve of each penguin, which permit to accelerate the search of a good solutions in reasonable time and to save energy in the disagreeable regions. To demonstrate the effectiveness of the suggested approach, several experiments have been carried out on different data-sets and specifically on the biological ones. The results reveal that the proposed approach outperforms the well known ARM algorithms in both execution time and solution quality. 
+Association Rules Mining (ARM) is one of the most popular and well-known approaches for the decision-making process. All existing ARM algorithms generate a very large number of association rules with high overlapping. To deal with this issue, we propose a new ARM approach based on penguins search optimisation algorithm (Pe-ARM for short). Moreover, an efficient measure is incorporated into the main process to evaluate the amount of overlapping among the generated rules. Indeed, before the evaluation of the rules, each penguin calculates the amount of overlapping between its rule and all accepted rules. Then, the given rule is rejected without fitness evaluation if at least the amount of overlapping for this rule and one rule from the set of accepted rule is greater than the maximum accepted overlap. The proposed approach also ensures a good diversification over the whole solutions space thanks to the multi-groups behaviour of penguins. Furthermore, the search process is based on the oxygen reserve of each penguin, which permit to accelerate the search of a good solutions in a reasonable time and to save energy in the disagreeable regions. To demonstrate the effectiveness of the suggested approach, several experiments have been carried out on different data-sets and specifically on the biological ones. The results reveal that the proposed approach outperforms the well known ARM algorithms in both execution time and solution quality. 
 \end{abstract}
 
 \begin{keyword}
-Association Rule Mining; Penguin Search Optimization Algorithm; Overlap measure; Biological Data-set; ARM.
+Association Rule Mining; Penguin Search Optimisation Algorithm; Overlap measure; Biological Data-set; ARM.
 %% keywords here, in the form: keyword \sep keyword
 
 %% PACS codes here, in the form: \PACS code \sep code
@@ -132,7 +132,7 @@ Association Rule Mining; Penguin Search Optimization Algorithm; Overlap measure;
 
 %% main text
 \section{Introduction}
- Association Rules Mining (ARM) is one of the most challenging and important tasks in data mining~\cite{1}. 
+ Association Rules Mining is one of the most challenging and important tasks in data mining~\cite{1}. 
  ARM problem was first introduced by Agrawal and Shafer in~\cite{2} and can be formalised as :
  Let $I=\left\{i_{1},i_{2},i_{3}....i_{n}\right\}$ be a set of items and $T =\left\{t_{1},t_{2},t_{3}....t_{m}\right\}$ be a set of transactions, 
  an association rule is an implication of the form 
@@ -142,16 +142,16 @@ respectively. The ARM problem consists of extracting among the transactional dat
 all pertinent rules respecting minimum support and minimum confidence constraints. Association rules are the core of many applications like data warehousing for indexing problem~\cite{3},
 information retrieval for request processing and educational data mining for improving education system~\cite{4}. Describing hidden patterns 
 and different dependencies between the set of data has the potential to efficiently improve
-the problem solving process. In the literature, ARM algorithms can be divided into two main categories: exact approaches and 
-metaheuristics-based approaches. First the exact approaches aim at extracting all possible association rules, such as Apriori~\cite{5}, FPGrowth~\cite{6}, DIC~\cite{7}, DHP~\cite{8} and Eclat~\cite{9}. However, these algorithms are high time and space consuming when dealing with very large databases with many items and transactions. 
-To reduce the computational time of such algorithms,second category is metaheuristics-based approaches have been proposed such as: ARMGA~\cite{10} and G3PARM~\cite{11} for evolutionary algorithms, PSO-ARM~\cite{12}, $ACO_R$~\cite{13} and BSO-ARM~\cite{14} 
-for swarm intelligence. These algorithms has the potential to give only one part of rules and not all relevant rules. Therefore, two challenges can be derived, the computation time of exact algorithms by exploring all rules space in one hand and the quality of extracted rules using metaheuristics-based approaches by taking into account the similar rules in the other hand. \\
-The penguins search optimization algorithm \cite{15} is a recent nature inspired approach based on the collaborative hunting strategies of penguins. The penguins synchronize their dives to reduce the expenditure of energy on the hunting process, this assumption used to help the algorithm to converge quickly to the optimal solution. The diversification strategy of penguins search algorithm allow penguins to explore in an efficient way the whole space solution. The search process of penguins is based on the reserve of oxygen which allow penguins to decide to go fast or no while explorer the search space in one hand and to decide to search or not in a given region on the other hand. This has motivate us to use the PeSOA for the association rule mining problem to explore in efficient way the space solution. We incorporate a new measure to the main process of penguins search to compute the amount of overlapping between rules to help penguins search process to generate only the non redundant rule with low amount of overlapping among them. \\
-In this paper a new algorithm called Pe-Arm (Pe-ARM: for association rules mining) is proposed  to find a set of consistent rules having a high quality with low amount of overlapping. These set of rules must cover the maximum number of transaction in the database.\\
-The remainder of the paper is organised as follows. In the next section, relevant works on association rule mining with diverse applications are presented. 
-Then, the penguins search optimization algorithm is introduced in Section 3, 
-followed by the proposed Pe-ARM approach  (penguins search optimization algorithm for association rules mining) in section 4. 
-The experimental results with both standard and biological data sets is reported in Section 5. 
+the problem solving process. In the literature, ARM algorithms are divided into two main categories: exact approaches and 
+meta-heuristics based approaches. The exact approaches such as Apriori~\cite{5}, FPGrowth~\cite{6}, DIC~\cite{7}, DHP~\cite{8} and Eclat~\cite{9} aim at extracting all possible association rules. However, these algorithms are high time and space consuming when dealing with very large databases with many items and transactions. 
+To reduce the computation time of such algorithms, a second category, metaheuristics-based approaches have been proposed. Examples of such approaches include ARMGA~\cite{10} and G3PARM~\cite{11} for evolutionary algorithms, PSO-ARM~\cite{12}, $ACO_R$~\cite{13} and BSO-ARM~\cite{14} 
+for swarm intelligence. These algorithms have the potential to \textbf{give only one part of rules and not all relevant rules}. Therefore, two challenges can be derived, the computation time of exact algorithms by exploring all rules space in one hand and the quality of the extracted rules using meta-heuristics based approaches by taking into account the similar rules in the other hand. \\
+The penguins search optimisation algorithm (PeSOA) \cite{15} is a recent nature inspired approach based on the collaborative hunting strategies of penguins. The penguins synchronise their dives to reduce the expenditure of energy in the hunting process. This strategy is used in the algorithm to help converging quickly towards an optimal solution. The diversification strategy of the penguins search algorithm allows penguins to explore  the whole solution space efficiently. The search process of penguins is based on the reserve of oxygen which allows penguins to decide whether to accelerate or decelerate while exploring the search space and also to decide whether to search or not in a given region. This has motivated the use of the PeSOA for the association rules mining problem to facilitate efficient exploration of the solution space. We incorporate a new measure to the main process of the penguins search to compute the amount of overlapping between rules to help penguins search process to generate only the non redundant rule with low amount of overlapping among them. \\
+In this paper, a new algorithm called Pe-Arm (penguins search optimisation algorithm for association rules mining) is proposed  to find a set of consistent rules with superior quality and a low amount of overlapping among the rules. These set of rules must cover the maximum number of transaction in the database.\\
+The remainder of the paper is organised as follows: In the next section, relevant works on association rule mining with diverse applications are presented. 
+Then, the penguins search optimisation algorithm is introduced in Section 3, 
+followed by the proposed Pe-ARM approach   in section 4. 
+The experimental results with both standard and biological data sets are reported in Section 5. 
 Conclusion and future perspectives of the the present work are provided in Section 6.
 \section{Related Works}
 ARM approaches can be divided into two main categories, exact and metaheuristic-based methods.
@@ -175,16 +175,16 @@ G3APRM \cite{11} is a novel generation on association rule mining algorithm with
 Grammar Guided Genetic Programming to avoid invalid individuals found by genetic programming process. In \cite{19}, 
 the authors reviewed all association rule mining algorithm based on genetic algorithm and its hybridization.\\
 Other methods based on swarm intelligence have been designed for ARM problem. 
-Particle swarm optimization algorithm has been applied for association rule mining \cite{12}, 
+Particle swarm optimisation algorithm has been applied for association rule mining \cite{12}, 
 in this algorithm particle moves randomly on different neighborhood and optimize the selection process with the best neighbor. 
 The main difference between this method and AGA is the use of neighborhood points which outperforms the intensification search. 
-Other swarm intelligence algorithms have also been applied for ARM problem. First, an Ant colony optimization \cite{20} worked in health application 
+Other swarm intelligence algorithms have also been applied for ARM problem. First, an Ant colony optimisation \cite{20} worked in health application 
 to deal with the health insurance database. ARMBGSA \cite{21} is an association rule mining algorithm based on Newton law of universal gravitation namely 
-a gravitational emulation local search algorithm, which is a nature inspired optimization algorithm. Each rule is modeled as a mass, all the masses attract each others using the law of motion. Each iteration is based on the 
+a gravitational emulation local search algorithm, which is a nature inspired optimisation algorithm. Each rule is modeled as a mass, all the masses attract each others using the law of motion. Each iteration is based on the 
 previous one, and take only the k-heaviest masses in order to influence the new masses. The algorithm generates few rules because 
 the search space is reduced at each iteration. 
 Authors on \cite{22} proposed a new hybrid algorithm called (HBSO-TS) for association rule mining based on hybrid method based on 
-Bees Swarm Optimization (BSO) and Tabu Search (TS). BSO will explore the search space so that it can cover most of its neighbors. 
+Bees Swarm Optimisation (BSO) and Tabu Search (TS). BSO will explore the search space so that it can cover most of its neighbors. 
 \subsection{ARM applications for genomic}
 Algorithms for Association Rule Mining have been extensively developed in market basket analysis, further studies concern  biological data sets are already available.
  In \cite{23}, the authors apply association rule mining process for genomic. 
@@ -192,10 +192,10 @@ Algorithms for Association Rule Mining have been extensively developed in market
  proposed using additional data \cite{24}. Temporal association rules have been used to represent dependencies between the different factors 
  on gene regulatory network \cite{25}. Recent works of biological data analysis based on association rules mining are reviewed in \cite{26}.
 
-\section{Penguins Search Optimization Algorithm }
+\section{Penguins Search Optimisation Algorithm }
 
-Penguin search optimization algorithm (PeSOA) is a new swarm based metaheuristic algorithm which was proposed in \cite{15}. The dietary behavior of penguins may be explained by the economic reasoning: it comes to a profitable food search activity when the gain of energy is greater than the expenditure required to obtain this gain. Penguins, behaving along the line of foraging predators, must extract information about the time and cost to get food and the energy content of prey in order to choose the course for making their next dive.
- PeSOA is inspired by the penguin’s hunting behavior and it generally works as follows. The population of penguins locates initial positions, this population is divided on a set of groups, and each group is assigned to a region on the whole solution space. Each penguin then dives and swims under the water for hunting fish while consuming its oxygen reserve. Different forms of the communication between penguins are occasionally performed and the quantities of eaten fish increase. The process is repeated until the specified amount of fish is obtained or the maximum number of iterations is reached. The authors of \cite{15} have shown the PeSOA outruns genetic algorithms and particle swarm optimization in obtaining better values for benchmark optimization functions. 
+Penguin search optimisation algorithm (PeSOA) is a new swarm based metaheuristic algorithm which was proposed in \cite{15}. The dietary behaviour of penguins may be explained by the economic reasoning: it comes to a profitable food search activity when the gain of energy is greater than the expenditure required to obtain this gain. Penguins, behaving along the line of foraging predators, must extract information about the time and cost to get food and the energy content of prey in order to choose the course for making their next dive.
+ PeSOA is inspired by the penguin’s hunting behaviour and it generally works as follows. The population of penguins locates initial positions, this population is divided on a set of groups, and each group is assigned to a region on the whole solution space. Each penguin then dives and swims under the water for hunting fish while consuming its oxygen reserve. Different forms of the communication between penguins are occasionally performed and the quantities of eaten fish increase. The process is repeated until the specified amount of fish is obtained or the maximum number of iterations is reached. The authors of \cite{15} have shown the PeSOA outruns genetic algorithms and particle swarm optimisation in obtaining better values for benchmark optimisation functions. 
 After a number of dives, the penguin returns to surface and share with its group affiliates the position and quantity of the food found. So the local best of each group continuingly
  improves as more members report the food sources. After an entire cycle of the intra-group communication of all the penguin groups, the penguins might migrate to other group’s habitat according to the probability of nurture existence of each group in terms of the quantity of food found by all its members.
 The oxygen reserve depends on both the gain of the food source and the swimming duration the penguin endures. If the energy gain is positive, the longer the penguin stays under the water, the more quantities of food it catches and thus becomes healthier. Otherwise, the longer the swimming duration, the more oxygen the penguin consumes. Hence, the oxygen reserve is updated according to the amelioration of the objective function. The oxygen reserve increases if the new solution is better than the previous one, and the oxygen reserve decreases in the other case.
@@ -233,9 +233,9 @@ measure.\\
 The solution $S_1=\{0, 0, 0, 1, 2, 1, 0, 0, 0, 0\}$ represents the
 rule $r_1: i_4, i_6 \Rightarrow i_5$
 \subsection{Overlapping measure}
-The optimization of ARM aims at maximizing the
+The optimisation of ARM aims at maximizing the
 average of the confidence and the support of the generated
-rules. Optimization algorithm gives only a set of the pertinent
+rules. Optimisation algorithm gives only a set of the pertinent
 rules having a high confidence and support values. However, the
 generated rules may be redundant or similar \cite{27}. For dealing with this
 problem, we propose a new measure to evaluate the correlation
@@ -383,7 +383,7 @@ The number of neighbors changes from penguin to another, the number of neighbors
 \begin{center}
 \includegraphics[width=15cm]{2.jpg}
 \end{center}
-\caption{Penguins Search Optimization Algorithm For Arm}
+\caption{Penguins Search Optimisation Algorithm For Arm}
 \label{algo}
 \end{figure*}
 \section{EXPERIMENTATION AND RESULTS}
@@ -683,7 +683,7 @@ In experimentation of biological data sets cases we have used 0.20, 0.30, 0.50 f
 %% \begin{proof} ...  \end{proof}
 %%
  \section{Conclusion}
-In this work a new association rules mining algorithm based on penguins search optimization 
+In this work a new association rules mining algorithm based on penguins search optimisation 
 algorithm (Pe-Arm) has been proposed. The incorporation of a new overlapping measure  into the main method of Pe-Arm to evaluate the amount of overlapping between generated rules in order to generate a set of consistent rules. 
 Pe-Arm has been compared with a set of well known meta-heuristics for association rule mining, by different criteria such as the computational time, the statistical measure (confidence and support) and finally with the coverage measure, which proved the efficiency of the proposed Pe-ARM. Different data sets have been used in the comparison, firstly is the standard data is used to evaluate the approach with those datasets that have been used by most of the association rule mining algorithm. Secondly, with a biological datasets, the use of biological data sets allows us to validate the approach with data that contain a huge number of association between item sets which is the specificity of the gene expression data. The gene expression datasets is made for that raison like extracting rules between conditions of genes. Currently, we are investigating with the improvement of the rules representation to develop new way to represent large datasets because we lose a lot of time on measure calculation.
 
