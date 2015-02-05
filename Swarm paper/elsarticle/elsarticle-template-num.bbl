@@ -1,0 +1,171 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{1}
+R.~Agrawal, T.~Imieli{\'n}ski, A.~Swami, Mining association rules between sets
+  of items in large databases, in: ACM SIGMOD Record, Vol.~22, ACM, 1993, pp.
+  207--216.
+
+\bibitem{2}
+R.~Agrawal, J.~C. Shafer, Parallel mining of association rules, IEEE
+  Transactions on knowledge and Data Engineering 8~(6) (1996) 962--969.
+
+\bibitem{3}
+Z.~Chen, Intelligent Data Warehousing: From data preparation to data mining,
+  CRC press, 2001.
+
+\bibitem{4}
+C.~Romero, S.~Ventura, E.~Garc{\'\i}a, Data mining in course management
+  systems: Moodle case study and tutorial, Computers \& Education 51~(1) (2008)
+  368--384.
+
+\bibitem{5}
+R.~Agrawal, R.~Srikant, et~al., Fast algorithms for mining association rules,
+  in: Proc. 20th int. conf. very large data bases, VLDB, Vol. 1215, 1994, pp.
+  487--499.
+
+\bibitem{6}
+J.~Han, J.~Pei, Y.~Yin, Mining frequent patterns without candidate generation,
+  in: ACM SIGMOD Record, Vol.~29, ACM, 2000, pp. 1--12.
+
+\bibitem{7}
+S.~Brin, R.~Motwani, J.~D. Ullman, S.~Tsur, Dynamic itemset counting and
+  implication rules for market basket data, in: ACM SIGMOD Record, Vol.~26,
+  ACM, 1997, pp. 255--264.
+
+\bibitem{8}
+J.~S. Park, M.-S. Chen, P.~S. Yu, An effective hash-based algorithm for mining
+  association rules, Vol.~24, ACM, 1995.
+
+\bibitem{9}
+M.~J. Zaki, Scalable algorithms for association mining, Knowledge and Data
+  Engineering, IEEE Transactions on 12~(3) (2000) 372--390.
+
+\bibitem{10}
+X.~Yan, C.~Zhang, S.~Zhang, Genetic algorithm-based strategy for identifying
+  association rules without specifying actual minimum support, Expert Systems
+  with Applications 36~(2) (2009) 3066--3076.
+
+\bibitem{11}
+J.~L. Olmo, J.~M. Luna, J.~R. Romero, S.~Ventura, Association rule mining using
+  a multi-objective grammar-based ant programming algorithm, in: Intelligent
+  Systems Design and Applications (ISDA), 2011 11th International Conference
+  on, IEEE, 2011, pp. 971--977.
+
+\bibitem{12}
+R.~J. Kuo, C.~M. Chao, Y.~Chiu, Application of particle swarm optimization to
+  association rule mining, Applied Soft Computing 11~(1) (2011) 326--336.
+
+\bibitem{13}
+P.~Moslehi, B.~M. Bidgoli, M.~Nasiri, A.~Salajegheh, Multi-objective numeric
+  association rules mining via ant colony optimization for continuous domains
+  without specifying minimum support and minimum confidence, International
+  Journal of Computer Science Issues (IJCSI) 8~(5).
+
+\bibitem{14}
+Y.~Djenouri, H.~Drias, Z.~Habbas, Bees swarm optimisation using multiple
+  strategies for association rule mining, International Journal of Bio-Inspired
+  Computation 6~(4) (2014) 239--249.
+
+\bibitem{15}
+Y.~Gheraibia, A.~Moussaoui, Penguins search optimization algorithm (pesoa), in:
+  Recent Trends in Applied Artificial Intelligence, Springer, 2013, pp.
+  222--231.
+
+\bibitem{16}
+J.~Mata, J.~Alvarez, J.~Riquelme, Mining numeric association rules with genetic
+  algorithms, in: Artificial Neural Nets and Genetic Algorithms, Springer,
+  2001, pp. 264--267.
+
+\bibitem{17}
+J.~Mata, J.-L. Alvarez, J.-C. Riquelme, An evolutionary algorithm to discover
+  numeric association rules, in: Proceedings of the 2002 ACM symposium on
+  Applied computing, ACM, 2002, pp. 590--594.
+
+\bibitem{18}
+M.~Ykhlef, A quantum swarm evolutionary algorithm for mining association rules
+  in large databases, Journal of King Saud University-Computer and Information
+  Sciences 23~(1) (2011) 1--6.
+
+\bibitem{19}
+M.~Zhang, C.~He, Survey on association rules mining algorithms, in: Advancing
+  Computing, Communication, Control and Management, Springer, 2010, pp.
+  111--118.
+
+\bibitem{20}
+K.~Thangavel, P.~Jaganathan, Rule mining algorithm with a new ant colony
+  optimization algorithm, in: Conference on Computational Intelligence and
+  Multimedia Applications, 2007. International Conference on, Vol.~2, IEEE,
+  2007, pp. 135--140.
+
+\bibitem{21}
+F.~Khademolghorani, A.~Baraani, K.~Zamanifar, Efficient mining of association
+  rules based on gravitational search algorithm, International Journal of
+  Computer Science Issues (IJCSI) 8~(4).
+
+\bibitem{22}
+Y.~Djenouri, H.~Drias, A.~Chemchem, A hybrid bees swarm optimization and tabu
+  search algorithm for association rule mining, in: Nature and Biologically
+  Inspired Computing (NaBIC), 2013 World Congress on, IEEE, 2013, pp. 120--125.
+
+\bibitem{23}
+M.~Anandhavalli, M.~Ghose, M.~Gauthaman, Association rule mining in genomics,
+  International journal of computer Theory and engineering 2~(5).
+
+\bibitem{24}
+P.~Carmona-Saez, M.~Chagoyen, A.~Rodriguez, O.~Trelles, J.~M. Carazo,
+  A.~Pascual-Montano, Integrated analysis of gene expression by association
+  rules discovery, BMC bioinformatics 7~(1) (2006) 54.
+
+\bibitem{25}
+E.~Baralis, G.~Bruno, E.~Ficarra, Temporal association rules for gene
+  regulatory networks, in: Intelligent Systems, 2008. IS'08. 4th International
+  IEEE Conference, Vol.~2, IEEE, 2008, pp. 12--2.
+
+\bibitem{26}
+G.~Atluri, R.~Gupta, G.~Fang, G.~Pandey, M.~Steinbach, V.~Kumar, Association
+  analysis techniques for bioinformatics problems, in: Bioinformatics and
+  Computational Biology, Springer, 2009, pp. 1--13.
+
+\bibitem{27}
+Y.~Djenouri, Y.~Gheraibia, M.~Mehdi, A.~Bendjoudi, N.~Nouali-Taboudjemat, An
+  efficient measure for evaluating association rules, in: Soft Computing and
+  Pattern Recognition (SoCPaR), 2014 6th International Conference of, IEEE,
+  2014, pp. 406--410.
+
+\bibitem{28}
+K.~Bache, M.~Lichman, Uci machine learning repository. university of
+  california, school of information and computer science, irvine, ca (2013)
+  (2009).
+
+\bibitem{29}
+S.~Ozel, H.~Guvenir, An algorithm for mining association rules using perfect
+  hashing and database pruning, in: 10th Turkish Symposium on Artificial
+  Intelligence and Neural Networks, Citeseer, 2001, pp. 257--264.
+
+\bibitem{30}
+S.~Naulaerts, P.~Meysman, W.~Bittremieux, T.~N. Vu, W.~V. Berghe, B.~Goethals,
+  K.~Laukens, A primer to frequent itemset mining for bioinformatics, Briefings
+  in bioinformatics (2013) bbt074.
+
+\bibitem{31}
+A.~Gyenesei, U.~Wagner, S.~Barkow-Oesterreicher, E.~Stolte, R.~Schlapbach,
+  Mining co-regulated gene profiles for the detection of functional
+  associations in gene expression data, Bioinformatics 23~(15) (2007)
+  1927--1935.
+
+\bibitem{32}
+D.~Liu, Improved genetic algorithm based on simulated annealing and quantum
+  computing strategy for mining association rules, Journal of Software 5~(11)
+  (2010) 1243--1249.
+
+\bibitem{33}
+G.~Li, Q.~Ma, H.~Tang, A.~H. Paterson, Y.~Xu, Qubic: a qualitative biclustering
+  algorithm for analyses of gene expression data, Nucleic acids research
+  37~(15) (2009) e101--e101.
+
+\end{thebibliography}
