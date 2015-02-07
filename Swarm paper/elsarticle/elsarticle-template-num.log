@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.30)  5 FEB 2015 22:20
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.30)  7 FEB 2015 16:04
 entering extended mode
 **elsarticle-template-num.tex
 
@@ -323,6 +323,14 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen137
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
@@ -335,20 +343,20 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 ("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
 sarticle\elsarticle-template-num.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -365,7 +373,7 @@ LaTeX Font Info:    ... okay on input line 62.
 \everyMPtoPDFconversion=\toks25
 )
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 62.
+Package hyperref Info: Link coloring OFF on input line 65.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -374,21 +382,21 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count127
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 65.
+LaTeX Info: Redefining \pageref on input line 65.
+LaTeX Info: Redefining \nameref on input line 65.
 
 ("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
 sarticle\elsarticle-template-num.out")
 ("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
 sarticle\elsarticle-template-num.out")
 \@outlinefile=\write5
-LaTeX Font Info:    Try loading font information for U+msa on input line 129.
+LaTeX Font Info:    Try loading font information for U+msa on input line 132.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 129.
+LaTeX Font Info:    Try loading font information for U+msb on input line 132.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -400,100 +408,91 @@ Missing character: There is no © in font cmti10!
  [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
- [5] [6] [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 281.
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 282--285
 
+ []
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+[7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 297.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 281.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 297.
 
-<3.jpg, id=186, 586.5915pt x 275.22826pt>
+<3.jpg, id=186, 565.51276pt x 258.9675pt>
 File: 3.jpg Graphic file (type jpg)
  <use 3.jpg>
-Package pdftex.def Info: 3.jpg used on input line 299.
-(pdftex.def)             Requested size: 293.29503pt x 137.61378pt.
+Package pdftex.def Info: 3.jpg used on input line 315.
+(pdftex.def)             Requested size: 282.75568pt x 129.48341pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--318
+Underfull \hbox (badness 10000) in paragraph at lines 322--336
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 321--323
+Underfull \hbox (badness 10000) in paragraph at lines 339--341
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--353
+Underfull \hbox (badness 10000) in paragraph at lines 342--371
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--353
+Underfull \hbox (badness 10000) in paragraph at lines 342--371
 
  []
 
 
-Package natbib Warning: Citation `TransacionalDatabaseIllustration' on page 9 u
-ndefined on input line 355.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Swarm paper/
-elsarticle/3.jpg>]
-
-Package natbib Warning: Citation `algo' on page 10 undefined on input line 370.
-
-
-[10] <2.jpg, id=207, 384.2355pt x 296.90926pt>
+elsarticle/3.jpg>] [10] <2.jpg, id=211, 384.2355pt x 296.90926pt>
 File: 2.jpg Graphic file (type jpg)
  <use 2.jpg>
-Package pdftex.def Info: 2.jpg used on input line 384.
+Package pdftex.def Info: 2.jpg used on input line 401.
 (pdftex.def)             Requested size: 426.79134pt x 329.80421pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 384--385
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 401--402
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--398
+Underfull \hbox (badness 10000) in paragraph at lines 407--415
 
  []
 
 [11] [12 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Swarm 
 paper/elsarticle/2.jpg>] [13]
-Overfull \hbox (58.72464pt too wide) in paragraph at lines 426--443
+Overfull \hbox (58.72464pt too wide) in paragraph at lines 443--460
 [][] 
  []
 
 [14]
-Overfull \hbox (27.4793pt too wide) in paragraph at lines 452--477
+Overfull \hbox (27.4793pt too wide) in paragraph at lines 469--494
 [][] 
  []
 
 [15]
-Overfull \hbox (18.14238pt too wide) in paragraph at lines 512--526
+Overfull \hbox (18.14238pt too wide) in paragraph at lines 529--543
  [][] 
  []
 
 
-Overfull \hbox (30.14238pt too wide) in paragraph at lines 532--546
+Overfull \hbox (30.14238pt too wide) in paragraph at lines 549--563
  [][] 
  []
 
 
-Overfull \hbox (35.61739pt too wide) in paragraph at lines 551--565
+Overfull \hbox (35.61739pt too wide) in paragraph at lines 568--582
  [][] 
  []
 
@@ -503,22 +502,22 @@ Overfull \hbox (35.61739pt too wide) in paragraph at lines 551--565
 
 
 ] [17]
-Overfull \hbox (36.54436pt too wide) in paragraph at lines 606--621
+Overfull \hbox (36.54436pt too wide) in paragraph at lines 623--638
  [][] 
  []
 
 
-Overfull \hbox (36.54436pt too wide) in paragraph at lines 626--641
+Overfull \hbox (36.54436pt too wide) in paragraph at lines 643--658
  [][] 
  []
 
 
-Overfull \hbox (51.69183pt too wide) in paragraph at lines 646--663
+Overfull \hbox (51.69183pt too wide) in paragraph at lines 663--680
  [][] 
  []
 
 
-Overfull \hbox (1.14038pt too wide) in paragraph at lines 577--672
+Overfull \hbox (1.14038pt too wide) in paragraph at lines 594--689
 []\OT1/cmr/m/n/12 One of the use-ful ap-pli-ca-tions of as-so-ci-a-tion rules m
 in-ing is bio-informatics
  []
@@ -526,30 +525,27 @@ in-ing is bio-informatics
 [18] [19] [20]
 ("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
 sarticle\elsarticle-template-num.bbl" [21] [22] [23])
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 704.
-[24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 704.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 721.
+ [24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 721.
 
 ("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
 sarticle\elsarticle-template-num.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 704.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 704.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 721.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 721.
 Package rerunfilecheck Info: File `elsarticle-template-num.out' has not changed
 .
 (rerunfilecheck)             Checksum: 9B063863676D9835D1A7549E94D33DB8;1096.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 704.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 721.
  ) 
 Here is how much of TeX's memory you used:
- 6844 strings out of 493921
- 95964 string characters out of 3147281
- 193943 words of memory out of 3000000
- 9936 multiletter control sequences out of 15000+200000
+ 6884 strings out of 493921
+ 96593 string characters out of 3147281
+ 194795 words of memory out of 3000000
+ 9971 multiletter control sequences out of 15000+200000
  14967 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,12n,30p,1487b,540s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,13n,30p,1487b,541s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -567,9 +563,9 @@ public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti7.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on elsarticle-template-num.pdf (24 pages, 505104 bytes).
+Output written on elsarticle-template-num.pdf (24 pages, 500779 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
+ 384 PDF objects out of 1000 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

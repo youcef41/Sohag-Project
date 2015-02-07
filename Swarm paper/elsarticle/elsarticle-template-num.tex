@@ -30,6 +30,9 @@
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{color}
+
+
 %% Use the option review to obtain double line spacing
 %% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
 
@@ -153,52 +156,61 @@ Then, the penguins search optimisation algorithm is introduced in Section 3,
 followed by the proposed Pe-ARM approach   in section 4. 
 The experimental results with both standard and biological data sets are reported in Section 5. 
 Conclusion and future perspectives of the the present work are provided in Section 6.
+
 \section{Related Works}
-ARM approaches can be divided into two main categories, exact and metaheuristic-based methods.
+ARM approaches can be divided into two main categories, exact and meta-heuristic based methods.
 This section reports some existing ARM approaches from both categories.
-\subsection{ARM with exact methods} The well known ARM exact algorithms are Apriori \cite{5}, AIS (Agrawal, Imielinski, Swami) \cite{1}, 
+
+\subsection{ARM with exact methods}
+The well known ARM exact algorithms are Apriori \cite{5}, AIS (Agrawal, Imielinski, Swami) \cite{1}, 
 Eclat \cite{9} and FP-Growth \cite{6}. 
 The Apriori algorithm is the most used exact algorithm for association rule mining, starts by finding all item sets that satisfy minimum support 
-(frequent itemsets) also called large itemsets. After that Apriori uses these frequent item sets to generate association rules. 
-AIS is the first proposed algorithm for mining association rules, the main drawbacks of this algorithm are both time consuming with the multiple scanning 
-of database consuming in one hand and the space consuming for storage on the other hand. FP-growth uses FP-tree structure to compress the database, where 
+(frequent item sets) also called large item sets. After that Apriori uses these frequent item sets to generate association rules. 
+AIS is the first proposed algorithm for mining association rules. The main drawbacks of this algorithm are that it requires multiple scanning 
+of database, i.e., it is time consuming and requires more storage space. FP-growth uses FP-tree structure to compress the database, where 
 a divide-and-conquer strategy is performed to decompose the mining tasks and the database as well. When dealing with large transactional database, 
-these algorithms became high time and memory consuming. Thereafter, different approaches have 
+these algorithms become high time and memory consuming. Thereafter, different approaches have 
 been proposed to ameliorate the exact methods such as reducing the number of passes over the database, sampling the database, using parallelism, and adding constraints on the structure of rules.
+
 \subsection{ARM with meta-heuristics}
-Meta-heuristics have been used to reduce the running time of the existing ARM algorithms. Genetic algorithm is the first evolutionary algorithm used to solve the ARM problem, such as GENAR \cite{16}, GAR \cite{17}. 
-Those two methods used the standard version of the genetic algorithm with poor representation of the individuals. Afterward, several methods 
+Meta-heuristics have been used to reduce the run time of the existing ARM algorithms. Genetic algorithm is the first evolutionary algorithm used to solve the ARM problem, such as GENAR \cite{16}, GAR \cite{17}. 
+Those two methods used the standard version of the genetic algorithm with poor representation of the \textbf{individuals}. Afterward, several methods 
 for improving genetic algorithm for association rule mining have been proposed to ameliorate genetic operators and the 
-representation of individuals, such as ARMGA \cite{10}. Two major differences between the classical GENAR and ARMGA are the mutation and crossover methods. Often a hybrid method is used to reduce cost, as well as to improve the original methods. A novel hybrid genetic based algorithm called PQGMA has been applied for association rules mining with the use of simulated annealing for the mutation and the crossover operations respectively.
-Quantum computing based method \cite{18} uses an adaptive mutation rate, this algorithm provides a diversified population.
-G3APRM \cite{11} is a novel generation on association rule mining algorithm with the use of  genetic programming based on the 
+representation of \textbf{individuals}, such as ARMGA \cite{10}. Two major differences between the classical GENAR and ARMGA are the mutation and crossover methods. Often a hybrid method is used to reduce cost, as well as to improve the original methods. A novel hybrid genetic based algorithm called PQGMA has been applied for association rules mining with the use of simulated annealing for the mutation and the crossover operations respectively.
+Quantum computing based method \cite{18} uses an adaptive mutation rate, and provides a diversified population.
+G3APRM \cite{11} is a novel generation \textcolor{red}{on} association rule mining algorithm with the use of  genetic programming based on the 
 Grammar Guided Genetic Programming to avoid invalid individuals found by genetic programming process. In \cite{19}, 
-the authors reviewed all association rule mining algorithm based on genetic algorithm and its hybridization.\\
+the authors reviewed all association rule mining algorithms based on genetic algorithm and its hybridisation.
+
 Other methods based on swarm intelligence have been designed for ARM problem. 
 Particle swarm optimisation algorithm has been applied for association rule mining \cite{12}, 
-in this algorithm particle moves randomly on different neighborhood and optimize the selection process with the best neighbor. 
-The main difference between this method and AGA is the use of neighborhood points which outperforms the intensification search. 
-Other swarm intelligence algorithms have also been applied for ARM problem. First, an Ant colony optimisation \cite{20} worked in health application 
+in this algorithm particle moves randomly on different neighbourhood and optimise the selection process with the best neighbour. 
+The main difference between this method and the AGA is the use of neighbourhood points which outperforms the \textcolor{red} {intensification search}. 
+Other swarm intelligence algorithms have also been applied for ARM problem. Firstly, an Ant colony optimisation \cite{20} was employed in health application 
 to deal with the health insurance database. ARMBGSA \cite{21} is an association rule mining algorithm based on Newton law of universal gravitation namely 
-a gravitational emulation local search algorithm, which is a nature inspired optimisation algorithm. Each rule is modeled as a mass, all the masses attract each others using the law of motion. Each iteration is based on the 
+a gravitational emulation local search algorithm, which is a nature inspired optimisation algorithm. Each rule is modelled as a mass, all the masses attract each other using the law of motion. Each iteration is based on the 
 previous one, and take only the k-heaviest masses in order to influence the new masses. The algorithm generates few rules because 
 the search space is reduced at each iteration. 
 Authors on \cite{22} proposed a new hybrid algorithm called (HBSO-TS) for association rule mining based on hybrid method based on 
-Bees Swarm Optimisation (BSO) and Tabu Search (TS). BSO will explore the search space so that it can cover most of its neighbors. 
+Bees Swarm Optimisation (BSO) and Tabu Search (TS). BSO is used to explore the search space so that it can cover most of its neighbours.
+ 
 \subsection{ARM applications for genomic}
-Algorithms for Association Rule Mining have been extensively developed in market basket analysis, further studies concern  biological data sets are already available.
+Algorithms for Association Rule Mining have been extensively developed in market basket analysis, further studies concerning  biological data sets are already available.
  In \cite{23}, the authors apply association rule mining process for genomic. 
- Ant-based Association Rule Mining (Ant-ARM) is employed to discover classification of rules for one particular class only, each ant is used to construct one  Classification Association Rule and change one item set at a time. An improved method for integrated analysis of gene expression has been 
+ Ant based Association Rule Mining (Ant-ARM) is employed to discover classification of rules for one particular class only, each ant is used to construct one  Classification Association Rule and change one item set at a time. An improved method for integrated analysis of gene expression has been 
  proposed using additional data \cite{24}. Temporal association rules have been used to represent dependencies between the different factors 
  on gene regulatory network \cite{25}. Recent works of biological data analysis based on association rules mining are reviewed in \cite{26}.
 
 \section{Penguins Search Optimisation Algorithm }
 
-Penguin search optimisation algorithm (PeSOA) is a new swarm based metaheuristic algorithm which was proposed in \cite{15}. The dietary behaviour of penguins may be explained by the economic reasoning: it comes to a profitable food search activity when the gain of energy is greater than the expenditure required to obtain this gain. Penguins, behaving along the line of foraging predators, must extract information about the time and cost to get food and the energy content of prey in order to choose the course for making their next dive.
- PeSOA is inspired by the penguin’s hunting behaviour and it generally works as follows. The population of penguins locates initial positions, this population is divided on a set of groups, and each group is assigned to a region on the whole solution space. Each penguin then dives and swims under the water for hunting fish while consuming its oxygen reserve. Different forms of the communication between penguins are occasionally performed and the quantities of eaten fish increase. The process is repeated until the specified amount of fish is obtained or the maximum number of iterations is reached. The authors of \cite{15} have shown the PeSOA outruns genetic algorithms and particle swarm optimisation in obtaining better values for benchmark optimisation functions. 
-After a number of dives, the penguin returns to surface and share with its group affiliates the position and quantity of the food found. So the local best of each group continuingly
- improves as more members report the food sources. After an entire cycle of the intra-group communication of all the penguin groups, the penguins might migrate to other group’s habitat according to the probability of nurture existence of each group in terms of the quantity of food found by all its members.
+Penguin search optimisation algorithm (PeSOA) is a new swarm based meta-heuristic algorithm which was proposed in \cite{15}. The dietary behaviour of penguins may be explained by the economic reasoning: it comes to a profitable food search activity when the gain of energy is greater than the expenditure required to obtain this gain. Penguins, behaving along the line of foraging predators, must extract information about the time and cost to get food and the energy content of prey in order to choose the course for making their next dive.
+ PeSOA is inspired by the penguin's hunting behaviour and it generally works as follows:
+  
+The population of penguins locates initial position \textbf{(solution space)}, then the population is divided into a set of groups, and each group is assigned to a region in the whole solution space. Each penguin then dives and swims under the water for hunting fish while consuming its oxygen reserve. Different forms of communication between penguins are occasionally \textbf{taken place} and the quantities of eaten fish increase. The process is repeated until the specified amount of fish is obtained or the maximum number of iterations is reached. The authors of \cite{15} have shown that the PeSOA outruns genetic algorithms and particle swarm optimisation in obtaining better values for benchmark optimisation functions. 
+After a number of dives, the penguin returns to surface and share with its group affiliates the position and quantity of the food found. So the local best of each group continuously
+ improves as more members report the food sources. After an entire cycle of the intra-group communication of all the penguin groups, the penguins might migrate to other group's habitat according to the probability of nurture existence of each group in terms of the quantity of food found by all its members.
 The oxygen reserve depends on both the gain of the food source and the swimming duration the penguin endures. If the energy gain is positive, the longer the penguin stays under the water, the more quantities of food it catches and thus becomes healthier. Otherwise, the longer the swimming duration, the more oxygen the penguin consumes. Hence, the oxygen reserve is updated according to the amelioration of the objective function. The oxygen reserve increases if the new solution is better than the previous one, and the oxygen reserve decreases in the other case.
+
 \section{Pe-ARM: PeSOA for association rules mining}
 \subsection{Encoding}
 There are two well known association \textbf{reference needed} rule presentation, binary encoding and
@@ -232,18 +244,20 @@ measure.\\
 \textbf{Example:} Let's $I=\{i_1, i_2,..., i_{10}\}$ be a set of items.
 The solution $S_1=\{0, 0, 0, 1, 2, 1, 0, 0, 0, 0\}$ represents the
 rule $r_1: i_4, i_6 \Rightarrow i_5$
+
 \subsection{Overlapping measure}
-The optimisation of ARM aims at maximizing the
+The optimisation of ARM aims at maximising the
 average of the confidence and the support of the generated
 rules. Optimisation algorithm gives only a set of the pertinent
 rules having a high confidence and support values. However, the
 generated rules may be redundant or similar \cite{27}. For dealing with this
 problem, we propose a new measure to evaluate the correlation
-between the generated rules, allowing to maximize the coverage of
+between the generated rules, allowing to maximise the coverage of
 the target data, this new measure thus gives a set of consistent rules with minimum overlap.
-\textbf{definition}
+
+\textbf{Definition 1.}
 Let I=$\left\{i_{1},...,i_{m}\right\}$ be a set of items; D=$\left\{r_{1},...r_{n}\right\}$ be a set of association rules which can be defined as follow :  \\
-A= $\left\{ (X,Y) / X  \subseteq  I, Y   \subseteq  I and X  \cap  Y =  \phi   \right\}$ \\
+A= $\left\{ (X,Y) / X  \subseteq  I, Y   \subseteq  I ~and~ X  \cap  Y =  \phi   \right\}$ \\
 Let $\mu$ be a function that computes the dissimilarity between two rules:
 \begin{displaymath}
 \mu :
@@ -268,6 +282,7 @@ Let $\mu$ be a function that computes the dissimilarity between two rules:
 While $X_{r_1}, X_{r_2}$ are the X parts of $r_1$ and $r_2$ element (rule)
 respectively, and $Y_{r_1}, Y_{r_2}$ are the Y parts of $r_1$ and $r_2$
 element (rule) respectively. \\
+
 \textbf{Proposition 1:} 
 $\mu$   satisfies the usual conditions for a distance:
 \begin{enumerate}[i)]
@@ -275,22 +290,23 @@ $\mu$   satisfies the usual conditions for a distance:
 \item  $\mu$ ($r_1$, $r_2$) = $\mu$($r_2$, $r_1$)
 \item  $\mu$ ($r_1$, $r_3$) $\leq$ $\mu$($r_1$, $r_2$) + $\mu$ ($r_2$, $r_3$) for any $r_1$, $r_2$, $r_3$ $\in$ E*E.
 \end{enumerate}
-\textbf{proof}
+
+\textbf{Proof:}
 \begin{enumerate}[i)]
 \item  $\mu$($r_1$, $r_2$) = 0 if and only if $r_1$, $r_2$ agree in all items and this happens if
 and only if $r_1$\{x\} = $r_2$\{x\} and $r_1$\{y\} = $r_2$\{y\}.
 \item  The number of items in which $r_1$ differs from $r_2$ is equal to the number of
-items in which $r_2$ differs from $r_1$, because the distance is equal to the sum of all items $\left|r_1\right|+\left|r_2\right|$ 
+items in which $r_2$ differs from $r_1$, because the distance is equal to the sum of all items $\left|r_1\right|+\left|r_2\right|$.
 \item  $\mu$($r_1$, $r_2$) is equal to the minimal number of items which change their position or to add necessary to get
 from $r_1$ to $r_2$. In its turn, $\mu$($r_2$, $r_3$) is equal to the minimal number
-of items changes position or to add
-necessary to get from $r_2$ to $r_3$.\\
+of items changes position or \textcolor{red}{to add
+necessary} to get from $r_2$ to $r_3$.\\
 So $\mu$($r_1$, $r_2$) + $\mu$($r_2$, $r_3$) changes from $r_1$ to $r_3$. Hence \\
 $\mu$($r_1$, $r_2$) + $\mu$($r_2$, $r_3$) $\geq$ $\mu$($r_1$, $r_3$) which is the minimal number of
-items that change position or to add necessary to get from $r_1$ to $r_3$.
+items that change position or \textcolor{red}{to add necessary} to get from $r_1$ to $r_3$.
 \end{enumerate}
 \textbf{Example:}
-Let $I=\left\{A,B,C,D,E,F\right\}$ be a set of items and ($r_{1}$,$r_{2}$) are two rules defined as follow :\\
+Let $I=\left\{A,B,C,D,E,F\right\}$ be a set of items and ($r_{1}$,$r_{2}$) are two rules defined as follow:\\
 $r_{1}$ : A,B,C $\rightarrow $D\\
 $r_{2}$ : C,D $\rightarrow$ E \\
 $\mu$($r_{1},r_{2}$) = 3.5
@@ -299,10 +315,12 @@ $\mu$($r_{1},r_{2}$) = 3.5
 \includegraphics[scale=0.5]{3.jpg}
 \end{center}
 \label{Fig1}
+\caption{Measuring overlap distance}
 \end{figure}
+
 \subsection{The Fitness Function}
-The main goal of penguins search algorithm is to optimize the
-expenditure of energy (running time) and to improve the
+The main goal of penguins search algorithm is to optimise the
+expenditure of energy (run time) and to improve the
 quality of generated rules. The generated rules have both
 individual and collective quality, the first quality represents
 the statistical measure (confidence and support) which is
@@ -310,26 +328,26 @@ calculated only from the rule and the transactional database,
 whereas, the second one aims to represent the correlation between
 the rules (overlap) which is well explained in the previous
 section. In the fitness computing, we focused on the first aspect
-by taking the rules which maximize the average of the support (Supp) and the confidence (Conf). The fitness value is computed only for the rules satisfying the maximum overlap where
+by taking the rules which maximise the average of the support (Supp) and the confidence (Conf). The fitness value is computed only for the rules satisfying the maximum overlap where
 the maximum Overlap (Max-Overlap) is a predefined value that represents the
 maximum accepted distance between each pair of rules.
 More formally, the fitness function $F$ for a given solution $S$
-can be formulated as\\
+can be formulated as:\\
 \begin{equation}
 \label{equa:eq1} F_{max}(S)=\alpha Supp(S) + \beta Conf
 (S)
 \end{equation}
-Where\\
+where\\
 
-$Support(S)= \frac{|\{t \in T | S[i] \neq 0 \Rightarrow S[i]
+$Supp(S)= \frac{|\{t \in T | S[i] \neq 0 \Rightarrow S[i]
 \subseteq t,  \forall i \in [1..n]\}|}{|T|}$\\ \\
-$Confidence(S)= \frac{|\{t \in T | S[i]\neq 0 \Rightarrow
+$Conf(S)= \frac{|\{t \in T | S[i]\neq 0 \Rightarrow
 S[i]\subseteq t, \forall i \in [1..n]\}|}{|\{t \in T | S[i]=1
 \Rightarrow S[i]\subseteq t, \forall i \in [1..n]\|}$\\
 \\
-While :
+where
 $\alpha$ and $\beta$ are two empirical parameters chosen between
-$0$ and $1$ and $T$ is the transactional data base.
+$0$ and $1$ and $T$ is the transactional database.
 \\
 \textbf{Example:}
 \begin{table}[h]
@@ -351,12 +369,12 @@ $t_{5}$& C & A &\\
 \label{TransacionalDatabaseIllustration}
 \end{table}
 
-Let us consider the transactional database (See
-Tab~\cite{TransacionalDatabaseIllustration}) that contains $5$
+Let us consider the transactional database (see
+Table~\ref{TransacionalDatabaseIllustration}) that contains $5$
 transactions T=$\left\{t_{1}, t_{2}, t_{3}, t_{4}, t_{5}\right\}$ and
-$5$ items I=$\left\{A, B, C, D, E \right\}$. For instance, To compute the support
+$5$ items I=$\left\{A, B, C, D, E \right\}$. For instance, to compute the support
 and the confidence of the solution $S=(1,2,0,0,0)$ equivalent to the
-rule ($A \rightarrow B$). The number of occurrences of the itemset
+rule ($A \rightarrow B$), the number of occurrences of the itemset
 (A) and the item set (A,B) should be first determined. We notice that
 (A) is repeated $3$ times and (A,B) are repeated together $2$ times.
 As a result, the support of (A) is $3/5$ and the support of
@@ -367,18 +385,17 @@ $F_{max}(S)$ =  ${\left(\frac{1}{2} \times \frac{2}{5}\right)} + {\left(\frac{1}
 \frac{2}{3}\right)}$, which equal to $\frac{8}{15}$.
 
 \subsection{Algorithm of Pe-ARM}
-Pe-ARM algorithm (See Figure~\cite{algo}) starts with generating a random population of penguins (each penguin represent a rule), this population is divided into groups, each group contains a variable number of penguins which is updated according to the penguins' health. The division of the initial population is based on the amount of overlapping between population rules. 
-First a random penguin ($P_{r}$) is selected (will be the center of the first group), and all penguins that have a distance (amount of overlapping) from $P_{r}$ inferior than the (\textbf{Min-distance}) will be added to this group. The \textbf{Min-distance} is equal to the average of distances between any two rules on the whole population. New group is created if all other remaining penguins have a distance  from $P_{r}$ superior than \textbf{Min-distance}.
-The diversification generation strategy is used to generate K diversified groups in the initial penguin population. Pe-ARM starts with a population distributed in K groups, and each group is placed in a separate region with a minimum distance to any other. The purpose is to start the search with a set of diversified initial solutions which have contrasting features benefiting in future solution improvement in one hand, and to control the non visited region in the coming iterations in the other hand.\\  
- Our main goal is to generate a set of consistent rules that have a good fitness with small amount of overlapping between them. The objective function of a given solution $F(P_{i})$ is to maximize the average of statistical measure (confidence and support).
+Pe-ARM algorithm (see Fig.~\ref{algo}) starts with generating a random population of penguins (each penguin represent a rule), this population is divided into groups, each group contains a variable number of penguins which is updated according to the penguins' health. The division of the initial population is based on the amount of overlapping between population rules. 
+First a random penguin ($P_{r}$) is selected (center of the first group), and all penguins that have a distance (amount of overlapping) from $P_{r}$ inferior than the min-distance are added to this group. The min-distance is equal to the average of distances between any two rules in the whole population. A new group is created if all other remaining penguins have a distance  from $P_{r}$ superior than the min-distance.
+A diversification generation strategy is used to generate K diversified groups in the initial penguin population. Pe-ARM starts with a population distributed in K groups, and each group is placed in a separate region with a minimum distance to any other. The purpose is to start the search with a set of diversified initial solutions which have contrasting features benefiting future solution improvement and to control the non visited region in the coming iterations. Our main goal is to generate a set of consistent rules that have a good fitness with small amount of overlapping between them. The objective function of a given solution $F(P_{i})$ is to maximise the average of statistical measure (confidence and support).
  
-Each penguin generates from it's rule another set of rules (neighbors), the best rule among these rules that optimize the objective function will be selected. The penguin can move to another position and generate these neighbors  if and only if its oxygen reserve \textbf{$O_{i}$} is not depleted. This Oxygen reserve is updated according to the objective function, it represents the health of the penguin. The oxygen reserve is computed after each iteration, it is equal to the subtraction between the fitness of the new solution and t e fitness of the previous iteration solution. If the value of the subtraction is positive, the oxygen reserve will be incremented to allow this penguin to move to other positions in the next iteration elsewhere the oxygen reserve will be decremented. The oxygen reserve will control the energy of the penguins on the whole search process, if the oxygen reserve is depleted (equal to zero) the penguins will move to another location either in an existing group or a new unexplored area. 
+Each penguin generates from it's rule another set of rules (neighbours). The best rule among these rules that optimises the objective function is selected. The penguin can move to another position and generate these neighbours  if and only if its oxygen reserve \textbf{$O_{i}$} is not depleted. This oxygen reserve is updated according to the objective function, it represents the health of the penguin. After each iteration, the fitness of the solution of the previous iteration is subtracted from the fitness of the new solution to obtain the value of the oxygen reserve. If the value of the subtraction is positive, the oxygen reserve is incremented to allow this penguin to move to other positions in the next iteration otherwise the oxygen reserve is decremented. The oxygen reserve controls the energy of the penguins in the whole search process. If the oxygen reserve is depleted (equal to zero) the penguins move to another location, either in an existing group or to a new unexplored area. 
 
-All generated rules are firstly validated with the overlap measure $\mu(P_{i})$ before it's evaluation by the objective function, any solution is validated (passed to the objective function evaluation) if it guarantee the minimum amount of overlap allowed with other accepted rules. The objective function evaluation is made only for valid rules because the objective function computation usually is high time consuming task for any meta-heuristics Algorithms.
+All generated rules are firstly validated with the overlap measure $\mu(P_{i})$ before it is evaluated by the objective function. Any solution is validated (passed to the objective function evaluation) if it guarantee the minimum amount of overlap allowed with other accepted rules. The objective function evaluation is performed only for the valid rules because it is usually a high time consuming task for any meta-heuristics based algorithms.
 
-The number of neighbors changes from penguin to another, the number of neighbors is updated according to the penguin health (penguin oxygen reserve). At each time, if the oxygen reserve incremented the number of neighbors is incremented too, in the other case the number of neighbors is decremented. The number of neighbors is initialized to '1', with such situation the penguin can generate only one new position by swapping between the possible values (0,1,2) for one item set. The amount of oxygen allows the penguins to decide to search or not in a given area and the number of neighbors allows penguins to decide to evaluate only a new one position or a set of new positions. 
+The number of neighbours changes from one penguin to another and it is updated according to the penguin's health (penguin's oxygen reserve). In each iteration, if the oxygen reserve is incremented the number of neighbours is also incremented, in the other case the number of neighbours is decremented. The number of neighbours is initialised to '1', with such situation the penguin can generate only one new position by swapping between the possible values (0,1,2) for one item set. The amount of oxygen allows the penguins to decide to search or not in a given area and the number of neighbours allows penguins to decide to evaluate only a new position or a set of new positions. 
 
- After each iteration, the penguins communicate with each other the best rule founded  $GLbest$ to converge for the best group, update the oxygen reserve and the number of neighbours  for each penguin. The computation of the health of each group is made to  define the probabilities of improvement in each group, and finally we redistribute the penguins on the new population according the health of the penguins of each group (probabilities). 
+ After each iteration, the penguins communicate with each other the best rule,  $GLbest$, founded  to converge to the best group, update the oxygen reserve and the number of neighbours  for each penguin. The computation of the health of each group is made to  define the probabilities of improvement in each group, and finally we redistribute the penguins on the new population according the health of the penguins of each group (probabilities). 
 \begin{figure*}[htbp]
 \begin{center}
 \includegraphics[width=15cm]{2.jpg}
@@ -409,7 +426,7 @@ Coverage =   \frac{\sum_{i=1}^{n}{\sum_{j=1}^{n} {\eta{(r_{i},r_{j})}}}}{n~(n-1)
 
 \subsection{Parameters Settings}
 The Penguin search algorithm needs many parameters to ensure the diversification and the intensification properties of the search
-process. The aim of this experiment is to find the best parameters to maximize the ratio 
+process. The aim of this experiment is to find the best parameters to maximise the ratio 
 between the average of between the fitness of generated rules and the CPU run time. 
 In each iteration, we change the parameters in order to find the best stabilized averages values. Each new parameters are tested for a set of  data sets. According to table 2, we see that when few number of penguins are used, the CPU run time is low, consequently, 
 a small part of rules space is explored, this reduce the quality of the generated rules. Otherwise, when the number of penguins 
@@ -567,8 +584,8 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 We have compared PeARM with a set of well known association rule mining algorithms( BSO-ARM \cite{22} , $ACO_{R}$ \cite{13}, 
 SA \cite{30}, G3APARM  \cite{11},  ARMBGSA \cite{21}).
 Table 5,6 and Table 7 summarize all the obtained results by using Pe-ARM with the various standard datasets. 
-The aim is to maximize the average of the statistical measures (confidence and support) and to maximize the overlap 
-between rules in order to maximize the coverage.
+The aim is to maximise the average of the statistical measures (confidence and support) and to maximise the overlap 
+between rules in order to maximise the coverage.
 The new Pe-ARM with the new overlap measure gives the best coverage values relative to other used algorithms, 
 because of the set of association rules generated by the Pe-Arm (with the overlap measure) have low overlap between them. 
 The mechanism of the penguins algorithm, ensures a good intensification technique on the way to ameliorate the execution time.
