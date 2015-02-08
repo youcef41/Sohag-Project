@@ -403,10 +403,10 @@ The number of neighbours changes from one penguin to another and it is updated a
 \caption{Penguins Search Optimisation Algorithm For Arm}
 \label{algo}
 \end{figure*}
-\section{EXPERIMENTATION AND RESULTS}
-We used several evaluation criteria in the experimentation process in order to evaluate the proposed algorithm.
+\section{Experiments and Results}
+In order to evaluate the effectiveness of the proposed algorithm, several evaluation criteria were used in the experimentation process.
 Firstly, the statistical measure is computed which is represented as the average of the confidence and the support of the generated rules. 
-Secondly, the run time of each approach is determined. \\
+Secondly, the execution time of each approach is determined. \\
 The last measure is the coverage formula which represents the similarities 
 between the generated rules according to the number of common transactions. Indeed, 
 the rules are similar when they verify together many transactions and dissimilar where
@@ -427,13 +427,12 @@ Coverage =   \frac{\sum_{i=1}^{n}{\sum_{j=1}^{n} {\eta{(r_{i},r_{j})}}}}{n~(n-1)
 \subsection{Parameters Settings}
 The Penguin search algorithm needs many parameters to ensure the diversification and the intensification properties of the search
 process. The aim of this experiment is to find the best parameters to maximise the ratio 
-between the average of between the fitness of generated rules and the CPU run time. 
-In each iteration, we change the parameters in order to find the best stabilized averages values. Each new parameters are tested for a set of  data sets. According to table 2, we see that when few number of penguins are used, the CPU run time is low, consequently, 
-a small part of rules space is explored, this reduce the quality of the generated rules. Otherwise, when the number of penguins 
-increases, we get a set of good rules but with increased CPU run time increases (We have used a 100 generation for all tests).\\
-For the number of iterations(table 3), we aim to stabilize the average of the fitness solutions with the execution time. For few numbers of iterations 
-we get a small execution time but also with small average of confidence and support, because of the few numbers of generated rules.
-while with a greater number of iterations we get a large average but also with longer execution time. According to the obtained results, 
+between the average of the fitness of generated rules and the CPU run time. 
+In each iteration, we change the parameters in order to find the best stabilised average values. Each new \textbf{parameter is} tested for a set of  datasets. As seen in table 2, when a fewer number of penguins are used the CPU run time is lower, consequently, 
+a small part of the rules space is explored, this reduces the quality of the generated rules. In contrast, when the number of penguins 
+increases, we get a set of good rules but with increased CPU run time (a 100 generation is used for all tests).
+
+For the number of iterations (table 3), we aim to stabilise the average of the \textcolor {red}{fitness solutions with the execution time}. It is evident from the table that the fewer the number of iterations the smaller the average of confidence and support and the smaller the execution time. This due to the fact that with a fewer number of iterations a fewer number of rules are generated. However, if the number of iteration is increased the average of confidence and support also increased but with a longer execution time. According to the obtained results, 
 the number of iterations is set to $100$ and the number of penguins is set to $25$.
 \begin{landscape}
 %\clearpage
@@ -497,8 +496,8 @@ the number of iterations is set to $100$ and the number of penguins is set to $2
 \subsection{Evaluation with standard data sets}
 The following datasets were prepared by \cite{28} from the UCI datasets and PUMSB, 
 though they have been converted to Apriori binary format. It has been widely used in 
-the evaluating and comparing process for association rule mining problem, these data sets can be classified on three categories 
-(small, medium and large data sets) \cite{29}. Table 4 describes the size of the used datasets, the number of transactions and the number
+the evaluation and comparison process for association rule mining problem. These data sets can be classified into three categories-- 
+small, medium and large \cite{29}. Table 4 describes the size of the used datasets, the number of transactions and the number
 of items in each of the transactions. 
 \begin{table}[htbp]
 \small
@@ -525,7 +524,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \small
 \centering
 \label{Fig3}
-\caption{Comparison of Pe-ARM different approaches with confidence and support average }
+\caption{Comparison of Pe-ARM with different approaches for confidence and support average }
 \begin{tabular}{c c c c c c c}
 \toprule
 \textbf{Data sets} &  PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA\\
@@ -545,7 +544,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \small
 \centering
 \label{Fig4}
-\caption{Comparison of Pe-ARM to different approaches with the run time (second)}
+\caption{ Run time (in seconds) comparison among the Pe-ARM and other approaches}
 \begin{tabular}{c c c c c c c c c c}
 \toprule
 \textbf{Data sets} & PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
@@ -564,7 +563,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \begin{table*}[htbp]
 \small
 \centering
-\caption{Comparison of Pe-ARM to  different approaches with the coverage of 100 generated rules}
+\caption{Comparison of Pe-ARM with different approaches for the coverage of 100 generated rules}
 \begin{tabular}{c c c c c c c c c c}
 \toprule
 \textbf{Data sets} & PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
@@ -581,15 +580,14 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \end{tabular}
 \end{table*}
 \newpage
-We have compared PeARM with a set of well known association rule mining algorithms( BSO-ARM \cite{22} , $ACO_{R}$ \cite{13}, 
+We have compared the performance of Pe-ARM with a set of well known association rule mining algorithms ( BSO-ARM \cite{22} , $ACO_{R}$ \cite{13}, 
 SA \cite{30}, G3APARM  \cite{11},  ARMBGSA \cite{21}).
-Table 5,6 and Table 7 summarize all the obtained results by using Pe-ARM with the various standard datasets. 
+Table 5,6 and 7 summarise all the results obtained by applying Pe-ARM and above mentioned approaches on the various standard datasets. 
 The aim is to maximise the average of the statistical measures (confidence and support) and to maximise the overlap 
 between rules in order to maximise the coverage.
-The new Pe-ARM with the new overlap measure gives the best coverage values relative to other used algorithms, 
-because of the set of association rules generated by the Pe-Arm (with the overlap measure) have low overlap between them. 
-The mechanism of the penguins algorithm, ensures a good intensification technique on the way to ameliorate the execution time.
-In experimentation of standard data sets cases we have used 0.25, 0.30, 0.75 for minimum support, minimum confidence and maximum overlap accepted, respectively during performing experiments on standard datasets. 
+The proposed Pe-ARM with the new overlap measure gives the best coverage values compare to other  algorithms. This is due to the fact that the set of association rules generated by the Pe-Arm (with the overlap measure) have low overlap between them. 
+The mechanism of the penguins algorithm ensures a good intensification  on the way to ameliorate the execution time.
+During performing experiments on standard datasets, the values 0.25, 0.30, 0.75 were used as the minimum support, the minimum confidence and the maximum overlap accepted respectively . 
 \subsection{ Evaluation with Biological data sets}
 One of the useful applications of association rules mining is bio-informatics \cite{31}. 
 In this section we have used several biological data sets for gene expression under a (sub)set of 

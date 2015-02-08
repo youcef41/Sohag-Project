@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.11.30)  7 FEB 2015 16:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.27)  8 FEB 2015 21:04
 entering extended mode
 **elsarticle-template-num.tex
 
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
-sarticle\elsarticle-template-num.tex"
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Swarm paper\elsarticle\elsarticle-template-num.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,7 +15,9 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\elsarticle\elsarticle.cls"
+
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\elsarticle\elsarticle
+.cls
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -97,9 +99,9 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@sep=\skip43
 \@@sep=\skip44
 
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
-sarticle\elsarticle-template-num.spl")
-("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Swarm paper\elsarticle\elsarticle-template-num.spl")
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip45
 \bibsep=\skip46
@@ -111,7 +113,7 @@ LaTeX Info: Redefining \cite on input line 694.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\comment\comment.sty"
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\comment\comment.sty
 \CommentStream=\write4
 
 Excluding comment 'comment')
@@ -300,7 +302,7 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip51
 \backup@length=\skip52
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen124
 \lightrulewidth=\dimen125
@@ -319,8 +321,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@thisruleclass=\count119
 \@lastruleclass=\count120
 \@thisrulewidth=\dimen136
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen137
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
@@ -341,8 +342,8 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
-sarticle\elsarticle-template-num.aux")
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Swarm paper\elsarticle\elsarticle-template-num.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
@@ -358,7 +359,7 @@ LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(C:\Users\456388.NET\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen138
@@ -386,10 +387,10 @@ LaTeX Info: Redefining \ref on input line 65.
 LaTeX Info: Redefining \pageref on input line 65.
 LaTeX Info: Redefining \nameref on input line 65.
 
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
-sarticle\elsarticle-template-num.out")
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
-sarticle\elsarticle-template-num.out")
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Swarm paper\elsarticle\elsarticle-template-num.out")
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Swarm paper\elsarticle\elsarticle-template-num.out")
 \@outlinefile=\write5
 LaTeX Font Info:    Try loading font information for U+msa on input line 132.
 
@@ -408,7 +409,8 @@ Missing character: There is no © in font cmti10!
  [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] [5] [6]
+{C:/Users/456388.NET/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3
+] [4] [5] [6]
 Underfull \hbox (badness 10000) in paragraph at lines 282--285
 
  []
@@ -454,8 +456,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 342--371
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Swarm paper/
-elsarticle/3.jpg>] [10] <2.jpg, id=211, 384.2355pt x 296.90926pt>
+[9 <C:/Users/456388.NET/OneDrive/Paper to Publish/new plan with yusuf/Sohag-Pro
+ject/Swarm paper/elsarticle/3.jpg>] [10]
+<2.jpg, id=211, 384.2355pt x 296.90926pt>
 File: 2.jpg Graphic file (type jpg)
  <use 2.jpg>
 Package pdftex.def Info: 2.jpg used on input line 401.
@@ -470,29 +473,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 407--415
 
  []
 
-[11] [12 <C:/Users/SOHAG/Documents/GitHub/paper with yusuf/Sohag-Project/Swarm 
-paper/elsarticle/2.jpg>] [13]
-Overfull \hbox (58.72464pt too wide) in paragraph at lines 443--460
+[11] [12 <C:/Users/456388.NET/OneDrive/Paper to Publish/new plan with yusuf/Soh
+ag-Project/Swarm paper/elsarticle/2.jpg>] [13]
+Overfull \hbox (58.72464pt too wide) in paragraph at lines 442--459
 [][] 
  []
 
 [14]
-Overfull \hbox (27.4793pt too wide) in paragraph at lines 469--494
+Overfull \hbox (27.4793pt too wide) in paragraph at lines 468--493
 [][] 
  []
 
 [15]
-Overfull \hbox (18.14238pt too wide) in paragraph at lines 529--543
+Overfull \hbox (18.14238pt too wide) in paragraph at lines 528--542
  [][] 
  []
 
 
-Overfull \hbox (30.14238pt too wide) in paragraph at lines 549--563
+Overfull \hbox (30.14238pt too wide) in paragraph at lines 548--562
  [][] 
  []
 
 
-Overfull \hbox (35.61739pt too wide) in paragraph at lines 568--582
+Overfull \hbox (35.61739pt too wide) in paragraph at lines 567--581
  [][] 
  []
 
@@ -502,45 +505,45 @@ Overfull \hbox (35.61739pt too wide) in paragraph at lines 568--582
 
 
 ] [17]
-Overfull \hbox (36.54436pt too wide) in paragraph at lines 623--638
+Overfull \hbox (36.54436pt too wide) in paragraph at lines 621--636
  [][] 
  []
 
 
-Overfull \hbox (36.54436pt too wide) in paragraph at lines 643--658
+Overfull \hbox (36.54436pt too wide) in paragraph at lines 641--656
  [][] 
  []
 
 
-Overfull \hbox (51.69183pt too wide) in paragraph at lines 663--680
+Overfull \hbox (51.69183pt too wide) in paragraph at lines 661--678
  [][] 
  []
 
 
-Overfull \hbox (1.14038pt too wide) in paragraph at lines 594--689
+Overfull \hbox (1.14038pt too wide) in paragraph at lines 592--687
 []\OT1/cmr/m/n/12 One of the use-ful ap-pli-ca-tions of as-so-ci-a-tion rules m
 in-ing is bio-informatics
  []
 
 [18] [19] [20]
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
-sarticle\elsarticle-template-num.bbl" [21] [22] [23])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 721.
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Swarm paper\elsarticle\elsarticle-template-num.bbl" [21] [22] [23])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 719.
  [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 721.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 719.
 
-("C:\Users\SOHAG\Documents\GitHub\paper with yusuf\Sohag-Project\Swarm paper\el
-sarticle\elsarticle-template-num.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 721.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 721.
+("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
+ct\Swarm paper\elsarticle\elsarticle-template-num.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 719.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 719.
 Package rerunfilecheck Info: File `elsarticle-template-num.out' has not changed
 .
-(rerunfilecheck)             Checksum: 9B063863676D9835D1A7549E94D33DB8;1096.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 721.
+(rerunfilecheck)             Checksum: 496047E796F221E13AF72552EA6C2C2B;1092.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 719.
  ) 
 Here is how much of TeX's memory you used:
  6884 strings out of 493921
- 96593 string characters out of 3147281
+ 97133 string characters out of 3147267
  194795 words of memory out of 3000000
  9971 multiletter control sequences out of 15000+200000
  14967 words of font info for 57 fonts, out of 3000000 for 9000
@@ -563,7 +566,7 @@ public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti7.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on elsarticle-template-num.pdf (24 pages, 500779 bytes).
+Output written on elsarticle-template-num.pdf (24 pages, 500066 bytes).
 PDF statistics:
  384 PDF objects out of 1000 (max. 8388607)
  104 named destinations out of 1000 (max. 500000)
