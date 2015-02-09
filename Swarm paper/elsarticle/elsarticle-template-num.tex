@@ -20,7 +20,7 @@
 %% SP 2008/03/01
 
 \documentclass[preprint,12pt]{elsarticle}
-\usepackage{lscape}
+\usepackage{pdflscape}
 \usepackage{comment}
 \usepackage{amsmath}
 \usepackage{enumerate}
@@ -115,7 +115,8 @@
 
 \begin{abstract}
 
-Association Rules Mining (ARM) is one of the most popular and well-known approaches for the decision-making process. All existing ARM algorithms generate a very large number of association rules with high overlapping. To deal with this issue, we propose a new ARM approach based on penguins search optimisation algorithm (Pe-ARM for short). Moreover, an efficient measure is incorporated into the main process to evaluate the amount of overlapping among the generated rules. Indeed, before the evaluation of the rules, each penguin calculates the amount of overlapping between its rule and all accepted rules. Then, the given rule is rejected without fitness evaluation if at least the amount of overlapping for this rule and one rule from the set of accepted rule is greater than the maximum accepted overlap. The proposed approach also ensures a good diversification over the whole solutions space thanks to the multi-groups behaviour of penguins. Furthermore, the search process is based on the oxygen reserve of each penguin, which permit to accelerate the search of a good solutions in a reasonable time and to save energy in the disagreeable regions. To demonstrate the effectiveness of the suggested approach, several experiments have been carried out on different data-sets and specifically on the biological ones. The results reveal that the proposed approach outperforms the well known ARM algorithms in both execution time and solution quality. 
+Association Rules Mining (ARM) is one of the most popular and well-known approaches for the decision-making process. All existing ARM algorithms generate a very large number of association rules with high amount of overlapping. To deal with this issue, we propose a new ARM approach (Pe-ARM) based on penguins search optimisation algorithm (PeSOA). Moreover, a new method of overlapping measure is used in the Pe-ARM to evaluate the amount of overlapping among the generated rules. %Indeed, before the evaluation of the rules, each penguin calculates the amount of overlapping between its rule and all accepted rules. Then, the given rule is rejected without fitness evaluation if at least the amount of overlapping for this rule and one rule from the set of accepted rule is greater than the maximum accepted overlap. 
+The proposed approach ensures a good diversification over the whole solution space by utilising the multi-groups behaviour of penguins. Furthermore, the search process is based on the oxygen reserve of each penguin, which helps to accelerate the search process. To demonstrate the effectiveness of the proposed approach, several experiments have been carried out on different datasets and specifically on the biological ones. The results reveal that the proposed approach outperforms different well-known ARM algorithms in both execution time and solution quality. 
 \end{abstract}
 
 \begin{keyword}
@@ -148,9 +149,9 @@ and different dependencies between the set of data has the potential to efficien
 the problem solving process. In the literature, ARM algorithms are divided into two main categories: exact approaches and 
 meta-heuristics based approaches. The exact approaches such as Apriori~\cite{5}, FPGrowth~\cite{6}, DIC~\cite{7}, DHP~\cite{8} and Eclat~\cite{9} aim at extracting all possible association rules. However, these algorithms are high time and space consuming when dealing with very large databases with many items and transactions. 
 To reduce the computation time of such algorithms, a second category, metaheuristics-based approaches have been proposed. Examples of such approaches include ARMGA~\cite{10} and G3PARM~\cite{11} for evolutionary algorithms, PSO-ARM~\cite{12}, $ACO_R$~\cite{13} and BSO-ARM~\cite{14} 
-for swarm intelligence. These algorithms have the potential to \textbf{give only one part of rules and not all relevant rules}. Therefore, two challenges can be derived, the computation time of exact algorithms by exploring all rules space in one hand and the quality of the extracted rules using meta-heuristics based approaches by taking into account the similar rules in the other hand. \\
+for swarm intelligence. These algorithms have the potential to give only a subset of all relevant rules. Therefore, two challenges can be derived, the computation time of exact algorithms by exploring all rules space in one hand and the quality of the extracted rules using meta-heuristics based approaches by taking into account the similar rules in the other hand. \\
 The penguins search optimisation algorithm (PeSOA) \cite{15} is a recent nature inspired approach based on the collaborative hunting strategies of penguins. The penguins synchronise their dives to reduce the expenditure of energy in the hunting process. This strategy is used in the algorithm to help converging quickly towards an optimal solution. The diversification strategy of the penguins search algorithm allows penguins to explore  the whole solution space efficiently. The search process of penguins is based on the reserve of oxygen which allows penguins to decide whether to accelerate or decelerate while exploring the search space and also to decide whether to search or not in a given region. This has motivated the use of the PeSOA for the association rules mining problem to facilitate efficient exploration of the solution space. We incorporate a new measure to the main process of the penguins search to compute the amount of overlapping between rules to help penguins search process to generate only the non redundant rule with low amount of overlapping among them. \\
-In this paper, a new algorithm called Pe-Arm (penguins search optimisation algorithm for association rules mining) is proposed  to find a set of consistent rules with superior quality and a low amount of overlapping among the rules. These set of rules must cover the maximum number of transaction in the database.\\
+In this paper, a new algorithm called Pe-ARM (penguins search optimisation algorithm for association rules mining) is proposed  to find a set of consistent rules with superior quality and a low amount of overlapping among the rules. These set of rules must cover the maximum number of transaction in the database.\\
 The remainder of the paper is organised as follows: In the next section, relevant works on association rule mining with diverse applications are presented. 
 Then, the penguins search optimisation algorithm is introduced in Section 3, 
 followed by the proposed Pe-ARM approach   in section 4. 
@@ -174,18 +175,18 @@ been proposed to ameliorate the exact methods such as reducing the number of pas
 
 \subsection{ARM with meta-heuristics}
 Meta-heuristics have been used to reduce the run time of the existing ARM algorithms. Genetic algorithm is the first evolutionary algorithm used to solve the ARM problem, such as GENAR \cite{16}, GAR \cite{17}. 
-Those two methods used the standard version of the genetic algorithm with poor representation of the \textbf{individuals}. Afterward, several methods 
+Those two methods used the standard version of the genetic algorithm with poor representation of the solutions. Afterward, several methods 
 for improving genetic algorithm for association rule mining have been proposed to ameliorate genetic operators and the 
-representation of \textbf{individuals}, such as ARMGA \cite{10}. Two major differences between the classical GENAR and ARMGA are the mutation and crossover methods. Often a hybrid method is used to reduce cost, as well as to improve the original methods. A novel hybrid genetic based algorithm called PQGMA has been applied for association rules mining with the use of simulated annealing for the mutation and the crossover operations respectively.
+representation of the solutions, such as ARMGA \cite{10}. Two major differences between the classical GENAR and ARMGA are the mutation and crossover methods. Often a hybrid method is used to reduce cost, as well as to improve the original methods. A novel hybrid genetic based algorithm called PQGMA has been applied for association rules mining with the use of simulated annealing for the mutation and the crossover operations respectively.
 Quantum computing based method \cite{18} uses an adaptive mutation rate, and provides a diversified population.
-G3APRM \cite{11} is a novel generation \textcolor{red}{on} association rule mining algorithm with the use of  genetic programming based on the 
+G3APRM \cite{11} is a new method for association rule mining  with the use of  genetic programming based on the 
 Grammar Guided Genetic Programming to avoid invalid individuals found by genetic programming process. In \cite{19}, 
 the authors reviewed all association rule mining algorithms based on genetic algorithm and its hybridisation.
 
 Other methods based on swarm intelligence have been designed for ARM problem. 
 Particle swarm optimisation algorithm has been applied for association rule mining \cite{12}, 
 in this algorithm particle moves randomly on different neighbourhood and optimise the selection process with the best neighbour. 
-The main difference between this method and the AGA is the use of neighbourhood points which outperforms the \textcolor{red} {intensification search}. 
+The main difference between this method and the AGA is the use of neighbourhood points to improve the search intensification strategy. 
 Other swarm intelligence algorithms have also been applied for ARM problem. Firstly, an Ant colony optimisation \cite{20} was employed in health application 
 to deal with the health insurance database. ARMBGSA \cite{21} is an association rule mining algorithm based on Newton law of universal gravitation namely 
 a gravitational emulation local search algorithm, which is a nature inspired optimisation algorithm. Each rule is modelled as a mass, all the masses attract each other using the law of motion. Each iteration is based on the 
@@ -206,7 +207,7 @@ Algorithms for Association Rule Mining have been extensively developed in market
 Penguin search optimisation algorithm (PeSOA) is a new swarm based meta-heuristic algorithm which was proposed in \cite{15}. The dietary behaviour of penguins may be explained by the economic reasoning: it comes to a profitable food search activity when the gain of energy is greater than the expenditure required to obtain this gain. Penguins, behaving along the line of foraging predators, must extract information about the time and cost to get food and the energy content of prey in order to choose the course for making their next dive.
  PeSOA is inspired by the penguin's hunting behaviour and it generally works as follows:
   
-The population of penguins locates initial position \textbf{(solution space)}, then the population is divided into a set of groups, and each group is assigned to a region in the whole solution space. Each penguin then dives and swims under the water for hunting fish while consuming its oxygen reserve. Different forms of communication between penguins are occasionally \textbf{taken place} and the quantities of eaten fish increase. The process is repeated until the specified amount of fish is obtained or the maximum number of iterations is reached. The authors of \cite{15} have shown that the PeSOA outruns genetic algorithms and particle swarm optimisation in obtaining better values for benchmark optimisation functions. 
+The population of penguins locates initial position (solution space), then the population is divided into a set of groups, and each group is assigned to a region in the whole solution space. Each penguin then dives and swims under the water for hunting fish while consuming its oxygen reserve. Different forms of communication between penguins are occasionally taken place and the quantities of eaten fish increase. The process is repeated until the specified amount of fish is obtained or the maximum number of iterations is reached. The authors of \cite{15} have shown that the PeSOA outruns genetic algorithms and particle swarm optimisation in obtaining better values for benchmark optimisation functions. 
 After a number of dives, the penguin returns to surface and share with its group affiliates the position and quantity of the food found. So the local best of each group continuously
  improves as more members report the food sources. After an entire cycle of the intra-group communication of all the penguin groups, the penguins might migrate to other group's habitat according to the probability of nurture existence of each group in terms of the quantity of food found by all its members.
 The oxygen reserve depends on both the gain of the food source and the swimming duration the penguin endures. If the energy gain is positive, the longer the penguin stays under the water, the more quantities of food it catches and thus becomes healthier. Otherwise, the longer the swimming duration, the more oxygen the penguin consumes. Hence, the oxygen reserve is updated according to the amelioration of the objective function. The oxygen reserve increases if the new solution is better than the previous one, and the oxygen reserve decreases in the other case.
@@ -299,17 +300,19 @@ and only if $r_1$\{x\} = $r_2$\{x\} and $r_1$\{y\} = $r_2$\{y\}.
 items in which $r_2$ differs from $r_1$, because the distance is equal to the sum of all items $\left|r_1\right|+\left|r_2\right|$.
 \item  $\mu$($r_1$, $r_2$) is equal to the minimal number of items which change their position or to add necessary to get
 from $r_1$ to $r_2$. In its turn, $\mu$($r_2$, $r_3$) is equal to the minimal number
-of items changes position or \textcolor{red}{to add
-necessary} to get from $r_2$ to $r_3$.\\
+of items changes their positions or number of items added
+to obtain  $r_3$ from $r_2$.\\
 So $\mu$($r_1$, $r_2$) + $\mu$($r_2$, $r_3$) changes from $r_1$ to $r_3$. Hence \\
 $\mu$($r_1$, $r_2$) + $\mu$($r_2$, $r_3$) $\geq$ $\mu$($r_1$, $r_3$) which is the minimal number of
-items that change position or \textcolor{red}{to add necessary} to get from $r_1$ to $r_3$.
+items that changes their positions or number of items added
+to obtain  $r_3$ from $r_1$.
 \end{enumerate}
 \textbf{Example:}
 Let $I=\left\{A,B,C,D,E,F\right\}$ be a set of items and ($r_{1}$,$r_{2}$) are two rules defined as follow:\\
 $r_{1}$ : A,B,C $\rightarrow $D\\
 $r_{2}$ : C,D $\rightarrow$ E \\
-$\mu$($r_{1},r_{2}$) = 3.5
+The amount of overlapping between $r_{1}$ and $r_{2}$ is (see Fig. 1):\\
+$\mu$($r_{1},r_{2}$) = 3.5 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.5]{3.jpg}
@@ -337,17 +340,17 @@ can be formulated as:\\
 \label{equa:eq1} F_{max}(S)=\alpha Supp(S) + \beta Conf
 (S)
 \end{equation}
-where\\
-
-$Supp(S)= \frac{|\{t \in T | S[i] \neq 0 \Rightarrow S[i]
-\subseteq t,  \forall i \in [1..n]\}|}{|T|}$\\ \\
-$Conf(S)= \frac{|\{t \in T | S[i]\neq 0 \Rightarrow
+where $\alpha$ and $\beta$ are two empirical parameters chosen between
+$0$ and $1$ and $T$ is the transactional database and \\
+\begin{equation*}
+Supp(S)= \frac{|\{t \in T | S[i] \neq 0 \Rightarrow S[i]
+\subseteq t,  \forall i \in [1..n]\}|}{|T|}
+\end{equation*}
+\begin{equation*}
+Conf(S)= \frac{|\{t \in T | S[i]\neq 0 \Rightarrow
 S[i]\subseteq t, \forall i \in [1..n]\}|}{|\{t \in T | S[i]=1
-\Rightarrow S[i]\subseteq t, \forall i \in [1..n]\|}$\\
-\\
-where
-$\alpha$ and $\beta$ are two empirical parameters chosen between
-$0$ and $1$ and $T$ is the transactional database.
+\Rightarrow S[i]\subseteq t, \forall i \in [1..n]\|}\\
+\end{equation*}
 \\
 \textbf{Example:}
 \begin{table}[h]
@@ -428,15 +431,16 @@ Coverage =   \frac{\sum_{i=1}^{n}{\sum_{j=1}^{n} {\eta{(r_{i},r_{j})}}}}{n~(n-1)
 The Penguin search algorithm needs many parameters to ensure the diversification and the intensification properties of the search
 process. The aim of this experiment is to find the best parameters to maximise the ratio 
 between the average of the fitness of generated rules and the CPU run time. 
-In each iteration, we change the parameters in order to find the best stabilised average values. Each new \textbf{parameter is} tested for a set of  datasets. As seen in table 2, when a fewer number of penguins are used the CPU run time is lower, consequently, 
+In each iteration, we change the parameters in order to find the best stabilised average values. As seen in table 2, when a fewer number of penguins are used the CPU run time is lower, consequently, 
 a small part of the rules space is explored, this reduces the quality of the generated rules. In contrast, when the number of penguins 
 increases, we get a set of good rules but with increased CPU run time (a 100 generation is used for all tests).
 
-For the number of iterations (table 3), we aim to stabilise the average of the \textcolor {red}{fitness solutions with the execution time}. It is evident from the table that the fewer the number of iterations the smaller the average of confidence and support and the smaller the execution time. This due to the fact that with a fewer number of iterations a fewer number of rules are generated. However, if the number of iteration is increased the average of confidence and support also increased but with a longer execution time. According to the obtained results, 
+For the number of iterations (table 3), we aim to stabilise the average between the fitness of the solutions and the execution time. It is evident from the table that the fewer the number of iterations the smaller the average of confidence and support and the smaller the execution time. This due to the fact that with a fewer number of iterations a fewer number of rules are generated. However, if the number of iteration is increased the average of confidence and support also increased but with a longer execution time. According to the obtained results, 
 the number of iterations is set to $100$ and the number of penguins is set to $25$.
 \begin{landscape}
 %\clearpage
 \begin{table*}[b]
+\renewcommand{\arraystretch}{1.3}
 \caption{The performance of the PeSOA number of iterations with CPU execution time for different data sets.}
 \label{sample-table}
 \begin{tabular}{c c c c c c c c c c c c c c c c c c c}
@@ -462,6 +466,7 @@ the number of iterations is set to $100$ and the number of penguins is set to $2
 \begin{landscape}
 
 \begin{table*}[b]
+\renewcommand{\arraystretch}{1.3}
 \small
 \caption{The performance of the PeSOA number of penguins with CPU execution time for different data sets.}
 \label{sample-table1}
@@ -498,7 +503,8 @@ The following datasets were prepared by \cite{28} from the UCI datasets and PUMS
 though they have been converted to Apriori binary format. It has been widely used in 
 the evaluation and comparison process for association rule mining problem. These data sets can be classified into three categories-- 
 small, medium and large \cite{29}. Table 4 describes the size of the used datasets, the number of transactions and the number
-of items in each of the transactions. 
+of items in each of the transactions. During performing experiments on standard datasets, the values 0.25, 0.30, 0.75 were used as the minimum support, the minimum confidence and the maximum overlap accepted respectively.
+ 
 \begin{table}[htbp]
 \small
 \label{datas}
@@ -527,7 +533,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \caption{Comparison of Pe-ARM with different approaches for confidence and support average }
 \begin{tabular}{c c c c c c c}
 \toprule
-\textbf{Data sets} &  PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA\\
+\textbf{Data sets} &  Pe-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA\\
 \midrule
 \textbf{Bolts}&		1&		1& 0.69 & 0.60 & 0.92 & 0.45\\\hline
 \textbf{Sleep}&		1&		1& 0.67 & 0.53 & 0.90 & 0.39\\\hline
@@ -547,7 +553,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \caption{ Run time (in seconds) comparison among the Pe-ARM and other approaches}
 \begin{tabular}{c c c c c c c c c c}
 \toprule
-\textbf{Data sets} & PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
+\textbf{Data sets} & Pe-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
 \midrule
 \textbf{Bolts}&			0.12&		0.22& 1.23 & 1.04 & 0.59 & 1.17 &\\\hline
 \textbf{Sleep}&		0.48&		0.95& 2.1 & 2.4 & 0.87 & 1.38 &\\\hline
@@ -566,7 +572,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \caption{Comparison of Pe-ARM with different approaches for the coverage of 100 generated rules}
 \begin{tabular}{c c c c c c c c c c}
 \toprule
-\textbf{Data sets} & PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
+\textbf{Data sets} & Pe-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
 \midrule
 \textbf{Bolts}&11&	7	& 5& 4.12 & 8.24 & 6.25 &\\\hline
 \textbf{Sleep}&11.23& 7.5	& 5 & 5.65 & 6.01 & 5.9 &\\\hline
@@ -585,17 +591,19 @@ SA \cite{30}, G3APARM  \cite{11},  ARMBGSA \cite{21}).
 Table 5,6 and 7 summarise all the results obtained by applying Pe-ARM and above mentioned approaches on the various standard datasets. 
 The aim is to maximise the average of the statistical measures (confidence and support) and to maximise the overlap 
 between rules in order to maximise the coverage.
-The proposed Pe-ARM with the new overlap measure gives the best coverage values compare to other  algorithms. This is due to the fact that the set of association rules generated by the Pe-Arm (with the overlap measure) have low overlap between them. 
+The proposed Pe-ARM with the new overlap measure gives the best coverage values compare to other  algorithms. This is due to the fact that the set of association rules generated by the Pe-ARM (with the overlap measure) have low overlap between them. 
 The mechanism of the penguins algorithm ensures a good intensification  on the way to ameliorate the execution time.
-During performing experiments on standard datasets, the values 0.25, 0.30, 0.75 were used as the minimum support, the minimum confidence and the maximum overlap accepted respectively . 
+
+ 
 \subsection{ Evaluation with Biological data sets}
 One of the useful applications of association rules mining is bio-informatics \cite{31}. 
-In this section we have used several biological data sets for gene expression under a (sub)set of 
+In this section we have used several biological datasets for gene expression under a (sub)set of 
 conditions \cite{32,29}. In the context of market basket analysis, gene expression data can be used as a single transaction, 
-and each condition as an item.  Also each condition can be validate or not in a given transaction (gene expression).  
-Since the gene expression data belong to continuous real values, a discretization preprocessing for the gene expression data is needed \cite{33}.
- Data sets values are discretized into two values, 0 if the condition are less-than or equal 0; and 1 otherwise. Table 8 presents the description of the gene expression datasets.
-\begin{table*}
+and each condition as an item.  Also each condition can be validated or not in a given transaction (gene expression).  
+Since the gene expression data belong to continuous real values, a discretisation  preprocessing for the gene expression data is needed \cite{33}.
+ Datasets values are discretised into two values, 0 if the condition are less-than or equal 0; and 1 otherwise. Table 8 presents the description of the gene expression datasets. During performing experiments on biological datasets, the values 0.20, 0.30, and 0.50 were used as the minimum support, the minimum confidence and the maximum overlap accepted respectively. These values are not fixed, the users are given the flexibility to insert their own values according to the application area.
+ 
+ \begin{table*}
 \small
 \caption{Biological data sets description}
 \begin{center}
@@ -620,7 +628,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \caption{Comparison of Pe-ARM different approaches with confidence and support average }
 \begin{tabular}{c c c c c c c}
 \toprule
-\textbf{Data sets} &  PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA\\
+\textbf{Data sets} &  Pe-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA\\
 \toprule
 \textbf{Leukemia}                &	0.78 &	0.68& 0.45 & 0.41	& 0.65 & 0.51	\\\hline
 \textbf{Arabidopsis }  &  \multirow{2}{*}{0.64} &  \multirow{2}{*}{0.51}& \multirow{2}{*}{0.41} & \multirow{2}{*}{0.48} & \multirow{2}{*}{0.54} & \multirow{2}{*}{0.39} \\
@@ -640,7 +648,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \caption{Comparison of Pe-ARM to different approaches with the run time (second)}
 \begin{tabular}{c c c c c c c}
 \toprule
-\textbf{Data sets} & PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
+\textbf{Data sets} & Pe-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
 \midrule
 \textbf{Leukemia}                &1.8  &2.4  & 3.8  & 3.1 & 2.61 & 3.01\\\hline
 \textbf{Arabidopsis}  & \multirow{2}{*}{0.867}& \multirow{2}{*}{1.875}&  \multirow{2}{*}{2.1}  &  \multirow{2}{*}{1.9} &  \multirow{2}{*}{1.12} &  \multirow{2}{*}{2.10}\\
@@ -660,7 +668,7 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \caption{Comparison of Pe-ARM to  different approaches with the coverage of 100 rules}
 \begin{tabular}{c c c c c c c}
 \toprule
-\textbf{Data sets} & PE-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
+\textbf{Data sets} & Pe-ARM& BSO-ARM & $ACO_{R}$ & SA & G3APARM & ARMBGSA \\
 \midrule
 \textbf{Leukemia}                 &  1273.82  & 645.56 & 512.01 & 496.58 & 715.54 & 544.60 \\\hline
 \textbf{Arabidopsis }     &  \multirow{2}{*}{18.46 }     & \multirow{2}{*}{7.45} & \multirow{2}{*}{5.14  } & \multirow{2}{*}{5.27} & \multirow{2}{*}{7.14 }  & \multirow{2}{*}{4.98}  \\
@@ -676,14 +684,16 @@ $\textbf{Dataset}$&$\textbf{Transactions size}$&$\textbf{Items size}$\\\hline
 \bottomrule
 \end{tabular}
 \end{table*}
+
+
 The main motivation behind using biological datasets for evaluation is the 
-specificity of gene expression data sets that contains comprehensive and integrated biological information, 
-enabling the discovery of functional relationships between those information. Tables 9,10 and 11 show that the coverage of the final set of association rules 
-are very large comparing to other standard datasets according to the strong relation between biological data, also the coverage of Pe-ARM
-(with overlap measure) is the best comparing with Pe-ARM
-(without overlap measure) and BSO-ARM, and this large coverage can be interpreted with very low correlation between rules that allow to 
-take all transaction and items on consideration. The confidence and support average of the Pe-ARM has been ameliorated since the use of the Pe-ARM.
-In experimentation of biological data sets cases we have used 0.20, 0.30, 0.50 for minimum support, minimum confidence and minimum overlap accepted, respectively during performing experiments on standard datasets.  
+specificity of gene expression datasets that contains comprehensive and integrated biological information, 
+enabling the discovery of functional relationships between those information. Tables 9 shows that the maximum confidence and support for the rules are obtained by using the proposed approach. Interestingly, although the Pe-ARM provides maximum average confidence and support but it takes the minimum amount of run time with compared to other approaches (see Table 10). It is evident from Table 11 that the Pe-ARM provides maximum coverage among all other approaches. It is also seen that the coverage of the final set of association rules for the dataset Elutriation 
+is very high as well as the average confidence and support. This can be interpreted as: the set of generated rules are diverse and cover maximum number of different transactions. This is very important for biological datasets because they can grow very large and consist of small items therefore require more coverage. From the results shown in table 9, 10, and 11 we can conclude that the Pe-ARM approach outperforms all other approaches in all regards (e.g. execution time, coverage etc.).
+%The confidence and support average of the Pe-ARM has been ameliorated since the use of the Pe-ARM.
+
+
+%In experimentation of biological data sets cases we have used 0.20, 0.30, 0.50 for minimum support, minimum confidence and minimum overlap accepted, respectively during performing experiments on standard datasets.  
 
 %% \begin{theorem}[ ] ...  \end{theorem}
 %% \begin{definition}[ ] ...  \end{definition}
@@ -699,15 +709,15 @@ In experimentation of biological data sets cases we have used 0.20, 0.30, 0.50 f
 %%
  \section{Conclusion}
 In this work a new association rules mining algorithm based on penguins search optimisation 
-algorithm (Pe-Arm) has been proposed. The incorporation of a new overlapping measure  into the main method of Pe-Arm to evaluate the amount of overlapping between generated rules in order to generate a set of consistent rules. 
-Pe-Arm has been compared with a set of well known meta-heuristics for association rule mining, by different criteria such as the computational time, the statistical measure (confidence and support) and finally with the coverage measure, which proved the efficiency of the proposed Pe-ARM. Different data sets have been used in the comparison, firstly is the standard data is used to evaluate the approach with those datasets that have been used by most of the association rule mining algorithm. Secondly, with a biological datasets, the use of biological data sets allows us to validate the approach with data that contain a huge number of association between item sets which is the specificity of the gene expression data. The gene expression datasets is made for that raison like extracting rules between conditions of genes. Currently, we are investigating with the improvement of the rules representation to develop new way to represent large datasets because we lose a lot of time on measure calculation.
+algorithm (Pe-ARM) has been proposed. To evaluate the amount of overlapping between generated rules, a new way of overlapping measure is incorporated into the main method of the Pe-ARM.  This incorporation helps to generate a set of consistent rules. 
+Pe-ARM has been compared with a set of well known meta-heuristics based methods for association rule mining. The comparison was made to evaluate the performance of different methods in terms of computational time, the statistical measure (confidence and support) and finally the coverage measure. Two different types of datasets, e.g., standard and biological, were used to help the evaluation process. The use of biological data sets allows us to validate the approach with data that contain a huge number of association between item sets. The gene expression datasets are made to facilitate different functionalities like extracting rules between conditions of genes. The experiments confirm that the proposed Pe-ARM outperforms all other approaches in terms of statistical measure, coverage, and execution time for both standard and biological datasets. 
+Currently, we are investigating to develop a new method to represent large data to further improve the execution time.
 
 %\subsubsection{Caption of the Subsubsection} %Subsubsection
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Main Text End %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
 \section*{References}
 \bibliography{mybibfile}
 
