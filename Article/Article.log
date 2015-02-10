@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.27)  3 FEB 2015 15:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.27)  10 FEB 2015 08:53
 entering extended mode
 **Article.tex
 
@@ -276,11 +276,11 @@ LaTeX Font Info:    ... okay on input line 58.
 \makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks27
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 123.
+LaTeX Font Info:    Try loading font information for U+msa on input line 142.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 123.
+LaTeX Font Info:    Try loading font information for U+msb on input line 142.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -339,17 +339,14 @@ Overfull \hbox (3.86786pt too wide) in paragraph at lines 479--480
  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14] [15] [16] [17] [18 <C:/Users/456388.NET/OneDrive/Paper to Publish/new plan
- with yusuf/Sohag-Project/Article/Images/drawing4_1.jpg>]
+[14 <C:/Users/456388.NET/OneDrive/Paper to Publish/new plan with yusuf/Sohag-Pr
+oject/Article/Images/drawing4_1.jpg>] [15] [16] [17] [18]
 ("C:\Users\456388.NET\OneDrive\Paper to Publish\new plan with yusuf\Sohag-Proje
-ct\Article\Article.bbl" [19]
+ct\Article\Article.bbl"
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ” in font cmr12!
-
+ [19]
 Underfull \hbox (badness 3009) in paragraph at lines 64--68
 []\OT1/cmr/m/n/12 C. Scott, L. Yim-ing, L. Chen, X. Xi-ao-hui, Hu-man genomes
  []
@@ -366,11 +363,11 @@ ct\Article\Article.aux") )
 Here is how much of TeX's memory you used:
  3616 strings out of 493921
  46836 string characters out of 3147267
- 123754 words of memory out of 3000000
+ 123730 words of memory out of 3000000
  6848 multiletter control sequences out of 15000+200000
  15313 words of font info for 58 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,13n,30p,2451b,289s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,13n,30p,2451b,295s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
@@ -389,7 +386,7 @@ s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX
 ts/type1/public/amsfonts/cm/cmti7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
 msfonts/symbols/msam10.pfb>
-Output written on Article.pdf (21 pages, 616018 bytes).
+Output written on Article.pdf (21 pages, 615059 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
