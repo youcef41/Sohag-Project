@@ -1,0 +1,207 @@
+\begin{thebibliography}{31}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Altenkamp and Mehlhorn(1980)]{AltMel80}
+D.~Altenkamp and K.~Mehlhorn.
+\newblock Codes: Unequal probabilities, unequal letter costs.
+\newblock \emph{Journal of the Association for Computing Machinery},
+  27\penalty0 (3):\penalty0 412--427, 1980.
+
+\bibitem[Amsterdam(1986)]{Amst86}
+J.~Amsterdam.
+\newblock Data compression with huffman coding.
+\newblock \emph{BYTE}, 11\penalty0 (5):\penalty0 98--108, 1986.
+
+\bibitem[Blickle and Thiele(1995)]{bli95}
+T.~Blickle and L.~Thiele.
+\newblock A comparison of selection schemes used in genetic algorithms, 1995.
+
+\bibitem[Bradford et~al.({2002})Bradford, Golin, Larmore, and Rytter]{Gol2002}
+P.~Bradford, M.~J. Golin, L.~L. Larmore, and W.~Rytter.
+\newblock {Optimal prefix-free codes for unequal letter costs: Dynamic
+  programming with the Monge property}.
+\newblock \emph{{Journal of Algorithms}}, {42}\penalty0 ({2}):\penalty0
+  {277--303}, {2002}.
+
+\bibitem[Brandon et~al.(2009)Brandon, Wallace, and Baldi]{bra09}
+M.~C. Brandon, D.~C. Wallace, and P.~Baldi.
+\newblock Data structures and compression algorithms for genomic sequence data.
+\newblock \emph{Bioinformatics}, 25\penalty0 (14):\penalty0 1731--1738, 2009.
+
+\bibitem[Chenna et~al.(2003)Chenna, Sugawara, Koike, Lopez, Gibson, Higgins,
+  and Thompson]{che03}
+R.~Chenna, H.~Sugawara, T.~Koike, R.~Lopez, T.~J. Gibson, D.~G. Higgins, and
+  J.~D. Thompson.
+\newblock Multiple sequence alignment with the clustal series of programs.
+\newblock \emph{Nucleic acids research}, 31\penalty0 (13):\penalty0 3497--3500,
+  2003.
+
+\bibitem[Elias(1975)]{Elias75}
+P.~Elias.
+\newblock Universal codeword sets and representations of the integers.
+\newblock \emph{IEEE Transactions on Information Theory}, 21\penalty0
+  (2):\penalty0 194--203, 1975.
+\newblock \doi{10.1109/TIT.1975.1055349}.
+
+\bibitem[Gilbert(1995)]{Gil95}
+E.~N. Gilbert.
+\newblock Coding with digits of unequal costs.
+\newblock \emph{IEEE Transactions on Information Theory}, 41\penalty0
+  (2):\penalty0 596--600, 1995.
+
+\bibitem[Golin and Rote(1998)]{golin98}
+M.~J. Golin and G.~Rote.
+\newblock A dynamic programming algorithm for constructing optimal prefix-free
+  codes with unequal letter costs.
+\newblock \emph{IEEE Transactions on Information Theory}, 44\penalty0
+  (5):\penalty0 1770--1781, 1998.
+
+\bibitem[Golin and Young({1996})]{Gol1996}
+M.~J. Golin and N.~Young.
+\newblock {Prefix codes: Equiprobable words, unequal letter costs}.
+\newblock \emph{{SIAM Journal on Compting}}, {25}\penalty0 ({6}):\penalty0
+  {1281--1292}, {1996}.
+
+\bibitem[Golin et~al.(2002)Golin, Kenyon, and Young]{Gol02}
+M.~J. Golin, C.~Kenyon, and N.~E. Young.
+\newblock Huffman coding with unequal letter costs.
+\newblock In \emph{ACM Symposium on Theory of Computing}, pages 785--791, 2002.
+
+\bibitem[Golin et~al.({2012})Golin, Mathieu, and Young]{Gol12}
+M.~J. Golin, C.~Mathieu, and N.~E. Young.
+\newblock {Huffman Coding with Letter Costs: A Linear-Time Approximation
+  Scheme}.
+\newblock \emph{{SIAM Journal on Computing}}, {41}\penalty0 ({3}):\penalty0
+  {684--713}, {2012}.
+
+\bibitem[Golomb(1996)]{Golomb96}
+S.~W. Golomb.
+\newblock Run-length encodings.
+\newblock \emph{IEEE Transactions on Information Theory}, 12\penalty0
+  (3):\penalty0 399--401, • 1996.
+
+\bibitem[Grunwald and Vitany(2003)]{Gr03}
+P.~D. Grunwald and P.~M.~B. Vitany.
+\newblock Kolmogorov complexity and information theory: With an interpretation
+  in terms of questions and answers.
+\newblock \emph{Journal of Logic, Language and Information}, 12:\penalty0
+  497--529, 2003.
+
+\bibitem[Howe et~al.(2008)Howe, Costanzo, Fey, Gojobori, Hannick, Hide, Hill,
+  Kania, Schaeffer, Pierre, Twigger, White, and Rhee]{Doug08}
+D.~Howe, M.~Costanzo, P.~Fey, T.~Gojobori, L.~Hannick, W.~Hide, D.~P. Hill,
+  R.~Kania, M.~Schaeffer, S.~S. Pierre, S.~Twigger, O.~White, and S.~Y. Rhee.
+\newblock Big data: The future of biocuration.
+\newblock \emph{Nature}, 455:\penalty0 47--50, 2008.
+
+\bibitem[Huffman(1952)]{Huff51}
+D.A. Huffman.
+\newblock A method for the construction of minimum-redundancy codes.
+\newblock \emph{Proceedings of the Institute of Radio Engineers}, 40\penalty0
+  (9):\penalty0 1098--1101, Sept 1952.
+\newblock \doi{10.1109/JRPROC.1952.273898}.
+
+\bibitem[Kabir et~al.(2014)Kabir, Azad, Alam, and Kaykobad]{Kab14}
+S.~Kabir, T.~Azad, A.~S. M.~A. Alam, and M.~Kaykobad.
+\newblock Effects of unequal bit costs on classical huffman codes.
+\newblock In \emph{17th International Conference on Computer and Information
+  Technology}, pages 96--101, 2014.
+
+\bibitem[Karp(1961)]{Karp61}
+R.~Karp.
+\newblock Minimum-redundancy coding for the discrete noiseless channel.
+\newblock \emph{IRE Transactions on Information Theory}, 7\penalty0
+  (1):\penalty0 27--38, 1961.
+
+\bibitem[Krause(1962)]{Kar62}
+R.~M. Krause.
+\newblock Channels which transmit letters of unequal duration.
+\newblock \emph{Information Control}, 5\penalty0 (1):\penalty0 13--24, 1962.
+
+\bibitem[Lodish et~al.(1999)Lodish, Berk, Zipursky, Matsudaira, Baltimore, and
+  Darnell]{Harvey00}
+H.~Lodish, A.~Berk, S.~L. Zipursky, P.~Matsudaira, D.~Baltimore, and
+  J.~Darnell.
+\newblock \emph{Molecular Cell Biology}.
+\newblock W.H.Freeman and Co Ltd, 4th edition, 1999.
+
+\bibitem[Mannan and Kaykobad(2003)]{Kay03}
+M.~A. Mannan and M.~Kaykobad.
+\newblock Block huffman coding.
+\newblock \emph{Computers and Mathematics with Applications}, 46\penalty0
+  (10-11):\penalty0 1581--1587, 2003.
+
+\bibitem[Mitchell(1998)]{gen1}
+M.~Mitchell.
+\newblock \emph{An introduction to genetic algorithms}.
+\newblock MIT press, 1998.
+
+\bibitem[Osaba et~al.(2014)Osaba, Carballedo, Diaz, Onieva, de~la Iglesia, and
+  Perallos]{osa14}
+E.~Osaba, R.~Carballedo, F.~Diaz, E.~Onieva, I.~de~la Iglesia, and A.~Perallos.
+\newblock Crossover versus mutation: A comparative analysis of the evolutionary
+  strategy of genetic algorithms applied to combinatorial optimization
+  problems.
+\newblock \emph{The Scientific World Journal}, 2014, 2014.
+
+\bibitem[Perl et~al.(1975)Perl, Garey, and Even]{perl1975}
+Y.~Perl, M.~R. Garey, and S.~Even.
+\newblock Efficient generation of optimal prefix code: Equiprobable words using
+  unequal cost letters.
+\newblock \emph{Journal of the ACM (JACM)}, 22\penalty0 (2):\penalty0 202--214,
+  1975.
+
+\bibitem[Pruitt et~al.(2009)Pruitt, Tatusova, Klimke, and
+  Maglott]{pruitt2009ncbi}
+K.~D. Pruitt, T.~Tatusova, W.~Klimke, and D.~R. Maglott.
+\newblock N{CBI} reference sequences: current status, policy and new
+  initiatives.
+\newblock \emph{Nucleic acids research}, 37\penalty0 (suppl 1):\penalty0
+  D32--D36, 2009.
+
+\bibitem[Redmond(1964)]{Redmond09}
+W.~A. Redmond.
+\newblock International morse code.
+\newblock \emph{Microsoft Encarta 2009 [DVD]}, pages 275--278, 1964.
+
+\bibitem[Scott et~al.(2009)Scott, Yiming, Chen, and Xiaohui]{chr09}
+C.~Scott, L.~Yiming, L.~Chen, and X.~Xiaohui.
+\newblock Human genomes as email attachments.
+\newblock \emph{Bioinformatics}, 25\penalty0 (2):\penalty0 274--275, 2009.
+\newblock \doi{10.1093/bioinformatics/btn582}.
+
+\bibitem[Tzu-Hao et~al.(2014)Tzu-Hao, Shih-Lin, Wei-Jen, Jorng-Tzong, and
+  Cheng-Wei]{cha14}
+C.~Tzu-Hao, W.~Shih-Lin, W.~Wei-Jen, H.~Jorng-Tzong, and C.~Cheng-Wei.
+\newblock A novel approach for discovering condition-specific correlations of
+  gene expressions within biological pathways by using cloud computing
+  technology.
+\newblock \emph{BioMed research international}, 2014, 2014.
+
+\bibitem[Valentin et~al.(2010)Valentin, Squizzato, Goujon, McWilliam, Paern,
+  and Lopez]{val10}
+F.~Valentin, S.~Squizzato, M.~Goujon, H.~McWilliam, J.~Paern, and R.~Lopez.
+\newblock Fast and efficient searching of biological data resources—using
+  eb-eye.
+\newblock \emph{Briefings in bioinformatics}, 11\penalty0 (4):\penalty0
+  375--384, 2010.
+
+\bibitem[Varn(1971)]{Varn71}
+B.~Varn.
+\newblock Optimal variable length codes -{Arbitrary symbol cost and equal code
+  word probability}.
+\newblock \emph{Information and Control}, 19\penalty0 (4):\penalty0 289--301,
+  1971.
+
+\bibitem[Wang and Zhang(2011)]{wan11}
+C.~Wang and D.~Zhang.
+\newblock A novel compression tool for efficient storage of genome resequencing
+  data.
+\newblock \emph{Nucleic acids research}, 39\penalty0 (7):\penalty0 e45--e45,
+  2011.
+
+\end{thebibliography}
