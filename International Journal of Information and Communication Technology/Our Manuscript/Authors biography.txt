@@ -1,0 +1,26 @@
+Youcef Gheraibia is an assistant lecturer at the University of  Mohamed Chérif Messaadia Souk-Ahras since 2012. He is a PhD student
+in Annaba University, Algeria. He received his BSc degree in Computer Science (Parallel and distributed system) from the University Oum El
+Bouaghi, Algeria, and also received a Master degree in Computer Science from University of M'sila, Algeria. His research projects
+are currently devoted to Data mining, machine learning, combinatorial optimisation, Bioinformatics and computational biology.
+
+Sohag Kabir is a PhD research student in Department of Computer Science at the University of Hull, UK.
+He received his MSc degree in Embedded Systems from University of Hull, UK in 2012 and BSc degree in Computer Science and Engineering from Military Institute of Science and Technology (MIST), Bangladesh in 2010.
+ His research interests include embedded systems, parallel computing, information theory, image processing, model-based safety assessment, and   probabilistic risk and safety analysis.
+
+Abdelouahab Moussaoui is a Professor at Ferhat Abbas University. 
+He received his BSc in Computer Science in 1990 from the Department of Computer Science of the University of Science and Technology of Houari Boumedienne (USTHB), Algeria.
+He received an MSc in Space Engineering in 1991 from University of Science and Technology of Oran (USTO).
+He also received an MSc degree in Machine Learning from Reims University (France) in 1992 and Master's degree in Computer Science in 1995 from University of Sidi Bel-abbes, Algeria.
+He received his PhD degree in Computer Science from Ferhat Abbas University, Algeria where he obtains a status of full-professor in Computer Science.
+He is a member of IEEE and AJIT, IJMMIA & IJSC Referee. His research are in the areas of clustering algorithms and multivariate image classification applications.
+His current research interests include the fuzzy neural network and non parametric classification using unsupervised knowledge system applied to biomedical image segmentation and bioinformatics.
+He also works from a long time on pattern recognition’s algorithm, complex data mining and medical image analysis.
+
+Smaine Mazouzi is an associate professor at 20 aout 1955 university of Skikda.
+He received his MS and PhD degrees in Computer Science from university of Constantine, respectively in 1996, and 2008. 
+His fields of interest are pattern recognition, machine vision, and computer security.
+His current research concerns using distributed and complex systems model as multi-agent systems in image understanding and intrusion detection.
+
+Submission ID:
+
+IJICT-114402

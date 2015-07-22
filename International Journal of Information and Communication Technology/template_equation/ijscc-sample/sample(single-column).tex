@@ -1,0 +1,1107 @@
+%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{singlecol-new}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{natbib,stfloats}
+\usepackage{mathrsfs}
+
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+\theoremstyle{TH}{
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{corrolary}[lemma]{Corrolary}
+\newtheorem{conjecture}[lemma]{Conjecture}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{claim}[lemma]{Claim}
+\newtheorem{stheorem}[lemma]{Wrong Theorem}
+\newtheorem{algorithm}{Algorithm}
+}
+
+\theoremstyle{THrm}{
+\newtheorem{definition}{Definition}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem{remark}{Remark}
+\newtheorem{scheme}{Scheme}
+}
+
+\theoremstyle{THhit}{
+\newtheorem{case}{Case}[section]
+}
+
+\makeatletter
+\def\theequation{\arabic{equation}}
+
+\JOURNALNAME{\TEN{\it Int. J. of Systems, Control and
+Communications, Vol. \theVOL, No. \theISSUE, \thePUBYEAR}\hfill\thepage}%
+
+\def\BottomCatch{%
+\vskip -10pt
+\thispagestyle{empty}%
+\begin{table}[b]%
+\NINE\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr@{}}%
+\\[-12pt]
+Copyright \copyright\ 20xx Inderscience Enterprises Ltd. & &%
+\end{tabular*}%
+\vskip -30pt%
+%%\vskip -35pt%
+\end{table}%
+} \makeatother
+
+%%%%%%%%%%%%%%%%%
+\begin{document}%
+%%%%%%%%%%%%%%%%%
+
+\setcounter{page}{1}
+
+\LRH{P. Zheng et~al.}
+
+\RRH{Constrained feedback RMPC for LPV systems}
+
+\VOL{x}
+
+\ISSUE{x}
+
+\PUBYEAR{xxxx}
+
+\BottomCatch
+
+\CLline
+
+%\PUBYEAR{2012}
+
+\subtitle{}
+
+\title{\sf{\textbf{Constrained feedback RMPC for LPV systems with bounded rates of parameter variations and measurement errors}}}
+
+\authorA{\sf{Pengyuan Zheng*, Dewei Li and Yugeng Xi}}
+
+\affA{Department of Automation,\\
+ Shanghai Jiao Tong University,\\
+Key Laboratory of System Control and Information Processing,\\ Ministry of Education,\\
+Shanghai 200240, China\\
+E-mail: pyzheng@sjtu.edu.cn\\
+E-mail: dwli@sjtu.edu.cn\\
+E-mail: ygxi@sjtu.edu.cn\\
+{\sf{*}}Corresponding author}
+
+\begin{abstract}
+For Linear Parameter Varying (LPV) systems with bounded rates of
+parameter variations and bounded parameter measurement errors, a
+feedback Robust Model Predictive Control (RMPC) is designed by
+utilising the information on system parameters. A sequence of
+feedback control laws is designed based on the model with
+parameter-incremental uncertainty. Since the sequence of feedback
+control laws corresponds to the future variations of system
+parameters and introduces additional freedom, the control
+performance of RMPC can be improved. The recursive feasibility and
+closed-loop stability of the proposed RMPC are also proven.
+\end{abstract}
+
+\KEYWORD{feedback RMPC; LPV systems; bounded rates; parameter
+variations; measurement errors.}
+
+\REF{to this paper should be made as follows: Zheng, P., Li, D. and
+Xi,~Y. (xxxx) `Constrained feedback RMPC for LPV systems with
+bounded rates of parameter variations and measurement errors', {\it
+Int. J. System Control and Information Processing}, Vol.~x, No.~x,
+pp.xxx--xxx.}
+
+\begin{bio}
+Pengyuan Zheng received his BSc in Electrical Engineering and
+Automation from the North University of China in 2000, the PhD in
+Control Theory and Control Engineering from Shanghai Jiao Tong
+University in 2010. He is currently a postdoctoral research fellow
+in Shanghai Jiao Tong University. His research interests include
+predictive control and robust control.\vs{8}
+
+\noindent Dewei Li received his BSc in Automation from Shanghai Jiao
+Tong University in 1993, the PhD in Control Theory and Control
+Engineering from Shanghai Jiao Tong University in 2009. He is
+currently an Associated Professor in Shanghai Jiao Tong University.
+His research interests include predictive control and robust
+control.\vs{8}
+
+\noindent Yugeng Xi received the Dr-Ing in Automatic Control from
+the Technical University Munich (Germany) in 1984. Since then, he has
+been with the Department of Automation, Shanghai Jiao Tong
+University, and as a \pagebreak Professor since 1988. He has
+authored or co-authored five books and more than 200 academic
+papers. His research interests include predictive control, large
+scale and complex systems and intelligent robotic systems.
+\end{bio}
+
+\maketitle
+
+\section{Introduction}
+
+Due to the capability of handing constraints explicitly, Model
+Predictive Control (MPC), also known as Receding Horizon Control
+(RHC), has become a popular technique for industrial process control
+and attracts much attention, especially robust MPC, such as
+\cite{Kothare} and \cite{li2009constrained}. In some practical
+applications, the system parameters of LPV systems are often online
+measurable or vary with known bounded rates. For LPV systems with
+bounded rates of parameter variations, if the available information
+on the system parameters can be taken into account during controller
+design, the control performance is expected to be improved.
+Considering the measurable parametersss of LPV systems,
+\cite{lu2000quasi} proposed a quasi-min-max MPC algorithm. For LPV
+systems with bounded rates of parameter variations and the
+parameters restricted into the unit simplex, \cite{casavola2002fmm}
+developed a feedback Min-Max MPC algorithm. But there is a major
+problem in its initialisation stage, which is pointed out by
+\cite{ding2007cfm}.
+
+For LPV systems with independently varying parameters,
+\cite{park2004crl} transformed the system into a system with
+`parameter-incremental' uncertainties. Then,~by~applying the
+open-loop dual-mode control, i.e., some free control moves followed
+by a feedback control law, an RMPC algorithm is proposed. But due to
+the uncertainty of systems, the recursive feasibility of the
+controller proposed in \cite{park2004crl} cannot be guaranteed,
+which directly results in that the closed-loop stability would not
+be guaranteed.
+
+In practical applications, the parameter measurement error is
+another issue which must be considered. Therefore, this paper
+considers the RMPC of LPV systems with both independently varying
+parameters and parameter measurement errors. In terms of the
+measurement errors, the error bounds are used to calculate the
+possible areas where the parameters could belong to in the future,
+and these areas can be tackled with the parameter variations
+together. Then the dynamic system model is converted into a sequence
+of future models with parameter-incremental uncertainty by referring
+to \cite{park2004crl}, which includes not only the time-varying
+parameter variations but also the measurement errors. Corresponding
+to the model sequence, the proposed RMPC adopts a sequence of
+feedback control laws, instead of open-loop control strategy. The
+recursive feasibility and closed-loop stability can be guaranteed.
+Meanwhile, since the feedback control laws are designed according to
+the future parameter variations, the information on the parameter
+variations and measurement errors can be utilised in the MPC
+controller and then better control performance can be expected.
+
+This paper is organised as follows: Section 2 introduces the problem
+and the issue about~the recursive feasibility of RMPC. The feedback
+RMPC will be introduced with a modified model sequence with
+parameter-incremental uncertainties in detail in Section 3.
+Numerical example is given in Section 4 to verify the results
+proposed in this paper.\vvp{}
+
+\noindent{\it Notation}: Denote $u(k + i|k)$ and $x(k + i|k)$ as the
+control input and system state of time $k~+~i$, predicted at time
+$k$. $||x||_Q^2 = x^T Qx$, $x(k|k) = x(k)$. The symbol $*$ induces
+a symmetric structure, e.g., when $L$  and $R$ are symmetric
+matrices,
+\begin{eqnarray*}
+\left[ {\begin{array}{cc}
+   L &  *   \\
+   N & R  \\
+\end{array}} \right] = \left[ {\begin{array}{cc}
+   L & {N^T }  \\
+   N & R  \\
+\end{array}}\right].
+\end{eqnarray*}
+%And symmetric matrix $\left[
+%{\begin{array}{*{20}c}
+%   L & {N^T }  \\
+%   N & R  \\
+%\end{array}} \right]$ is denoted as $\left[
+%{\begin{array}{*{20}c}
+%   L &  *   \\
+%   N & R  \\
+%\end{array}} \right]$.
+
+\section{Background}
+
+Consider the discrete-time LPV system
+\begin{equation}\label{sys1}
+x(k + 1) = A(\theta (k))x(k) + B(\theta (k))u(k)
+\end{equation}
+\noindent where $x(k) \in \mathbb{R}^n$, $u(k) \in \mathbb{R}^{n_u}$
+and $\theta(k)=\{\theta_1(k),\theta_2(k),\;\ldots,\;\theta_L(k)\}$
+are the system state, control input and parameter vector,
+respectively. The parameter vector $\theta (k)$ is assumed
+measurable with measurement error $\sigma$ at time $k$. The measured
+values of $\theta_i(k)$ is denoted as $\hat{\theta}_i(k)$. Moreover,
+the real values, measured values and the changes of parameters
+satisfy the following constraints
+\begin{eqnarray}\label{sys2}
+&&\theta _j \in \Sigma _j  =
+\left[{\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta
+} _j },{\bar \theta _j }\right], \\ \label{sys3} &&\Delta \theta _j
+(k) = \theta _j (k + 1) - \theta _j (k) \in \delta _j  =
+\left[{\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\delta}
+_j }, {\bar \delta _j}\right],\\\label{error}
+&&|\hat{\theta}_j(k)-\theta_j(k)|\leq \sigma_j.
+\end{eqnarray}
+\noindent System (\ref{sys1}) is subjected to the input constraints:
+\begin{equation}\label{constraint}
+\left| {u_j (k)} \right| \leq u_{j,\max},\quad j = 1,\ldots,m.
+\end{equation}
+\noindent At each time, the RMPC will calculate the control moves
+$u(k + i|k)$ by optimising the following optimisation problem
+\begin{equation}\label{op_p}
+\mathop {\min }\limits_{U(k)} {\text{ }}\mathop {\max
+}\limits_{\theta _j  \in \Sigma _j ,\Delta \theta _j \in \delta _j
+,j = 1,{\ldots},L} J_\infty(k) \; \mbox{s.t.}
+(\ref{sys1})-(\ref{constraint})
+\end{equation}
+\noindent where $J_\infty(k) = \sum\limits_{i = 0}^\infty  {\left[
+{\left\| {x(k + i|k)} \right\|_{Q_1 }^2  + \left\| {u(k + i|k)}
+\right\|_R^2 } \right]}$, $Q_1\ge 0$ and $R\ge 0$ are weighting
+matrices.
+
+\begin{remark}
+For LPV systems (\ref{sys1})--(\ref{constraint}), although the
+approach in \cite{Kothare} can be directly used to design RMPC, the
+information on system parameters (\ref{sys2})--(\ref{sys3}) is
+ignored, which may lead to poor performance. In order to improve the
+control performance, for LPV systems
+(\ref{sys1})--(\ref{constraint}) without parameter measurement
+errors, \cite{park2004crl} makes use of the information on
+parameters to design RMPC by tackling the uncertainty of LPV systems
+as parameter-incremental uncertainty. However, the open-loop
+strategy $U(k) = \left\{ {u(k|k),u(k+1|k),\ldots,u(k+N|k)} \right\}$
+is adopted by \cite{park2004crl} which is similar to \cite{Wanon}.
+As pointed out by \cite{Pluymer}, the proof about recursive
+feasibility of RMPC in \cite{Wanon} is not correct due to the
+uncertainty of system. The same situation happens in
+\cite{park2004crl} when $N>2$.
+\end{remark}
+
+\noindent For systems (\ref{sys1})--(\ref{sys3}), \cite{park2004crl}
+suggested the following method to form a system~with
+parameter-incremental uncertainties to make use of the property of
+parameters. Since the parameter $\theta _j (k)$ can be measured at
+sample time and the bound rates of parameters variations are also
+available, the range of $\theta_j(k + i|k)$ can be computed and
+described as:
+%\begin{displaymath}
+%\theta _j (k + i|k) \in \left[ {\max (\theta _j (k) + i \times
+%\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\delta }
+%_j
+%,\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta }
+%_j ),\min (\bar \theta _j ,\theta _j (k) + i \times \bar \delta _j
+%)} \right]
+%\end{displaymath}
+\begin{eqnarray*}
+\theta _j (k + i|k) \in [\max(\theta _j (k) + i \times
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\delta}
+_j,\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta}
+_j),\;\min (\bar \theta _j ,\theta _j (k) + i \times \bar \delta
+_j)].
+\end{eqnarray*}
+%By referring to \cite{park2004crl}, we can revise the model with
+%parameter-incremental uncertainties to include the measurement
+%errors for system (\ref{sys1})-(\ref{sys3}). From the measured
+%parameter $\hat\theta _j (k)$, the following is defined for $i\geq
+%0$.
+\noindent And then the following is defined in \cite{park2004crl}.
+\begin{eqnarray}
+&&\mu _j (k + i|k) \triangleq \frac{1} {2}\left[\min(\bar{\theta} _j
+,\theta _j (k) +i \times {\bar{\delta}}_j) +\max(\theta _j (k) +i
+\times
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\delta}_j,
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta}_j)\right], \nonumber\\
+&&\rho _j (k + i|k) \triangleq \frac{1}{2} \left[\min
+(\bar{\theta}_j ,\theta _j (k) +i \times {\bar
+{\delta}}_j)-\max(\theta _j (k)  + i \times
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\delta}_j
+,\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta}_j)\right].\nonumber
+\end{eqnarray}
+\noindent \cite{park2004crl} modifies parameter uncertainties into
+parameter-incremental uncertainties as below,
+\begin{eqnarray*}\label{m1}
+A(\theta (k + i|k)) &=& A(\mu (k + i|k)) + B_p (k + i|k)\Delta C_q
+(k + i|k),\\B(\theta (k + i|k))&=&B(\mu (k + i|k)) + B_p (k +i|k)\Delta D_{qu} (k+ i|k),\\
+\Delta &=&{\rm diag}\left( {\eta _1 I,\eta _2 I, \ldots ,\eta _L I}
+\right)\hspace{8em}
+\end{eqnarray*}
+\noindent where $\eta _i $ is a time-varying uncertain variable such
+that $\left\| {\eta _i } \right\| \leq 1,i = 1,2, \ldots ,p$.
+Thus,~systems (\ref{sys1})--(\ref{sys3}) can be transformed into the
+following structured uncertain system predicted at time $k$:
+\begin{eqnarray*}\label{m1}
+x(k + i + 1|k) &=& A(\mu (k + i|k))x(k + i|k)+ B(\mu (k + i|k)) u(k
++i|k)\nonumber\\ && + B_p (k + i|k)p(k + i|k),\\\label{m2} q(k +
+i|k)&=&C_q(k +
+i|k)x(k + i|k)+ D_{qu}(k + i|k)u(k + i|k),\\
+\label{m3} p(k + i|k) &=& \Delta q(k + i|k).\hspace{9em}
+\end{eqnarray*}
+%It is worth to be pointed out that there are also uncertainties for
+%the current system model due to measurement errors. Meanwhile, if
+%there is no measurement error, the above model will be reduced to
+%that in \cite{park2004crl}.
+%In addition, the original LPV system (\ref{sys1})-(\ref{sys2}) can
+%also be converted into a structured feedback uncertain system as
+%follows.
+%\begin{eqnarray}\label{ts1}
+%x(k + 1) &=& \tilde A(\alpha )x(k) + \tilde B(\alpha )u(k) + \tilde
+%B_p p(k),\\\label{ts2} q(k) &=& \tilde C_q x(k) + \tilde D_{qu}
+%u(k),\\\label{ts3} p(k) &=& \tilde \Delta q(k),
+%\end{eqnarray}
+%where $\alpha  \triangleq \frac{1} {2}(\bar \theta _j  +
+%\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta }
+%_j )$, $\beta  \triangleq \frac{1} {2}(\bar \theta _j  -
+%\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta }
+%_j )$ and ~$ A(\theta (k + i)) \subseteq \tilde A(\alpha ) + \tilde
+%B_p \tilde \Delta \tilde C_q$~, ~$ B(\theta (k + i)) \subseteq
+%\tilde B(\alpha ) + \tilde B_p \tilde \Delta \tilde D_{qu}$~, ~$
+%\tilde \Delta  = diag\left( {\eta _1 I,\eta _2 I, \cdots ,\eta _L I}
+%\right)$~.
+%
+%To simplify the presentation, system (\ref{m1})-(\ref{m3}) at time
+%$k$ is denoted as $\Sigma _{k,i}$ and system (\ref{ts1})-(\ref{ts3})
+%is denoted as $\Psi $ in the following. Obviously, it can be
+%concluded that $\Sigma _{k,i} \subseteq \Sigma _{k,i + 1} $ and
+%$\Sigma _{k,i} \subseteq \Psi $.
+
+\noindent Since the recursive feasibility is the precondition of the
+closed-loop stability for systems with MPC, how to make good use of
+the information on system parameters
+(\ref{sys1})--(\ref{constraint}) and to guarantee the recursive
+feasibility of RMPC become key issues to be studied. In the
+following, we will propose a feedback RMPC to achieve both of them
+for systems (\ref{sys1})--(\ref{constraint}).
+
+\section{Feedback RMPC for system with parameter-incremental uncertainty}
+
+\subsection{The modified model sequence with parameter-incremental uncertainties}
+
+For the parameters of systems (\ref{sys1})--(\ref{constraint}), the
+measured values of parameters can be utilised at each time. With
+consideration of measurement errors (\ref{error}), the following can
+be obtained.
+\begin{eqnarray*}
+\theta _j (k) \in \left[ {\hat \theta _j (k) - \sigma _j ,\hat
+\theta _j (k) + \sigma _j } \right]
+\end{eqnarray*}
+\noindent and for $\hat \theta _j (k + 1)$, it must satisfied with
+\begin{eqnarray*}
+\hat \theta _j (k + 1) \in \left[ {\theta _j (k) +
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\delta}_j
+ - \sigma _j ,\theta _j (k) + \bar \delta _j  + \sigma _j }\right].
+\end{eqnarray*}
+\noindent Hence, for $\theta _j (k + 1)$ we can get
+\begin{eqnarray*}
+\theta _j (k + 1) &\in& \left[ {\hat \theta _j (k + 1) - \sigma _j,
+\hat \theta _j (k + 1) + \sigma _j } \right] \\
+&=& \left[ \hat\theta _j (k) -\sigma_j+
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\hat\delta}
+_j,
+ \hat\theta _j (k) + \sigma_j+ \hat{\bar{ \delta}} _j\right]
+\end{eqnarray*}
+where
+${\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\hat\delta
+}_j}={\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\delta
+} _j -2\sigma_j}$ and $ \hat{\bar {\delta}} _j={\bar {\delta}}_j
++2\sigma_j$. If $\hat\theta_j(k)>\bar {\theta} _j$ (or
+$\hat\theta_j(k)<\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta
+} _j )$, $\hat\theta_j(k)$ is forced as $\bar {\theta} _j$ \big(or
+$\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta}_j\big)$
+due to (\ref{sys2}).
+
+In the same way, we can get that
+\begin{eqnarray}
+\theta _j (k + i) &\in& \left[ {\hat \theta _j (k + i) - \sigma _j
+,\hat \theta _j (k + i) + \sigma _j } \right] \nonumber \\
+&=& \left[ \hat\theta _j (k) -\sigma_j+i \times
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\hat\delta
+} _j, \hat\theta _j (k) + \sigma_j+i \times \hat{\bar{
+\delta}}_j\right]
+\end{eqnarray}
+%%\begin{eqnarray}
+%%\label{mea_1}\Delta \hat\theta _j (k) =\hat\theta _j (k + 1) -
+%%\hat\theta _j (k)  \in [\hat\theta _j (k) -\sigma_j+i \times
+%%\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\hat\delta
+%%} _j, \hat{\bar {\delta}} _j],
+%%\end{eqnarray}
+By referring to \cite{park2004crl}, we can revise the model with
+parameter-incremental uncertainties to include the measurement
+errors for systems (\ref{sys1})--(\ref{error}). From the measured
+parameter $\hat\theta_j (k)$, the following is defined for $i\geq
+0$.
+\begin{eqnarray}
+&&\tilde \mu _j (k + i|k) \triangleq \frac{1}{2}\left[\min
+(\bar{\theta}_j, \hat\theta _j (k) + \sigma_j+i \times \hat{\bar{
+\delta}} _j ) +\max(\hat\theta _j (k) -\sigma_j+i \times
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\hat\delta}_j,
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta}_j)\right], \nonumber\\
+&&\tilde \rho _j (k + i|k) \triangleq \frac{1} {2}\left[\min
+(\bar{\theta}_j ,\hat\theta _j (k) +  \sigma_j+i \times \hat{\bar
+{\delta}}_j ) -\max (\hat\theta _j (k) -\sigma_j+ i \times
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\hat\delta}_j
+,\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta}_j)\right].\nonumber
+\end{eqnarray}
+Then similar to \cite{park2004crl}, systems
+(\ref{sys1})--(\ref{error}) can be transformed into the following
+structured uncertain system predicted at time $k$:
+\begin{eqnarray}\label{m1}
+x(k + i + 1|k)&=& A(\tilde \mu (k + i|k))x(k + i|k) + B(\tilde \mu
+(k + i|k)) u(k +i|k)\nonumber\\ &&+ B_p (k + i|k)p(k +
+i|k),\\\label{m2}
+q(k + i|k)&=&C_q(k + i|k)x(k + i|k)+ D_{qu}(k + i|k)u(k + i|k),\\
+\label{m3} p(k+ i|k) &=& \Delta q(k + i|k).\hspace{9em}
+\end{eqnarray}
+It is worth to be pointed out that there are also uncertainties for
+the current system model due to measurement errors. Meanwhile, if
+there is no measurement error, the above model will be reduced to
+that in \cite{park2004crl}.
+
+In addition, the original LPV system (\ref{sys1})--(\ref{sys2}) can
+be converted into a structured feedback uncertain system as follows.
+\begin{eqnarray}\label{ts1}
+x(k + 1) &=& \tilde A(\alpha )x(k) + \tilde B(\alpha )u(k) + \tilde
+B_p p(k),\\\label{ts2} q(k) &=& \tilde C_q x(k) + \tilde D_{qu}
+u(k),\\\label{ts3} p(k) &=& \tilde \Delta q(k),
+\end{eqnarray}
+where $\alpha  \triangleq \frac{1} {2}(\bar \theta _j  +
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta}_j)$,
+$\beta  \triangleq \frac{1} {2}(\bar \theta _j  -
+\underset{\raise0.3em\hbox{$\smash{\scriptscriptstyle-}$}}{\theta}_j)$
+and ~$ A(\theta (k + i)) \subseteq \tilde A(\alpha) + \tilde B_p
+\tilde \Delta \tilde C_q$, ~$ B(\theta (k +~i)) \subseteq \tilde
+B(\alpha) + \tilde B_p \tilde \Delta \tilde D_{qu}$~, ~$ \tilde
+\Delta  = {\rm diag}\left( {\eta _1 I,\eta _2 I, \ldots ,\eta _L I}
+\right)$.
+
+To simplify the presentation, systems (\ref{m1})--(\ref{m3}) at time
+$k$ is denoted as $\Sigma _{k,i}$ and systems
+(\ref{ts1})-(\ref{ts3}) is denoted as $\Psi $ in the following.
+Obviously, it can be concluded that $\Sigma _{k,i} \subseteq \Sigma
+_{k,i + 1} $ and $\Sigma _{k,i} \subseteq \Psi $.
+
+\subsection{The feedback robust MPC}
+
+From the analysis in the last section, the system model will vary
+along the sequence $\left\{{\Sigma _{k,0} ,\Sigma _{k,1} ,\Sigma
+_{k,2},\ldots,\Sigma _{k,N - 1}} \right\} $ and $\Sigma
+_{k,N-1}=\Psi$, which is denoted as $\Sigma (k)$. To avoid the
+difficulty to guarantee the recursive feasibility and make use of
+the information on system parameters, a closed-loop strategy should
+be adopted and the varying feedback control law $F_i$ at each time
+should correspond to $\Sigma _{k,i} $. Hence, the control strategy
+\h{$\pi : = \{ u(k),F_1 ,F_2 , \ldots ,F_{N - 1} \}$} is adopted,
+where $F_i $ is the feedback control gain at the $i$th step and
+after the $N$th step the feedback control gain is always $F_{N - 1}
+$.
+
+For $\Sigma (k)$ with $i>0$, consider the following quadratic
+function:
+\begin{eqnarray*}
+V(i,k) = x(k + i|k)^T P(i,k)x(k + i|k),\nonumber
+\end{eqnarray*}
+where $P(i,k) = P(N - 1,k)$ when $i > N - 1$.
+
+From time $k + i$ to $k + i + 1$ ($i \ge 1$), the following robust
+stable condition is imposed on $V(i,k)$:
+\begin{eqnarray*}
+V(i + 1,k) - V(i,k) \leq  - {\left\| {x(k + i|k)} \right\|_{Q_1 }^2
+- \left\| {u(k + i|k)} \right\|_R^2 } ,
+\end{eqnarray*}
+which is equivalent to
+\begin{eqnarray}\label{ly1}
+|| (A(\tilde \mu (k + i|k)) + B(\tilde \mu (k + i|k))F_i )x(k + i|k)
+ \nonumber
+\\+B_p p(k + i|k) ||_{P(i + 1,k)}^2 - || x(k + i|k)
+||_{P(i,k)}^2 \nonumber\\\leq  - [ || x(k + i|k)||_{Q_1 }^2 +||u(k +
+i|k) ||_R^2 ].
+\end{eqnarray}
+By summing (\ref{ly1}) from $i = 1$ to $i = \infty $, it follows
+\begin{equation}
+\sum\limits_{i = 1}^\infty  {\left[ {\left\| {x(k + i|k)}
+\right\|_{Q_1 }^2  + \left\| {u(k + i|k)} \right\|_R^2 } \right]}
+\leq  V(1,k).
+\end{equation}
+Suppose there exists a non-negative parameter $\gamma$ such that
+$V(1,k)\leq \gamma$. Then, we can get
+\begin{equation}\label{sum1}
+J_\infty  (k)    \leq  \left\| {x(k)} \right\|_{Q_1 }^2  + \left\|
+{u(k)} \right\|_R^2  + \gamma.
+\end{equation}
+To guarantee (\ref{ly1}) and $V(1,k)\leq \gamma$, the following
+lemma is given.
+
+\begin{lemma}
+For the uncertain system $\Sigma (k)$ without input constraints, the
+policy \h{$\pi  = \{ u(k),F_1 ,F_2 , \ldots ,F_{N - 1} \}$,} which
+guarantees {\rm (\ref{ly1})} and $V(1,k)\leq \gamma$, is given by
+$u(k) = u_k $ and $F_i = Y_i X_i^{ - 1}$ with $P(i,k) = \gamma X_i^{
+- 1}$, if there exists $\gamma  > 0$, $X_i  \in \mathbb{R}^{n \times
+n} $, $X_i~>~0$, $Y_i \in \mathbb{R}^{n_u  \times n} $ $(i = 1,2,
+\ldots ,N - 1)$ and positive-definite diagonal matrices $\Lambda _j
+\in \mathbb{R}^{n \times n}$, $(j = 0,1,2, \ldots ,N - 1)$,
+satisfying the following conditions.
+\begin{eqnarray}\label{con1}
+&&\left[ {\begin{array}{ccc}
+   1 & * & *  \\
+   {\Xi_1}(k) & {\Lambda _0 } & *  \\
+   {\Xi_2}(k) & 0 & {\Xi_3}(k)  \\
+\end{array}} \right] \ge 0\\
+\label{con2}&&\left[ {\begin{array}{*{5}c}
+   {X_i }  \\
+   {R^{1/2} Y_i }  \\
+   {Q_1^{1/2} X_i }  \\
+   {\Xi_1}(k+i)  \\
+   {\Xi_2 }(k+i)  \\
+\end{array} } \right.\begin{array}{*{20}c}
+   *  \\
+   {\gamma I}  \\
+   0  \\
+   0  \\
+   0  \\
+ \end{array} \begin{array}{*{20}c}
+   *  \\
+   *  \\
+   {\gamma I}  \\
+   0  \\
+   0  \\
+ \end{array} \begin{array}{*{20}c}
+   *  \\
+   *  \\
+   *  \\
+   {\Lambda _i }  \\
+   0  \\
+ \end{array} \left. {\begin{array}{*{20}c}
+   *  \\
+   *  \\
+   *  \\
+   *  \\
+   {\Xi_3}(k+i)  \\
+ \end{array} } \right] \ge 0,
+\end{eqnarray}
+where $\Xi_1(k)=C_q (k )x(k) + D_{qu}(k )u_k$, $\Xi_2(k)=A(\tilde
+\mu(k ))x(k) + B(\tilde \mu (k))u_k$, $\Xi_3(k)=X_{1}  - B_p
+(k)\Lambda _0 B_p^T (k)$, $\Xi_1(k+i)=C_q (k + i|k)X_i  + D_{qu} (k
++ i|k)Y_i$, $\Xi_2(k+i)=A(\tilde \mu (k + i|k))X_i  + B(\tilde \mu
+(k + i|k))Y_i$, $ \Xi_3(k+i)=X_{i + 1}  - B_p (k + i|k)\Lambda _i
+B_p^T (k + i|k)$ and $X_N=X_{N-1}$.
+\end{lemma}
+
+\proof{Proof} From (\ref{m1})--(\ref{m3}) (or
+(\ref{ts1})--(\ref{ts3})), we can get
+\begin{eqnarray}
+ p (k + i|k)^T p (k + i|k) &\le& x(k + i|k)^T (C_q (k + i|k)  \nonumber\\
+&&+ D_{qu} (k + i|k))F_i )^T (C_q (k + i|k) \nonumber\\
+&& + D_{qu} (k + i|k))F_i )x(k + i|k)\nonumber
+\end{eqnarray}
+Condition (\ref{ly1}) holds if the following condition can be
+guaranteed.
+%\begin{eqnarray}
+%\left[ {\begin{array}{*{20}c}
+%   {x(k + i|k)}  \\
+%   {p(k + i|k)}  \\
+%\end{array}} \right]^T \left[ {\begin{array}{*{20}c}
+%   \begin{array}{l}
+% ||F_i||^2_R  + Q_1 - P(i,k)+||A(\tilde \mu (k + i|k))\\ + B(\tilde \mu (k + i|k))F_i||^2_{P(i + 1,k)} \\
+% \end{array} &  *   \\
+%    \begin{array}{l}B_p^T (k + i|k)P(i + 1,k)(A(\tilde \mu (k + i|k))\times\\ + B(\tilde \mu (k + i|k))F_i )\\\end{array} & \mathscr{B}  \\
+%\end{array}} \right]\left[ {\begin{array}{*{20}c}
+%   {x(k + i|k)}  \\
+%   {p(k + i|k)}  \\
+%\end{array}} \right]\leq0,\nonumber
+%\end{eqnarray}
+\begin{eqnarray}
+\chi^T \left[{\begin{array}{ll}
+ ||F_i||^2_R  + Q_1 - P(i,k)+||A(\mu (k + i|k))\\ + B(\mu (k + i|k))F_i||^2_{P(i + 1,k)}  &  *   \\
+ B_p^T (k + i|k)P(i + 1,k)(A(\mu (k + i|k))\times\\ + B(\mu (k + i|k))F_i )& \mathscr{B} \\
+ \end{array}}\right]\chi \leq0,\nonumber
+\end{eqnarray}
+where $\chi=\left[{\begin{array}{c}
+   {x(k + i|k)}  \\
+   {p(k + i|k)}  \\
+\end{array}} \right]$, $\mathscr{B}=||B_p(k + i|k)||^2_{P(i +
+1,k)}$.
+%\begin{eqnarray}
+%\left[ {\begin{array}{*{20}c}
+%   \begin{array}{l}
+% ||F_i||^2_R  + Q_1 - P(i,k)+||A(\mu (k + i|k))\\ + B(\mu (k + i|k))F_i||^2_{P(i + 1,k)} \\
+% \end{array} &  *   \\
+%    \begin{array}{l}B_p^T (k + i|k)P(i + 1,k)(A(\mu (k + i|k))\times\\ + B(\mu (k + i|k))F_i )\\\end{array} & \mathscr{B}  \\
+%\end{array}} \right]\leq0,\nonumber
+%\end{eqnarray}
+%where $\mathscr{B}=||B_p(k + i|k)||^2_{P(i + 1,k)}$.
+Then, by S-procedure, the above condition can be guaranteed if there
+exists $\Lambda _{i}^{\prime}  = {\rm diag}\left(
+{S_{(1,i)},\ldots,S_{(L,i)} } \right)$, $S_{(l,i)}  \ge 0,$ \h{$l =
+1,2, \ldots ,L$ such that}
+\begin{eqnarray}
+\left[ {\begin{array}{cc}
+   \mathscr{A}_1 &  *   \\
+   \mathscr{A}_2 & \mathscr{B}_1  \\
+\end{array}} \right]\leq 0,\nonumber
+\end{eqnarray}
+where $\mathscr{A}_1= ||A(\tilde \mu (k + i|k)) + B(\tilde \mu (k +
+i|k))F_i||^2_{P(i + 1,k)} - P(i,k) + ||F_i||^2_R + Q_1  + ||C_q (k +
+i|k) + D_{qu} (k + i|k)F_i ||^2_{\Lambda _{i}^{\prime}}$,
+ $\mathscr{A}_2=B_p^T (k + i|k)P(i + 1,k)(A(\tilde \mu (k + i|k)) + B(\tilde \mu
+(k + i|k))F_i )$, $\mathscr{B}_1=||B_p(k + i|k)||^2_{P(i +
+1,k)}-\Lambda _{i}^{\prime}$.
+
+Let $P(i,k) = \gamma X_i^{-1} $, $Y_i  = F_i X_i $
+ and $ \Lambda _{i }  = \gamma (\Lambda _{i }^{\prime})^{-1}$. By using Schur complement, it~can~be
+concluded that the above condition is equivalent to (\ref{con2}).
+
+In addition, by Schur complement, (\ref{con1}) is equivalent to
+\begin{eqnarray}
+\left[ {\begin{array}{cc}
+   \mathscr{A}_1(0)&  *   \\
+   \mathscr{A}_2(0)& \mathscr{B}_1(0)   \\
+\end{array}} \right] \le 0\hspace{4em}\nonumber
+\end{eqnarray}
+where \h{$\mathscr{A}_1(0)=||A(\tilde \mu(k))x(k) + B(\tilde \mu
+(k))u_k ||^2_{ X_1^{ - 1}} - 1 + ||C_q (k)x(k) + D_{qu}(k))$} $u_k
+||^2_{\Lambda _0^{-1}}$, \h{$\mathscr{A}_2(0)=B_p^T (k)X_1^{ - 1}
+(A(\tilde \mu (k)) x(k)+ B(\tilde \mu (k))u_k )$ and
+$\mathscr{B}_1(0)=||B_p(k)||^2_{X_1^{ - 1}}$}~$-$ $\Lambda _0^{-1}$.
+
+Left- and right-multiplying the above inequality by $[1 \;\; p(k)]$
+and $[1 \;\; p(k)]^T$, respectively, and then by
+(\ref{m1})--(\ref{m3}) and using S-procedure, we can get
+\begin{eqnarray}
+||A(\tilde \mu (k))x(k) + B(\tilde \mu (k))u_k  + B_p
+(k)p(k)||^2_{X_1^{ - 1}} \le 1. \nonumber
+\end{eqnarray}
+That is, $V(1,k)\leq \gamma$ holds if (\ref{con1}) is satisfied
+according to $P(1,k) = \gamma X_1^{ - 1} $. Therefore, the lemma is
+proven.
+\endproof
+
+\noindent From $V(1,k)\leq\gamma$ and (\ref{ly1}), it is obvious
+that $V(i,k)\leq\gamma$. Then constraints (\ref{constraint}) can be
+satisfied if the following lemma holds, whose proof can be easily
+obtained by the similar procedure in \cite{Kothare} or
+\cite{li2009constrained} and is omitted here.
+
+\begin{lemma}
+%The input constraints (\ref{constraint}) would be satisfied if Lemma
+%1 holds and the following conditions are satisfied:
+The input constraints {\rm (\ref{constraint})} can be satisfied if
+there exists $\gamma  > 0$, $X_i  \in \mathbb{R}^{n \times n} $,
+$X_i  > 0$, $Y_i \in \mathbb{R}^{n_u  \times n} $, $Z_i \in
+\mathbb{R}^{n_u \times n_u} $ $(i = 1,2, \ldots, N - 1)$ and
+positive-definite diagonal matrices $\Lambda _j \in \mathbb{R}^{n
+\times n}$, $(j = 0,1,2, \ldots ,N - 1)$, satisfying conditions {\rm
+(\ref{con1}) and (\ref{con2})}, and also satisfying the following
+conditions:
+\begin{eqnarray}\label{con3}
+&&\left| {(u_k )_l } \right| \leq u_{l,\max},\quad l = 1,2, \ldots
+,m\\\label{con4} &&\left[ {\begin{array}{cc}
+   {Z_i } &  *   \\
+   {Y_i } & {X_i }  \\
+ \end{array} } \right] \ge 0,(Z_i )_{ll}  \leq u_{l,\max }^2 \quad i = 1,2, \ldots, N-1, \quad l = 1,2, \ldots, m.
+\end{eqnarray}
+\end{lemma}
+
+\noindent Lemma 2 can be proven in a similar way to the proof of the
+constraints in \cite{Kothare}. Therefore, it is omitted here.
+
+Based on Lemmas 1 and 2, the optimisation problem of feedback RMPC
+for $\Sigma (k)$ can be formulated as below.
+
+\begin{algorithm}
+Let $x(k) = x(k|k)$ be the state of the uncertain system  $\Sigma
+(k)$ measured at sampling time $k$, and the input constraints are
+described as in {\rm (\ref{constraint})}. Then the policy $\pi  = \{
+u(k),F_1 ,F_2 , \ldots ,F_{N - 1} \} $ that minimises the upper
+bound on the robust performance objective function at sampling time
+$k$ is given by
+\begin{eqnarray*}
+u(k)=u_k,F_i  = Y_i X_i^{ - 1}
+\end{eqnarray*}
+where $\gamma  > 0$, $X_i  \in \mathbb{R}^{n \times n} $, $X_i  >
+0$, $Y_i \in \mathbb{R}^{n_u  \times n} $, $Z_i \in \mathbb{R}^{n_u
+\times n_u} $ $(i = 1,2, \ldots ,N - 1)$ and positive-definite
+diagonal matrices $\Lambda _j \in \mathbb{R}^{n \times n}$, $(j =
+0,1,2, \ldots, N - 1)$, are obtained from the solution (if it
+exists) of the following linear objective minimisation problem
+
+\begin{eqnarray}\label{controller1}
+&&\mathop {\min }\limits_{\gamma_0 ,\gamma,u_k ,X_i ,Y_i
+,Z_i,\Lambda_j } {\mathbf{   }} \gamma  + \gamma _0  \\
+s.t.&& \qquad (\ref{con1})-(\ref{con4})\\&&
+\label{controller2}\left[ {\begin{array}{ccc}
+   {\gamma _0 } & {x^T (k)} & {u_k^T }  \\
+   {x(k)} & {Q_1^{-1} } & 0  \\
+   {u_k } & 0 & R^{-1}  \\
+\end{array}} \right] \ge 0.
+\end{eqnarray}
+The current control input is $u(k)=u_k$.
+\end{algorithm}
+
+\begin{remark}
+For RMPC based on Algorithm 1, if the control input $u(k)$ in
+control strategy $\pi$ is removed and $N$ is chosen as 1, the
+controller will be simplified to the design in \cite{Kothare}. The
+added freedom in Algorithm 1 makes it possible to utilise the
+information on system parameters, which is helpful to improve the
+control performance.
+
+\noindent To simplify the presentation, let $\mathbb{Q}_i:=(X_i
+,Y_i,Z_i,\Lambda _i)$.
+
+In terms of the recursive feasibility and closed-loop stability of
+Algorithm 1, the following theorem can be given.
+\end{remark}
+
+\begin{theorem}
+If there is a feasible solution of Algorithm {\rm 1} at time $k$
+with system state $x(k)$, there will also exist a feasible solution
+for Algorithm {\rm 1} at next time, and the closed-loop system is
+asymptotically stable.
+\end{theorem}
+
+\proof{Proof} Since Algorithm 1 is feasible at time $k$, suppose
+~$\Gamma ^*  (k) = \{\gamma^*_0(k), \break \gamma^ *
+(k),u_k^*,\Lambda_0^*, \mathbb{Q}_1^ * , \ldots ,\mathbb{Q}_{N -
+1}^* \}$~ as the optimal solution for the current state $x(k)$. That
+implies that $\Gamma ^ * (k)$ satisfies (\ref{con1})--(\ref{con4}).
+
+%%Thus, to prove the recursive feasibility, we only need to prove
+%%conditions (\ref{con1})-(\ref{con4}) and (\ref{controller2}) is also
+%%feasible for state $x(k + 1)$.
+
+%%Corresponding to $\Gamma ^* (k)$, the control sequence $\pi = \{
+%%u(k),F_1 ,F_2 , \ldots ,F_{N - 1} \} $ refers to $ \{ u_k^
+%%*,Y_1^
+%%* (X_1^
+%%* )^{ - 1}
+%%,Y_2^ * (X_2^
+%%* )^{ - 1} , \ldots ,Y_{N-1}^ *
+%%(X_{N-1}^
+%%* )^{ - 1} \} $. Adopting the feedback law $F_1=Y_1^ *
+%%(X_1^
+%%* )^{ - 1}$ to steer state$x(k+1)$, it can be got that $x(k +
+%%2|k + 1) = [A(\theta (k + 1)) + B(\theta (k + 1))Y_1^ * (X_1^
+%%* )^{ - 1} ]x(k + 1)$, $V(1,k + 1) = x^T (k + 2|k + 1)\gamma ^
+%%*  (X_2^ *  )^{ - 1} x(k + 2|k + 1)$. In addition, a parameter
+%%is defined as $a: = V(1,k+1)/\gamma ^ *  (k)$. From Lemma 1,
+%%inequalities (15) and (16) result in $V(2,k) \leqslant V(1,k)
+%%\leqslant \gamma ^
+%%*  (k)$ , which immediately leads to $V(1,k+1) \leqslant \gamma ^
+%%*  (k)$ , i.e. $a \leqslant 1 $.
+
+At time $ k + 1$, for Algorithm 1, we construct a solution
+\begin{eqnarray}
+\Gamma (k + 1) &=& \{\left\| {x(k + 1)} \right\|_{Q_1 }^2  + \left\|
+{Y_1^ *  (X_1^ *  )^{ - 1} x(k + 1)} \right\|_R^2
+,\hspace{1em}\nonumber\\&&a\gamma ^
+*  (k),Y_1^ * (X_1^ *  )^{ - 1} x(k + 1),a\Lambda^*_1, a\mathbb{Q}_2^ * , \ldots
+a\mathbb{Q}_{N - 1}^ *,a\mathbb{Q}_{N - 1}^ *  \}\nonumber
+\end{eqnarray}
+with definition $a: = V(1,k+1)/\gamma ^ *  (k)$ where $V(1,k + 1) =
+x^T (k + 2|k + 1)\gamma ^ *  (X_2^ *  )^{ - 1} x(k + 2|k + 1)$, $x(k
++ 2|k + 1) = [A(\theta (k + 1)) + B(\theta (k + 1)) Y_1^ * (X_1^
+* )^{ - 1}]\break x(k + 1)$. The above definition means that$V(1,k+1)=a\gamma ^ *
+(k)$.
+
+%where $a$ is defined with $a = V(2,k)/\gamma ^ *  (k)$. From Lemma
+%1, inequalities (15) and (16) result in $V(2,k) \leqslant V(1,k)
+%\leqslant \gamma ^
+%*  (k)$ , i.e. $a \leqslant 1 $.
+
+From the model with parameter incremental uncertainty, $ \Sigma_{k +
+1,i} \subseteq \Sigma_{k,i+1}$ and $\Sigma _{k,i} \subseteq \Psi $.
+We observe that conditions (\ref{con2}) and (\ref{con4}) are affine
+in the matrices $(\gamma ,\mathbb{Q}_1^* ,\mathbb{Q}_2^* , \ldots
+,\mathbb{Q}_{N - 1}^* )$. Multiplying them by parameter $a$
+respectively, we can see that $\Gamma (k + 1)$ satisfies
+(\ref{con4}) and (\ref{con2}) when $i = 1,2, \ldots ,N - 1$.
+%It can also justify that (14) holds true
+%with the constructed solution $\Gamma (k + 1)$.
+
+Let $u_{k + 1}  = Y_1^ * (X_1^ *  )^{ - 1} x(k + 1)$ and $\gamma_0
+(k + 1) = \left\| {x(k + 1)} \right\|_{Q_1 }^2  + \left\| {Y_1^*
+(X_1^*)^{-1} x(k + 1)} \right\|_R^2 $. It is obvious that
+(\ref{con3}) and (\ref{controller2}) are satisfied by $\Gamma (k +
+1)$. Furthermore, since $\mathbb{Q}_1^*(k)$ satisfies (\ref{con2})
+at time $k$, it implies that (\ref{con1}) holds at time $k+1$ with
+the constructed solution $\Gamma (k + 1)$ due to the definition of
+$a$. That means, the constructed solution is a feasible solution of
+Algorithm 1 at time $k+1$. Hence, the recursive feasibility of
+Algorithm 1 can be established.
+
+In addition, from Lemma 1, it can be concluded that $\left\| {x(k +
+1)} \right\|_{Q_1 }^2  + \left\| {Y_1^ * (X_1^* )^{ - 1} x(k + 1)}
+\right\|_R^2  + V(1,k + 1) \leq V(1,k) \leq\gamma^*(k)$, i.e.,
+$\gamma_0(k+1)+\gamma(k+1) \leq\gamma ^ * (k)$. Therefore, it can be
+obtained that $\gamma _0^ * (k + 1) + \gamma ^
+*  (k + 1) \leq \gamma_0(k+1)+\gamma(k+1)
+< \gamma _0^* (k) + \gamma ^*  (k)$ when $x(k)\neq 0$. That is, the
+closed-loop system is asymptotically stable.
+\endproof
+
+\section{Numerical example}
+
+%First, let us verify the recursive feasibility of
+%\cite{park2004crl}. Investigate an extreme case for RHC in
+%\cite{park2004crl} with $N=3$, i.e. the case with $\theta(k)=1$,
+%$\delta=1$ and no measurement errors. For $x(k)=[1,1]^T$ and $k=1$,
+%RHC in \cite{park2004crl} optimizes the control inputs
+%$u(k),u(k+1),u(k+2)$ to steer $x(k)$ to a terminal invariant set.
+%The states $x(k|k),x(k+1|k),x(k+2|k),x(k+3|k)$ are shown in Figure
+%1, which is a partial enlarged drawing. From
+%\cite{schuurmans2000robust}, $x(k+i),i>1$ is a state constructed by
+%the linear combination from the states $x(k+i|k)$ corresponding to
+%the model vertices $\{A1,B1\}, \{A2,B2\}$. Thus, if Lemma 2 in
+%\cite{park2004crl} is correct, there must be a $u(k+3|k+1)$ with
+%$u(k+1|k+1)=u(k+1|k), u(k+2|k+1)=u(k+2|k)$ steering $x(k+1|k+1)$
+%into the terminal set computed at time $k$. In Figure 1, states
+%$x(k+1|k+1),x(k+2|k+1),x(k+3|k+1)$ are marked by a cycle. By
+%computing, it is found that this $u(k+3|k+1)$ does not exist. That
+%is, the RHC in \cite{park2004crl} cannot guarantee the recursive
+%feasibility.
+
+Consider the following system:
+\begin{eqnarray}
+x(k + 1) = \left[{\theta (k)A_1  + \left( {1 - \theta (k)}
+\right)A_2} \right]x(k) + \left[ {\theta (k)B_1  + \left({1 - \theta
+(k)} \right)B_2 } \right]u(k)\nonumber
+\end{eqnarray}
+where $A_1  = \left[ {\begin{array}{cc}
+   1 & 0  \\
+   {-0.3} & {1.4}  \\
+ \end{array} } \right]$, $A_2  = \left[ {\begin{array}{cc}
+   1 & 0  \\
+   {-0.1} & {1.1}  \\
+ \end{array} } \right]$, $B_1  = \left[ {\begin{array}{c}
+   {0.2}  \\
+   0  \\
+ \end{array} } \right]$, $B_2  = \left[{\begin{array}{c}
+   1  \\
+   0  \\
+ \end{array} } \right]$,
+ $\left| u \right| \leq 1$, $\theta (k) \in \left[ {\begin{array}{cc}
+   0 & 1  \\
+ \end{array} } \right],|\Delta \theta|\leq\delta$, $|\hat{\theta}(k)-\theta(k)|\leq \sigma$ and
+ \begin{eqnarray*}
+ \theta (k + 1) &=& \left\{ \begin{array}{l}
+  0   ,\theta (k) + \delta\sin (k-1) \leq 0 \hfill \\
+  \theta (k) + \delta\sin (k-1)   \hfill \\
+  1 ,\theta (k) + \delta\sin (k-1) \ge 1 \hfill \\
+\end{array} \right.\nonumber\\
+\hat{\theta}(k) &=& \left\{ \begin{array}{l}
+  0               ,\theta (k) +\sigma \leq 0 \hfill \\
+  \theta (k) + \sigma \hfill \\
+  1               ,\theta (k) + \sigma \ge 1 \hfill \\
+\end{array}\right..
+\end{eqnarray*}
+The initial state is chosen as $x(0)=[1,1]^T$ and the weighting
+matrices are chosen as $Q_1 = {\rm diag}(1,0.1)$, $R = 0.001$.
+First, let us verify the recursive feasibility of
+\cite{park2004crl}. Investigate an extreme case for RHC in
+\cite{park2004crl} with $N=3$, i.e., the case with $\theta(k)=1$,
+$\delta=1$ and no measurement errors. For $x(k)=[1,1]^T$ and $k=1$,
+RHC in \cite{park2004crl} optimises the control inputs
+$u(k),u(k+1),u(k+2)$ to steer $x(k)$ to a terminal invariant set.
+The states $x(k|k),x(k+1|k),x(k+2|k),x(k+3|k)$ are shown in
+Figure~1, which is a partial enlarged drawing. From
+\cite{schuurmans2000robust}, $x(k+i),i>1$ is a state constructed by
+the linear combination from the states $x(k+i|k)$ corresponding to
+the model vertices $\{A1,B1\}, \{A2,B2\}$. Thus, if Lemma 2 in
+\cite{park2004crl} is correct, there must be a $u(k+3|k+1)$ with
+$u(k+1|k+1)=u(k+1|k), u(k+2|k+1)=u(k+2|k)$ steering $x(k+1|k+1)$
+into the terminal set computed at time $k$. In Figure 1, states
+$x(k+1|k+1),x(k+2|k+1),x(k+3|k+1)$ are marked by a cycle. By
+computing, it is found that this $u(k+3|k+1)$ does not exist. That
+is, the RHC in \cite{park2004crl} cannot guarantee the recursive
+feasibility.
+
+
+%\begin{figure}[h] \caption{The `servicePort' schema (see online
+%version for~colours)} \label{servicePort}
+%\centerline{\epsffile{E:/Inderscience/Figures/F2.eps}}
+%\end{figure}
+
+\noindent Figures 2 and 3 show the state responses from
+$x(0)=[1,1]^T$ with $\theta(0)=0.6, \break \delta=0.15, \sigma=0$
+and $\theta(0)=0.6, \delta=0.15, \sigma=0.01$, respectively, where
+$N=3$ for RHC in \cite{park2004crl} and Algorithm 1. The results by
+using the techniques in \cite{lu2000quasi} and \cite{Kothare} are
+also included in Figures 2 and 3, respectively to make a comparison.
+From Figure 2, the performance of RMPC with Algorithm 1 is best,
+where the cost value of Algorithm 1 is 34.56, better than 42.69 of
+\cite{lu2000quasi} and 42.94 of \cite{park2004crl}. For the case
+with measurement errors $\sigma=0.01$, the results are compared
+between the proposed Algorithm 1 and the technique in
+\cite{Kothare}, which is the technique capable of dealing with LPV
+systems with measurement error in the previous literatures. The
+state response is shown in Figure 3 and the cost value of Algorithm
+1 is 28.73 and that of \cite{Kothare} is 38.44. Therefore, it
+reflects that Algorithm 1 can achieve better control performance
+than the design in \cite{Kothare}.
+
+%\begin{figure}[h]
+%\caption{The state responses ($\theta(0)=0.6, \delta=0.15,
+%\sigma=0$): dash-dotted line for \cite{park2004crl}, dashed line for
+%\cite{lu2000quasi}, solid line for Algorithm 1}
+%\centerline{\epsffile{D:/inderscience/LATEX/LATEX-FILES/Problemfile/Sample/Figures/F2.eps}}
+%\end{figure}\vspace{-0.17pc}
+
+%\begin{figure}[h]
+%\caption{The state responses ($\theta(0)=0.6, \delta=0.15,
+%\sigma=0.01$): dashed line for \cite{Kothare}, solid line for
+%Algorithm 1}
+%\centerline{\epsffile{D:/inderscience/LATEX/LATEX-FILES/Problemfile/Sample/Figures/F3.eps}}
+%\end{figure}
+
+%The initial state is chosen as $x(0)=[1,1]^T$ and the weighting
+%matrices are chosen as $Q_1 = diag(1,0.1)$, $R = 0.001$.
+
+%For the case without measurement errors, i.e. $\sigma=0$, the
+%results by using the technique in \cite{lu2000quasi} and
+%\cite{park2004crl} are included to make a compasion. The state
+%response is shown in Figure 1 and the cost value shown in Table 1,
+%where $N=3$ for RHC in \cite{park2004crl} and Algorithm 1. From
+%Figure 1 and Table 1, the performance of RMPC with Algorithm 1 is
+%better than that of \cite{lu2000quasi} and \cite{park2004crl}.
+%
+%For the case with measurement errors $\sigma=0.01$, the results are
+%compared between the proposed Algorithm 1 and the technique in
+%\cite{Kothare}, which is the technique capable of dealing with LPV
+%systems with measure error in the previous literatures. The state
+%response is shown in Figure 2 and the cost value shown in Table 2,
+%where $N=3$ for Algorithm 1. Figure 2 and Table 2 reflect that
+%Algorithm 1 can achieve better control performance than the design
+%in \cite{Kothare}.
+
+\noindent The above results verify the effectiveness of utilises the
+information of system parameters in Algorithm 1.
+
+
+%\vskip3mm
+%\begin{center} \small{{\small Table 1.~~comparisons of performance cost for
+%system without measure errors
+%} \\[2mm] \begin{tabular}{c|c|c|c}
+%\hline
+% approaches & Algorithm1 & \cite{lu2000quasi} & \cite{park2004crl}\\ \hline
+% performance cost & 34.56 & 42.69 & 42.94  \\
+%\hline
+%\end{tabular} }
+%\end{center}
+%\vskip3mm
+%
+%\vskip3mm
+%\begin{center} \small{{\small Table 2.~~comparisons of performance cost for
+%system with measure errors
+%} \\[2mm] \begin{tabular}{c|c|c}
+%\hline
+% approaches & Algorithm1 & \cite{Kothare} \\ \hline
+% performance cost & 28.73 & 38.44  \\
+%\hline
+%\end{tabular} }
+%\end{center}
+%\vskip3mm
+
+\section{Conclusions}
+
+This paper presents a new approach to RMPC for LPV systems with
+bounded rates of parameter variations and bounded parameter
+measurement errors. By adopting a sequence of feedback control laws
+corresponding to the parameter variation of LPV systems, the
+information on system parameters can be made use of, which is
+helpful to reduce the design conservativeness and then improve the
+control performance of RMPC. The recursive feasibility and
+closed-loop stability of the proposed MPC can be guaranteed by the
+proposed RMPC.
+
+\section*{Acknowledgements}
+The authors would like to acknowledge the financial support from the
+National Science Foundation of China (Grant No. 60934007, 61074060,
+61104078).
+
+
+\begin{thebibliography}{10}
+
+\bibitem[\protect\citeauthoryear{Casavola et al.}{2002}]{casavola2002fmm}
+Casavola, A., Famularo, D. and Franze, G. (2002) `A feedback min-max
+MPC algorithm for LPV systems subject to bounded rates of change of
+parameters', {\it IEEE Transactions on Automatic Control}, Vol. 47,
+No. 7, pp.1147--1153.
+
+\bibitem[\protect\citeauthoryear{Ding and Huang}{2007}]{ding2007cfm}
+Ding, B. and Huang, B. (2007) `Comments on a feedback min-max MPC
+algorithm for LPV systems subject to bounded rates of change of
+parameters', {\it IEEE Transactions on Automatic Control}, Vol.~52,
+No. 5, pp.970--970.
+
+\bibitem[\protect\citeauthoryear{Kothare~et~al.}{1996}]{Kothare}
+Kothare, M.V., Balakrishnan, V. and Morari, M. (1996) `Robust
+constrained model predictive control using linear matrix
+inequalities', {\it Automatica}, Vol. 32, No. 10, pp.1361--1379.
+
+\bibitem[\protect\citeauthoryear{Li et al.}{2009}]{li2009constrained}
+Li, D., Xi, Y. and Zheng, P. (2009) `Constrained robust feedback
+model predictive control for uncertain systems with polytopic
+description', {\it International Journal of Control}, Vol. 82,
+No.~7, \h{pp.1267--1274.}
+
+\bibitem[\protect\citeauthoryear{Lu and Arkun}{2000}]{lu2000quasi}
+Lu, Y. and Arkun, Y. (2000) `Quasi-min-max MPC algorithms for LPV
+systems', {\it Automatica}, Vol.~36, No. 4, pp.527--540.
+
+\bibitem[\protect\citeauthoryear{Park and Jeong}{2004}]{park2004crl}
+Park, P.G. and Jeong, S.C. (2004) `Constrained RHC for LPV systems
+with bounded rates of parameter variations', {\it Automatica}, Vol.
+40, No. 5, pp.865--872.
+
+\bibitem[\protect\citeauthoryear{Pluymers et al.}{2005}]{Pluymer}
+Pluymers, B., Suykens, J.A.K. and Moor, B.D. (2005) `Min-max
+feedback mpc using a time-varying terminal constraint set and
+comments on `efficient robust constrained model predictive control
+with a time-varying terminal constraint set'', {\it Systems \&
+Control Letters}, Vol. 54, No. 12, \h{pp.1143--1148.}
+
+\bibitem[\protect\citeauthoryear{Wan and Kothare}{2003}]{Wanon}
+Wan, Z. and Kothare, M.V. (2003) `Efficient robust constrained model
+predictive control with a time varying terminal constraint set',
+{\it Systems \& Control Letters}, Vol. 48, No. 5, pp.375--383.
+
+\bibitem[\protect\citeauthoryear{Schuurmans~and~Rossiter}{2000}]{schuurmans2000robust}
+Schuurmans, J. and Rossiter, J.A. (2000) `Robust predictive control
+using tight sets of predicted states', {\it IEE Proceedings-Control
+Theory and Applications}, Vol. 147,~No. 1,~pp.13--18.
+\end{thebibliography}
+%\begin{ack}                               % Place acknowledgements
+% here.
+%\end{ack}
+
+%\bibliographystyle{unsrt}        % Include this if you use bibtex
+%\bibliography{autosam}           % and a bib file to produce the
+                                 % bibliography (preferred). The
+                                 % correct style is generated by
+                                 % Elsevier at the time of printing.
+
+%\begin{thebibliography}{99}     % Otherwise use the
+                                 % thebibliography environment.
+                                 % Insert the full references here.
+                                 % See a recent issue of Automatica
+                                 % for the style.
+%  \bibitem[Heritage, 1992]{Heritage:92}
+%     (1992) {\it The American Heritage.
+%     Dictionary of the American Language.}
+%     Houghton Mifflin Company.
+%  \bibitem[Able, 1956]{Abl:56}
+%     B.~C.~Able (1956). Nucleic acid content of macroscope.
+%     {\it Nature 2}, 7--9.
+%  \bibitem[Able {\em et al.}, 1954]{AbTaRu:54}
+%     B.~C. Able, R.~A. Tagg, and M.~Rush (1954).
+%     Enzyme-catalyzed cellular transanimations.
+%     In A.~F.~Round, editor,
+%     {\it Advances in Enzymology Vol. 2} (125--247).
+%     New York, Academic Press.
+%  \bibitem[R.~Keohane, 1958]{Keo:58}
+%     R.~Keohane (1958).
+%     {\it Power and Interdependence:
+%     World Politics in Transition.}
+%     Boston, Little, Brown \& Co.
+%  \bibitem[Powers, 1985]{Pow:85}
+%     T.~Powers (1985).
+%     Is there a way out?
+%     {\it Harpers, June 1985}, 35--47.
+
+%\end{thebibliography}
+
+\end{document}
